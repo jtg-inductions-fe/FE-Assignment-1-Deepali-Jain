@@ -1,0 +1,64 @@
+@use '../abstracts/functions.scss' as f;
+@use '../abstracts/mixins.scss' as m;
+@use '../abstracts/variables.scss' as v;
+@font-face {
+    font-family: 'Circular Std';
+    src: url('/public/assets/fonts/circular-std-medium-500.ttf');
+}
+@font-face {
+    font-family: 'icomoon';
+    src: url('/public/assets/fonts/icomoon.ttf');
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/public/assets/fonts/Inter_18pt-Thin.ttf');
+}
+//heading for hero section
+.hero-heading {
+    font-size: f.pxToRem(69px);
+    font-weight: bold;
+}
+//section headings
+.heading {
+    font-size: f.pxToRem(44px);
+    font-weight: bold;
+}
+//heading for service section
+.service-card-heading {
+    font-size: f.pxToRem(28px);
+    font-weight: bold;
+}
+// section paragraphs
+.paragraph {
+    font-size: f.pxToRem(18px);
+    font-family: 'Inter';
+}
+//subheadings for the sections
+.subheading {
+    font-size: f.pxToRem(18px);
+    color: v.$highlight-color;
+}
+.travel-card-heading {
+    font-size: f.pxToRem(35px);
+    font-weight: bold;
+}
+.travel-card-subheading {
+    font-size: f.pxToRem(18px);
+    color: v.$card-heading-color;
+}
+.key-features-card-heading {
+    font-size: f.pxToRem(23px);
+    font-weight: bold;
+}
+.testimonial-name {
+    font-size: f.pxToRem(23px);
+    color: v.$card-heading-color;
+}
+.newsletter-heading {
+    font-size: f.pxToRem(55px);
+    font-weight: bold;
+}
+.footer-paragraph {
+    font-size: f.pxToRem(23px);
+    color: v.$muted-text-color;
+}

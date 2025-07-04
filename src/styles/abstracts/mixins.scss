@@ -1,0 +1,55 @@
+// mixins for media queries
+@mixin break($breakpoint) {
+    @if $breakpoint== m {
+        @media (max-width: $breakpoint-mobile) {
+            @content;
+        }
+    } @else if $breakpoint==t {
+        @media (max-width: $breakpoint-tablet) {
+            @content;
+        }
+    } @else if $breakpoint==d {
+        @media (min-width: $breakpoint-tablet) {
+            @content;
+        }
+    }
+}
+// For setting bg & text color
+@mixin theme($bg, $text) {
+    background-color: $bg;
+    color: $text;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+//For setting up height and width
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+//For setting border radius
+@mixin radius($radius: 32px) {
+    border-radius: $radius;
+}
+//For setting box shadow
+@mixin box-shadow($shadow...) {
+    box-shadow: $shadow;
+}
+//For setting up font size
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: pxToRem($size);
+}
+/*animation mixin*/

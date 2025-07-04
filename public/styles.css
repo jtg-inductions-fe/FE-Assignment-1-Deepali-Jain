@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Circular Std';
+    src: url('/public/assets/fonts/circular-std-medium-500.ttf');
+}
+
+/*animation mixin*/
+.btn-primary {
+    background-color: #5d50c6;
+    color: #eeeeee;
+    border-radius: 6.25rem;
+}
+body {
+    font-family: Circular Std;
+}
