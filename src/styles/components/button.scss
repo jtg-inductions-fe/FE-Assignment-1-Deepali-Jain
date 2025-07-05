@@ -3,29 +3,23 @@
 @use '../abstracts/variables.scss' as v;
 //Signup button
 .btn-primary {
-    background-color: v.$primary-color;
-    color: v.$secondary-text-color;
-    border-radius: f.pxToRem(100px);
-    border: none;
-    font-weight: bold;
-    padding: f.pxToRem(16px) f.pxToRem(32px);
-    height: f.pxToRem(49px);
-    width: f.pxToRem(115px);
+    @include m.btn-base(v.$primary-color, v.$secondary-color, 115px, 49px);
 }
 //Login buttons
 .btn-secondary {
-    background-color: v.$secondary-color;
-    color: v.$text-color;
-    border-radius: f.pxToRem(100px);
-    border: none;
-    font-weight: bold;
-    padding: f.pxToRem(16px) f.pxToRem(32px);
-    height: f.pxToRem(49px);
-    width: f.pxToRem(115px);
-    font-size: f.pxToRem(14px);
+    @include m.btn-base(v.$secondary-color, v.$text-color, 115px, 49px);
 }
 //subscribe button
 .btn-subscribe {
+    @include m.btn-base(
+        v.$primary-color,
+        v.$secondary-color,
+        235px,
+        96px,
+        32px,
+        32px,
+        64px
+    );
     background-color: v.$primary-color;
     color: v.$secondary-text-color;
     border-radius: f.pxToRem(32px);
