@@ -4,10 +4,49 @@
         <title>Assignment 1</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <link rel="stylesheet" href="public/assets/icons/icons.css" />
     </head>
     <body>
+        <nav>
+            <div class="nav-parent">
+                <div class="ham-parent">
+                    <i
+                        tabindex="0"
+                        role="button"
+                        class="icon-hamburger-menu ham-menu"
+                        id="hamIcon"
+                    ></i>
+                </div>
+                <div class="logo">
+                    <img src="/assets/images/logo.webp" alt="logo" />
+                </div>
+                <div class="nav-links">
+                    <ul id="navLinks">
+                        <li><a class="current" href="#">Home</a></li>
+                        <li><a href="#">Discover</a></li>
+                        <li><a href="#">Special Deals</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav-btns">
+                    <div>
+                        <button class="btn-base btn-outlined">Log In</button>
+                    </div>
+                    <div>
+                        <button class="btn-base btn-active">Sign Up</button>
+                    </div>
+                </div>
+                <div class="collapsed-menu" id="hamMenu">
+                    <p
+                        tabindex="0"
+                        role="button"
+                        class="cross-icon"
+                        id="crossIcon"
+                    >
+                        &#10006;
+                    </p>
+                </div>
+            </div>
+        </nav>
         <script type="module" src="./src/script"></script>
     </body>
 </html>
