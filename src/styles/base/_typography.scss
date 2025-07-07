@@ -1,0 +1,29 @@
+@use '../abstracts/functions.scss' as f;
+@use '../abstracts/mixins.scss' as m;
+@use '../abstracts/variables.scss' as v;
+
+//heading for hero section
+.hero-heading {
+    font-size: f.pxToRem(69px);
+    font-weight: bold;
+}
+//section headings
+.heading {
+    @include m.heading-font-size();
+    font-weight: bold;
+}
+// section paragraphs
+.paragraph {
+    font-size: f.pxToRem(18px);
+    font-family: 'Inter';
+    color: v.$muted-text-color;
+}
+//subheadings for the sections
+.subheading {
+    font-size: f.pxToRem(18px);
+    color: v.$highlight-color;
+}
+.card-subheading {
+    font-size: f.pxToRem(18px);
+    color: v.$card-heading-color;
+}

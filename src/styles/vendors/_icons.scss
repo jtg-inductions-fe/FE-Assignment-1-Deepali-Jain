@@ -1,16 +1,11 @@
+@use '../abstracts/variables.scss' as v;
 @font-face {
     font-family: 'icomoon';
-    src: url('./fonts/icomoon.eot?4etbac');
-    src:
-        url('./fonts/icomoon.eot?4etbac#iefix') format('embedded-opentype'),
-        url('./fonts/icomoon.ttf?4etbac') format('truetype'),
-        url('./fonts/icomoon.woff?4etbac') format('woff'),
-        url('./fonts/icomoon.svg?4etbac#icomoon') format('svg');
+    src: url('./fonts/icomoon.woff?4etbac') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
-
 [class^='icon-'],
 [class*=' icon-'] {
     /* use !important to prevent issues with browser extensions that change fonts */
@@ -29,28 +24,31 @@
 
 .icon-ig-logo:before {
     content: '\e900';
-    color: #fff;
+    color: v.$secondary-color;
 }
 .icon-star:before {
     content: '\e901';
-    color: #facd49;
+    color: v.$newsletter-bg-color;
 }
 .icon-play-button:before {
     content: '\e902';
-    color: #5d50c6;
+    color: v.$primary-color;
 }
 .icon-email:before {
     content: '\e903';
 }
 .icon-hamburger-menu:before {
-    content: '\e904';
-    color: #5d50c6;
+    content: '\e906';
+    color: v.$primary-color;
 }
 .icon-twitter-logo:before {
     content: '\e905';
-    color: #f1f2f2;
+    color: v.$twitter-logo-color;
 }
 .icon-fb-logo:before {
-    content: '\e906';
-    color: #5d50c6;
+    content: '\e904';
+    color: v.$primary-color;
+}
+.icon-cross:before {
+    content: '\ea0f';
 }

@@ -1,0 +1,50 @@
+@use './functions.scss' as f;
+@use './variables.scss' as v;
+// mixins for media queries
+@mixin breakpoint($name) {
+    @if not map-has-key(v.$breakpoints, $name) {
+        @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+    } @else {
+        @media (min-width: map-get(v.$breakpoints, $name)) {
+            @content;
+        }
+    }
+}
+// For setting bg & text color
+@mixin theme($bg, $text) {
+    background-color: $bg;
+    color: $text;
+}
+
+@mixin flexbox($justify: space-between, $align: center, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+//For setting up height and width
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+//For setting border radius
+@mixin radius($radius: 32px) {
+    border-radius: $radius;
+}
+//For setting box shadow
+@mixin box-shadow($shadow...) {
+    box-shadow: $shadow;
+}
+//For setting up section heading font size
+@mixin heading-font-size($size: 44px) {
+    font-size: f.pxToRem($size);
+}
+@mixin custom-utils($position: null, $line-clamp: 3, $section-spacing: null) {
+    -webkit-line-clamp: $line-clamp;
+    @if ($position!=null) {
+        position: $position;
+    }
+    @if ($section-spacing!=null) {
+        padding: $section-spacing;
+    }
+}
