@@ -1,0 +1,102 @@
+@use '../abstracts/variables.scss' as v;
+@use '../abstracts/functions.scss' as f;
+@use '../abstracts//mixins.scss' as m;
+.logo {
+    margin-left: f.pxToRem(100px);
+}
+.ham-menu {
+    font-size: f.pxToRem(47px);
+    display: inline-block;
+    transform: rotate(0deg);
+    transition: 1s ease-in;
+}
+.ham-menu-animation {
+    transform: rotate(90deg);
+    transition: 1s ease-in-out;
+}
+ul {
+    padding: 0 0;
+}
+li {
+    padding: f.pxToRem(20px) f.pxToRem(40px);
+}
+.collapsed-menu {
+    background-color: #f7f4f4;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.212);
+    line-height: f.pxToRem(30px);
+    height: 100%;
+    width: 0;
+    top: 0;
+    position: fixed;
+    overflow-x: hidden;
+    transition: 1s;
+}
+.opened-menu {
+    width: 20%;
+}
+img {
+    height: f.pxToRem(40px);
+}
+.nav-parent {
+    @include m.flexbox;
+    margin: f.pxToRem(25px) auto;
+    width: 100%;
+    // height: f.pxToRem(111px);
+    padding: f.pxToRem(32px) f.pxToRem(50px);
+}
+.nav-btns {
+    @include m.flexbox;
+    margin-right: f.pxToRem(50px);
+}
+.cross-icon {
+    padding: 0 f.pxToRem(15px);
+    cursor: pointer;
+}
+//mobile
+@media screen and (max-width: 480px) {
+    .nav-parent {
+        flex-direction: row-reverse;
+        padding: f.pxToRem(9px) f.pxToRem(15px);
+    }
+    .logo {
+        margin-left: 0;
+    }
+    .collapsed-menu {
+        right: 0;
+    }
+    .nav-btns {
+        flex-direction: column;
+        gap: f.pxToRem(20px);
+    }
+}
+//tablet
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .collapsed-menu {
+        left: 0;
+    }
+    .nav-parent {
+        padding: f.pxToRem(9px) f.pxToRem(50px);
+    }
+    .logo {
+        margin-left: f.pxToRem(200px);
+    }
+    .nav-btns {
+        margin-right: f.pxToRem(10px);
+    }
+}
+//desktop
+@media screen and (min-width: 1025px) {
+    .ham-menu {
+        display: none;
+    }
+    .ham-parent {
+        display: none;
+    }
+    #navLinks {
+        @include m.flexbox;
+        gap: f.pxToRem(24px);
+    }
+    li {
+        padding: f.pxToRem(20px) f.pxToRem(20px);
+    }
+}
