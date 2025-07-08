@@ -22,10 +22,6 @@ ul {
     margin: 0;
     padding: 0;
 }
-ul,
-ol {
-    list-style: none;
-}
 a {
     text-decoration: none;
     color: var.$muted-text-color;
@@ -33,6 +29,8 @@ a {
         color: var.$active-link-color;
     }
 }
+ul,
+ol,
 li {
     list-style: none;
 }

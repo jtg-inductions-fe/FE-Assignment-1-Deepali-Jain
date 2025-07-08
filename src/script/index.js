@@ -1,96 +1,77 @@
 import '../styles/main.scss';
-let hamIcon = document.getElementById('hamIcon');
-let crossIcon = document.getElementById('crossIcon');
-const navBtns = document.querySelector('.nav-btns');
+const hamIcon = document.getElementById('hamIcon');
+const crossIcon = document.getElementById('crossIcon');
+const navBtns = document.querySelector('.nav__buttons');
 const hamMenu = document.getElementById('hamMenu');
-const navParent = document.querySelector('.nav-parent');
-const navMenu = document.querySelector('.nav-links');
-const navLinks = document.querySelectorAll('.nav-links li a');
-const navButtons = document.querySelectorAll('.nav-btns button');
+const navParent = document.querySelector('.nav__container');
+const navMenu = document.querySelector('.nav__links');
+const navLinks = document.querySelectorAll('.nav__links li a');
+const navButtons = document.querySelectorAll('.nav__buttons button');
 hamIcon.addEventListener('click', () => {
-    hamMenu.style.width = window.innerWidth / 2 + 'px';
+    hamMenu.style.width = `${window.innerWidth / 2}px`;
 });
 crossIcon.addEventListener('click', () => {
     hamMenu.style.width = '0';
 });
-
+const breakpoints = {
+    mobile: 480,
+    tablet: 1024,
+};
 function handleNavBtns() {
     const width = window.innerWidth;
-    if (hamMenu.contains(navMenu)) {
-        hamMenu.removeChild(navMenu);
-    }
-    if (hamMenu.contains(navBtns)) {
-        hamMenu.removeChild(navBtns);
-    }
-    if (navParent.contains(navMenu)) {
-        navParent.removeChild(navMenu);
-    }
-    if (navParent.contains(navBtns)) {
-        navParent.removeChild(navBtns);
-    }
-    if (width <= 480) {
+    [navMenu, navBtns].forEach((element) => {
+        if (element.parentElement) {
+            element.parentElement.removeChild(element);
+        }
+    });
+    if (width <= breakpoints.mobile) {
         // mobile
-        if (!hamMenu.contains(navMenu)) {
-            hamMenu.appendChild(navMenu);
-        }
-        if (!hamMenu.contains(navBtns)) {
-            hamMenu.appendChild(navBtns);
-        }
-    } else if (width <= 1024) {
+
+        hamMenu.appendChild(navMenu);
+
+        hamMenu.appendChild(navBtns);
+    } else if (width <= breakpoints.tablet) {
         // tablet
-        if (!navParent.contains(navBtns)) {
-            navParent.appendChild(navBtns);
-        }
-        if (!hamMenu.contains(navMenu)) {
-            hamMenu.appendChild(navMenu);
-        }
+        navParent.appendChild(navBtns);
+
+        hamMenu.appendChild(navMenu);
     } else {
         // desktop
-        if (!navParent.contains(navMenu)) {
-            navParent.appendChild(navMenu);
-        }
-        if (!navParent.contains(navBtns)) {
-            navParent.appendChild(navBtns);
-        }
+        navParent.appendChild(navMenu);
+
+        navParent.appendChild(navBtns);
     }
 }
 window.addEventListener('resize', handleNavBtns);
 window.addEventListener('DOMContentLoaded', handleNavBtns);
+
+function handleKeyboardNavigation(elements, event, index) {
+    const { key } = event;
+    const isForward = key === 'ArrowRight' || key === 'ArrowDown';
+    const isBackward = key === 'ArrowLeft' || key === 'ArrowUp';
+
+    if (!isForward && !isBackward) return;
+
+    event.preventDefault();
+    elements[index].classList.remove('current');
+    let nextIndex;
+    if (isForward) {
+        nextIndex = (index + 1) % elements.length;
+    } else {
+        nextIndex = (index - 1 + elements.length) % elements.length;
+    }
+
+    elements[nextIndex].focus();
+    elements[nextIndex].classList.add('current');
+}
 navLinks.forEach((link, index) => {
     link.addEventListener('keydown', (e) => {
-        if (e.key == 'ArrowRight' || e.key == 'ArrowDown') {
-            e.preventDefault();
-            link.classList.remove('current');
-            const nextIndex = (index + 1) % navLinks.length;
-            navLinks[nextIndex].focus();
-            navLinks[nextIndex].classList.add('current');
-        }
-        if (e.key == 'ArrowLeft' || e.key == 'ArrowUp') {
-            e.preventDefault();
-            link.classList.remove('current');
-            const prevIndex = (index - 1 + navLinks.length) % navLinks.length;
-            navLinks[prevIndex].focus();
-            navLinks[prevIndex].classList.add('current');
-        }
+        handleKeyboardNavigation(navLinks, e, index);
     });
 });
 navButtons.forEach((link, index) => {
     link.addEventListener('keydown', (e) => {
-        if (e.key == 'ArrowRight') {
-            e.preventDefault();
-            link.classList.remove('current');
-            const nextIndex = (index + 1) % navButtons.length;
-            navButtons[nextIndex].focus();
-            navButtons[nextIndex].classList.add('current');
-        }
-        if (e.key == 'ArrowLeft') {
-            e.preventDefault();
-            link.classList.remove('current');
-            const prevIndex =
-                (index - 1 + navButtons.length) % navButtons.length;
-            navButtons[prevIndex].focus();
-            navButtons[prevIndex].classList.add('current');
-        }
+        handleKeyboardNavigation(navButtons, e, index);
     });
 });
 hamIcon.addEventListener('keydown', (e) => {
