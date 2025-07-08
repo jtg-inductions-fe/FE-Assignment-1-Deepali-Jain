@@ -130,6 +130,11 @@
         margin-left: 0;
         padding-left: func.pxToRem(100px);
     }
+    .nav__links {
+        li {
+            padding: f.pxToRem(30px) f.pxToRem(50px);
+        }
+    }
 }
 .nav__hamburger {
     order: 2;
