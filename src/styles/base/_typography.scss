@@ -1,6 +1,6 @@
-@use '../abstracts/functions.scss' as f;
-@use '../abstracts/mixins.scss' as m;
-@use '../abstracts/variables.scss' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
 
 //heading for hero section
 .hero-heading {
@@ -19,11 +19,16 @@
     color: v.$muted-text-color;
 }
 //subheadings for the sections
-.subheading {
+%subheading {
     font-size: f.pxToRem(18px);
+}
+
+.subheading {
+    @extend %subheading;
     color: v.$highlight-color;
 }
+
 .card-subheading {
-    font-size: f.pxToRem(18px);
+    @extend %subheading;
     color: v.$card-heading-color;
 }

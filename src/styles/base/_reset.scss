@@ -1,4 +1,4 @@
-@use '../abstracts/variables.scss' as v;
+@use '../abstracts/variables' as v;
 *,
 *::before,
 *::after {
@@ -19,17 +19,15 @@ ul {
     margin: 0;
     padding: 0;
 }
-ul,
-ol {
-    list-style: none;
-}
 a {
     text-decoration: none;
     color: v.$muted-text-color;
-    &.current {
+    &.nav__links--active {
         color: v.$active-link-color;
     }
 }
+ul,
+ol,
 li {
     list-style: none;
 }

@@ -6,47 +6,52 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
-        <nav>
-            <div class="nav-parent">
-                <div class="ham-parent">
-                    <i
-                        tabindex="0"
-                        role="button"
-                        class="icon-hamburger-menu ham-menu"
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__hamburger">
+                    <button
+                        class="icon-hamburger-menu nav__hamburger--icon"
+                        aria-label="open main menu"
                         id="hamIcon"
-                    ></i>
+                    ></button>
                 </div>
-                <div class="logo">
-                    <img src="/assets/images/logo.webp" alt="logo" />
+                <div class="nav__logo">
+                    <img src="/assets/images/logo.webp" alt="nav__logo" />
                 </div>
-                <div class="nav-links">
+                <div class="nav__links">
                     <ul id="navLinks">
-                        <li><a class="current" href="#">Home</a></li>
+                        <li>
+                            <a
+                                class="nav__links--active"
+                                aria-current="page"
+                                href="#"
+                                >Home</a
+                            >
+                        </li>
                         <li><a href="#">Discover</a></li>
                         <li><a href="#">Special Deals</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
-                <div class="nav-btns">
+                <div class="nav__buttons">
                     <div>
-                        <button class="btn-base btn-outlined">Log In</button>
+                        <button class="btn btn--outlined">Log In</button>
                     </div>
                     <div>
-                        <button class="btn-base btn-active">Sign Up</button>
+                        <button class="btn btn--active">Sign Up</button>
                     </div>
                 </div>
-                <div class="collapsed-menu" id="hamMenu">
-                    <p
-                        tabindex="0"
-                        role="button"
-                        class="cross-icon"
+                <div class="nav__collapsed--menu" id="hamMenu">
+                    <button
+                        class="cross-icon nav__buttons--close"
+                        aria-label="close main menu"
                         id="crossIcon"
                     >
                         &#10006;
-                    </p>
+                    </button>
                 </div>
             </div>
         </nav>
-        <script type="module" src="./src/script"></script>
+        <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

@@ -1,19 +1,20 @@
-@use '../abstracts/functions.scss' as f;
-@use '../abstracts/mixins.scss' as m;
-@use '../abstracts/variables.scss' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
 //Signup button
-.btn-base {
-    width: f.pxToRem(115px);
-    height: f.pxToRem(49px);
+.btn {
+    min-width: f.pxToRem(115px);
+    min-height: f.pxToRem(49px);
     border-radius: f.pxToRem(100px);
     padding: f.pxToRem(16px) f.pxToRem(32px);
     border: none;
     font-weight: bold;
-    &.btn-active {
+    cursor: pointer;
+    &.btn--active {
         background-color: v.$primary-color;
         color: v.$secondary-color;
     }
-    &.btn-outlined {
+    &.btn--outlined {
         background-color: v.$secondary-color;
         color: v.$text-color;
     }

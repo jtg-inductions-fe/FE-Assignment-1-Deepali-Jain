@@ -28,7 +28,7 @@
     height: $height;
 }
 //For setting border radius
-@mixin radius($radius: 32px) {
+@mixin radius($radius: v.$default-border-radius) {
     border-radius: $radius;
 }
 //For setting box shadow
@@ -39,12 +39,17 @@
 @mixin heading-font-size($size: 44px) {
     font-size: f.pxToRem($size);
 }
-@mixin custom-utils($position: null, $line-clamp: 3, $section-spacing: null) {
-    -webkit-line-clamp: $line-clamp;
-    @if ($position!=null) {
-        position: $position;
-    }
-    @if ($section-spacing!=null) {
-        padding: $section-spacing;
-    }
+@mixin text-clamp($lines: 3) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin position($position) {
+    position: $position;
+}
+
+@mixin section-spacing($spacing) {
+    padding: $spacing;
 }
