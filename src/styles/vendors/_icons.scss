@@ -22,7 +22,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-ig-logo:before {
+.icon-ig-nav__logo:before {
     content: '\e900';
     color: v.$secondary-color;
 }
@@ -31,7 +31,7 @@
     color: v.$newsletter-bg-color;
 }
 .icon-play-button:before {
-    content: '\e902';
+    content: '\e900';
     color: v.$primary-color;
 }
 .icon-email:before {
@@ -41,14 +41,18 @@
     content: '\e906';
     color: v.$primary-color;
 }
-.icon-twitter-logo:before {
+.icon-twitter-nav__logo:before {
     content: '\e905';
-    color: v.$twitter-logo-color;
+    color: v.$twitter-nav__logo-color;
 }
-.icon-fb-logo:before {
+.icon-fb-nav__logo:before {
     content: '\e904';
     color: v.$primary-color;
 }
 .icon-cross:before {
     content: '\ea0f';
+}
+.icon-work:before {
+    content: '\e903';
+    color: v.$highlight-color;
 }

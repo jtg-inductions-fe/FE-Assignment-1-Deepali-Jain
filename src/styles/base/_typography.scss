@@ -6,6 +6,10 @@
 .hero-heading {
     font-size: f.pxToRem(69px);
     font-weight: bold;
+    & .heading--highlight {
+        background-color: transparent;
+        color: v.$highlight-color;
+    }
 }
 //section headings
 .heading {
@@ -14,7 +18,7 @@
 }
 // section paragraphs
 .paragraph {
-    font-size: f.pxToRem(18px);
+    font-size: f.pxToRem(16px);
     font-family: 'Inter';
     color: v.$muted-text-color;
 }
@@ -31,4 +35,26 @@
 .card-subheading {
     @extend %subheading;
     color: v.$card-heading-color;
+}
+@media screen and (min-width: 481px) {
+    .paragraph {
+        font-size: f.pxToRem(18px);
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 786px) {
+    .paragraph {
+        // padding: 0 f.pxToRem(230px);
+        padding: 0 f.pxToRem(150px);
+    }
+}
+@media screen and (min-width: 787px) and (max-width: 1024px) {
+    .paragraph {
+        // padding: 0 f.pxToRem(230px);
+        padding: 0 f.pxToRem(290px);
+    }
+}
+@media screen and (min-width: 1025px) {
+    .paragraph {
+        max-width: f.pxToRem(420px);
+    }
 }
