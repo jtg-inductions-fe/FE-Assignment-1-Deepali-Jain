@@ -83,4 +83,22 @@
         box-shadow: 0 5px 10px rgba(21, 21, 21, 0.034);
         background-color: transparent;
     }
+    &.btn--explore {
+        width: f.pxToRem(224px);
+        height: f.pxToRem(56px);
+        color: v.$highlight-color;
+        box-shadow: 0 5px 10px rgba(21, 21, 21, 0.034);
+        background-color: transparent;
+    }
+
+    @media screen and (min-width: 481px) {
+        &.btn--start {
+            width: f.pxToRem(141px);
+            height: f.pxToRem(49px);
+        }
+        &.btn--watch {
+            width: f.pxToRem(181px);
+            height: f.pxToRem(56px);
+        }
+    }
 }
