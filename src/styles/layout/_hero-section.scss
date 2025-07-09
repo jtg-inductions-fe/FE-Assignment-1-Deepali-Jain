@@ -66,6 +66,10 @@
         width: f.pxToRem(398px);
         height: f.pxToRem(65px);
     }
+    .hero__heading {
+        padding: f.pxToRem(8px) f.pxToRem(42px);
+        line-height: 1.2;
+    }
 }
 // //tablet
 @media screen and (min-width: 481px) and (max-width: 1024px) {
