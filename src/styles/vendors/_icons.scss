@@ -1,7 +1,7 @@
 @use '../abstracts/variables' as var;
 @font-face {
     font-family: 'icomoon';
-    src: url('./fonts/icomoon.woff?4etbac') format('woff2');
+    src: url('./fonts/icomoon.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -51,7 +51,7 @@
 // Icon: Email / Newsletter
 // =============================================
 .icon-email:before {
-    content: '\e903';
+    content: '\e907';
 }
 
 // =============================================
