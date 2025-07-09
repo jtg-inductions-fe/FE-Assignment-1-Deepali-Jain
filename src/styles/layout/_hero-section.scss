@@ -4,14 +4,14 @@
 .hero {
     @include m.flexbox($direction: column-reverse);
     padding-top: f.pxToRem(32px);
-    position: relative;
+    overflow-x: hidden;
 }
 .hero::before {
     content: '';
     position: absolute;
-    top: -170px;
-    left: -150px;
-    width: 600px;
+    top: -130px;
+    left: -400px;
+    width: 100vw;
     height: 590px;
     background: radial-gradient(
         circle at center,

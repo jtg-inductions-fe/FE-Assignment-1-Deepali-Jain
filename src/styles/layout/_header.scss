@@ -1,9 +1,6 @@
 @use '../abstracts/variables' as v;
 @use '../abstracts/functions' as f;
 @use '../abstracts/mixins' as m;
-// .nav__logo {
-//     margin-left: f.pxToRem(100px);
-// }
 .nav__hamburger--icon {
     font-size: f.pxToRem(47px);
     display: inline-block;
