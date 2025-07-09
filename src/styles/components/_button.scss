@@ -92,10 +92,20 @@
         align-items: center;
     }
     &.btn--explore {
+        display: flex;
+        align-items: center;
         width: f.pxToRem(224px);
         height: f.pxToRem(56px);
         color: v.$highlight-color;
         box-shadow: 0 5px 10px rgba(21, 21, 21, 0.034);
         background-color: transparent;
+    }
+    &.btn--start {
+        box-shadow: 0 15px 10px rgba(0, 0, 0, 0.148);
+    }
+    &.btn--watch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
