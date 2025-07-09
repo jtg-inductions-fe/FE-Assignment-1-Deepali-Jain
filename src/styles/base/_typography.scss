@@ -146,3 +146,23 @@
         max-width: f.pxToRem(420px);
     }
 }
+@media screen and (min-width: 481px) {
+    .paragraph {
+        font-size: f.pxToRem(18px);
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 786px) {
+    .paragraph {
+        padding: 0 f.pxToRem(150px);
+    }
+}
+@media screen and (min-width: 787px) and (max-width: 1024px) {
+    .paragraph {
+        padding: 0 f.pxToRem(290px);
+    }
+}
+@media screen and (min-width: 1025px) {
+    .paragraph {
+        max-width: f.pxToRem(420px);
+    }
+}

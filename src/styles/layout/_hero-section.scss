@@ -1,14 +1,15 @@
-@use '../abstracts/variables.scss' as v;
-@use '../abstracts/functions.scss' as f;
-@use '../abstracts//mixins.scss' as m;
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts//mixins' as m;
 .hero {
     @include m.flexbox($direction: column-reverse);
     padding-top: f.pxToRem(32px);
+    position: relative;
 }
 .hero::before {
     content: '';
     position: absolute;
-    top: -10px;
+    top: -170px;
     left: -150px;
     width: 600px;
     height: 590px;
@@ -54,16 +55,20 @@
 }
 .hero__button--play-icon {
     font-size: f.pxToRem(24px);
-    margin-right: 10px;
+    margin-right: f.pxToRem(10px);
 }
 // //mobile
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 430px) {
+    .hero__button {
+        max-width: f.pxToRem(398px);
+        width: 100%;
+    }
     .btn--start {
-        width: f.pxToRem(398px);
+        width: 100%;
         height: f.pxToRem(65px);
     }
     .btn--watch {
-        width: f.pxToRem(398px);
+        width: 100%;
         height: f.pxToRem(65px);
     }
     .hero__heading {
@@ -72,7 +77,7 @@
     }
 }
 // //tablet
-@media screen and (min-width: 481px) and (max-width: 1024px) {
+@media screen and (min-width: 431px) and (max-width: 1024px) {
     .hero__image {
         max-width: f.pxToRem(782px);
         width: 100%;
