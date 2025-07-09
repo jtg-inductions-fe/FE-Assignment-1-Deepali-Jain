@@ -37,3 +37,9 @@ body {
     color: v.$text-color;
     overflow-x: hidden;
 }
+section,
+nav,
+footer {
+    max-width: 1440px;
+    margin: 0 auto;
+}

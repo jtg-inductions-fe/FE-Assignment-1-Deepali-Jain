@@ -19,7 +19,10 @@
         padding: f.pxToRem(20px) f.pxToRem(15px);
     }
 }
-
+.link--login {
+    color: v.$text-color;
+    margin-right: 25px;
+}
 .nav__collapsed--menu {
     background-color: v.$secondary-color;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.212);

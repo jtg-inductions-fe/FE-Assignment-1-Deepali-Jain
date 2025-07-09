@@ -11,10 +11,6 @@
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s ease;
-    &:focus {
-        outline: 2px solid v.$primary-color;
-        outline-offset: 2px;
-    }
     &:hover {
         transform: translateY(-1px);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -34,10 +30,20 @@
         }
     }
     &.btn--explore {
+        display: flex;
+        align-items: center;
         width: f.pxToRem(224px);
         height: f.pxToRem(56px);
         color: v.$highlight-color;
         box-shadow: 0 5px 10px rgba(21, 21, 21, 0.034);
         background-color: transparent;
+    }
+    &.btn--start {
+        box-shadow: 0 15px 10px rgba(0, 0, 0, 0.148);
+    }
+    &.btn--watch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
