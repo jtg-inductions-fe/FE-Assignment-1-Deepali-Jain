@@ -52,3 +52,9 @@ footer {
     max-width: map-get(var.$breakpoints, 'xl');
     margin: 0 auto;
 }
+section,
+nav,
+footer {
+    max-width: 1440px;
+    margin: 0 auto;
+}
