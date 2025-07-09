@@ -53,4 +53,7 @@
     @include mix.respond('md') {
         height: func.pxToRem(32px);
     }
+    .customers::before {
+        transform: translateX(500px) translateY(-20px);
+    }
 }
