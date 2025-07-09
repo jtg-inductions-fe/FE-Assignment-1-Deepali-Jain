@@ -1,7 +1,7 @@
-@use '../abstracts/variables.scss' as v;
+@use '../abstracts/variables' as v;
 @font-face {
     font-family: 'icomoon';
-    src: url('./fonts/icomoon.woff?4etbac') format('woff2');
+    src: url('./fonts/icomoon.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -23,7 +23,7 @@
 }
 
 .icon-ig-nav__logo:before {
-    content: '\e900';
+    content: '\e902';
     color: v.$secondary-color;
 }
 .icon-star:before {
@@ -35,7 +35,7 @@
     color: v.$primary-color;
 }
 .icon-email:before {
-    content: '\e903';
+    content: '\e907';
 }
 .icon-hamburger-menu:before {
     content: '\e906';

@@ -19,7 +19,7 @@
 // section paragraphs
 .paragraph {
     font-size: f.pxToRem(16px);
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     color: v.$muted-text-color;
 }
 //subheadings for the sections
@@ -43,13 +43,11 @@
 }
 @media screen and (min-width: 481px) and (max-width: 786px) {
     .paragraph {
-        // padding: 0 f.pxToRem(230px);
         padding: 0 f.pxToRem(150px);
     }
 }
 @media screen and (min-width: 787px) and (max-width: 1024px) {
     .paragraph {
-        // padding: 0 f.pxToRem(230px);
         padding: 0 f.pxToRem(290px);
     }
 }

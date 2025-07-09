@@ -1,6 +1,6 @@
 @use '../abstracts/variables' as v;
 @use '../abstracts/functions' as f;
-@use '../abstracts/mixins.scss' as m;
+@use '../abstracts/mixins' as m;
 // .nav__logo {
 //     margin-left: f.pxToRem(100px);
 // }
@@ -33,10 +33,9 @@
     position: fixed;
     overflow-x: hidden;
     transition: 1s;
+    z-index: 1;
 }
-.opened-menu {
-    width: 20%;
-}
+
 img {
     height: f.pxToRem(40px);
 }
@@ -119,7 +118,7 @@ img {
         @include m.flexbox;
         gap: f.pxToRem(24px);
     }
-    li {
+    .nav-links li {
         padding: f.pxToRem(20px) f.pxToRem(20px);
     }
 }

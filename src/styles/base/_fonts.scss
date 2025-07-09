@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Circular Std';
-    src: url('/assets/fonts/primary-font.woff2');
+    src: url('/assets/fonts/primary-font.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -8,11 +8,11 @@
 
 @font-face {
     font-family: 'icomoon';
-    src: url('/assets/fonts/icomoon.woff2');
+    src: url('/assets/fonts/icomoon.woff2') format(woff2);
     font-display: swap;
 }
 @font-face {
     font-family: 'Inter';
-    src: url('/public/assets/fonts/secondary-font.woff2');
+    src: url('/public/assets/fonts/secondary-font.woff2') format(woff2);
     font-display: swap;
 }

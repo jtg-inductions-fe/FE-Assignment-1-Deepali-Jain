@@ -26,19 +26,15 @@ function handleNavBtns() {
     });
     if (width <= breakpoints.mobile) {
         // mobile
-
         hamMenu.appendChild(navMenu);
-
         hamMenu.appendChild(navBtns);
     } else if (width <= breakpoints.tablet) {
         // tablet
         navParent.appendChild(navBtns);
-
         hamMenu.appendChild(navMenu);
     } else {
         // desktop
         navParent.appendChild(navMenu);
-
         navParent.appendChild(navBtns);
     }
 }
@@ -75,13 +71,13 @@ navButtons.forEach((link, index) => {
     });
 });
 hamIcon.addEventListener('keydown', (e) => {
-    if (e.key == 'Enter') {
+    if (e.key === 'Enter') {
         e.preventDefault();
         hamIcon.click();
     }
 });
 crossIcon.addEventListener('keydown', (e) => {
-    if (e.key == 'Enter') {
+    if (e.key === 'Enter') {
         e.preventDefault();
         crossIcon.click();
     }
