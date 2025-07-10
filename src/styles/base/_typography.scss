@@ -103,4 +103,16 @@
             font-size: func.pxToRem(28px);
         }
     }
+    .card-subheading {
+        &.services--subheading {
+            font-size: f.pxToRem(28px);
+        }
+    }
+    .subheading {
+        font-size: f.pxToRem(23px);
+        letter-spacing: 4px;
+    }
+    .services--heading {
+        font-size: f.pxToRem(44px);
+    }
 }
