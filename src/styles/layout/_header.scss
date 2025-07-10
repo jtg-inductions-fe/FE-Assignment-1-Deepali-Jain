@@ -1,0 +1,124 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+.nav__hamburger--icon {
+    font-size: f.pxToRem(47px);
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+}
+.nav__buttons--close {
+    background-color: transparent;
+    border: none;
+}
+.nav__links {
+    ul {
+        padding: 0 0;
+    }
+    li {
+        padding: f.pxToRem(20px) f.pxToRem(15px);
+    }
+}
+.link--login {
+    color: v.$text-color;
+    margin-right: 25px;
+}
+.nav__collapsed--menu {
+    background-color: v.$secondary-color;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.212);
+    line-height: f.pxToRem(30px);
+    height: 100%;
+    width: 0;
+    top: 0;
+    position: fixed;
+    overflow-x: hidden;
+    transition: 1s;
+    z-index: 1;
+}
+
+img {
+    height: f.pxToRem(40px);
+}
+.nav__container {
+    @include m.flexbox;
+    margin: f.pxToRem(25px) auto;
+    width: 100%;
+    padding: f.pxToRem(32px) f.pxToRem(50px);
+}
+.nav__buttons {
+    @include m.flexbox;
+    margin-right: f.pxToRem(50px);
+}
+.cross-icon {
+    padding: 0 f.pxToRem(15px);
+    cursor: pointer;
+}
+//mobile
+@media screen and (max-width: 480px) {
+    .nav__container {
+        flex-direction: row-reverse;
+        padding: f.pxToRem(9px) f.pxToRem(15px);
+    }
+    .nav__logo {
+        margin-left: 0;
+    }
+    .nav__collapsed--menu {
+        right: 0;
+    }
+    .nav__buttons {
+        flex-direction: column;
+        gap: f.pxToRem(20px);
+    }
+}
+//tablet
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .nav__collapsed--menu {
+        left: 0;
+    }
+    .nav__buttons {
+        margin-right: f.pxToRem(10px);
+    }
+    .nav__links {
+        li {
+            padding: f.pxToRem(30px) f.pxToRem(50px);
+        }
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .nav__collapsed--menu {
+        left: 0;
+    }
+    .nav__container {
+        padding: f.pxToRem(9px) f.pxToRem(50px);
+    }
+    .nav__logo {
+        margin-left: f.pxToRem(200px);
+    }
+    .nav__buttons {
+        margin-right: f.pxToRem(10px);
+    }
+    .nav__links {
+        li {
+            padding: f.pxToRem(30px) f.pxToRem(50px);
+        }
+    }
+}
+//desktop
+@media screen and (min-width: 1025px) {
+    .nav__logo {
+        margin-left: f.pxToRem(100px);
+    }
+    .nav__hamburger--icon {
+        display: none;
+    }
+    .nav__hamburger {
+        display: none;
+    }
+    #navLinks {
+        @include m.flexbox;
+        gap: f.pxToRem(24px);
+    }
+    .nav-links li {
+        padding: f.pxToRem(20px) f.pxToRem(20px);
+    }
+}

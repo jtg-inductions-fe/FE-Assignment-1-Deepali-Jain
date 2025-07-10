@@ -1,0 +1,76 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+.customers {
+    @include m.flexbox($justify: center);
+    flex-wrap: wrap;
+    gap: f.pxToRem(32px) f.pxToRem(27px);
+    padding: f.pxToRem(47px) 0;
+    position: relative;
+}
+.customers::before {
+    content: '';
+    position: absolute;
+    transform: translateX(300px) translateY(-20px);
+    bottom: 0;
+    width: 200px;
+    height: 300px;
+    background: radial-gradient(
+        circle at center,
+        v.$newsletter-bg-color,
+        v.$secondary-color
+    );
+    filter: blur(100px);
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.5;
+}
+.customers img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+@media screen and (max-width: 430px) {
+    .customers::before {
+        display: none;
+    }
+}
+@media screen and (min-width: 431px) and (max-width: 768px) {
+    .customers {
+        max-width: f.pxToRem(896px);
+        margin: 0 auto;
+        padding: 0 f.pxToRem(10px);
+    }
+    .customers img {
+        height: f.pxToRem(22px);
+    }
+    .customers::before {
+        transform: translateX(150px) translateY(-10px);
+        width: 100px;
+        height: 200px;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .customers {
+        max-width: f.pxToRem(896px);
+        margin: 0 auto;
+        padding: f.pxToRem(80px) f.pxToRem(100px);
+    }
+    .customers img {
+        height: f.pxToRem(32px);
+    }
+}
+@media screen and (min-width: 1025px) {
+    .customers {
+        max-width: f.pxToRem(1320px);
+        margin: 0 auto;
+        padding: f.pxToRem(95px) 0;
+        column-gap: f.pxToRem(100px);
+    }
+    .customers img {
+        height: f.pxToRem(32px);
+    }
+    .customers::before {
+        transform: translateX(500px) translateY(-20px);
+    }
+}

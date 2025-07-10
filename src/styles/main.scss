@@ -1,1 +1,12 @@
-// TODO: Add styles as per the requirement
+@use 'abstracts/variables.scss';
+@use 'abstracts/functions.scss';
+@use 'abstracts/mixins.scss';
+@use 'vendors/icons.scss';
+@use 'base/reset.scss';
+@use 'base/fonts.scss';
+@use 'components/button.scss';
+@use 'base/typography.scss';
+@use 'layout/header.scss';
+@use 'layout/hero-section';
+@use 'layout/customers';
+@use 'layout/service-section';

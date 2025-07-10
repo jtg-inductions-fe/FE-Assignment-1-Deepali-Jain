@@ -1,0 +1,49 @@
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+//Signup button
+.btn {
+    min-width: f.pxToRem(115px);
+    min-height: f.pxToRem(49px);
+    border-radius: f.pxToRem(100px);
+    padding: f.pxToRem(16px) f.pxToRem(32px);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    &.btn--active {
+        background-color: v.$primary-color;
+        color: v.$secondary-color;
+    }
+    &:hover {
+        background-color: darken(v.$primary-color, 10%);
+    }
+    &.btn--outlined {
+        background-color: v.$secondary-color;
+        color: v.$text-color;
+        &:hover {
+            background-color: darken(v.$secondary-color, 10%);
+        }
+    }
+    &.btn--explore {
+        display: flex;
+        align-items: center;
+        width: f.pxToRem(224px);
+        height: f.pxToRem(56px);
+        color: v.$highlight-color;
+        box-shadow: 0 5px 10px rgba(21, 21, 21, 0.034);
+        background-color: transparent;
+    }
+    &.btn--start {
+        box-shadow: 0 15px 10px rgba(0, 0, 0, 0.148);
+    }
+    &.btn--watch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

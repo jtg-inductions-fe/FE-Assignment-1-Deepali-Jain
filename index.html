@@ -1,12 +1,154 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Assignment 1</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
-        <div>Hello World</div>
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__hamburger">
+                    <button
+                        class="icon-hamburger-menu nav__hamburger--icon"
+                        aria-label="open main menu"
+                        id="hamIcon"
+                    ></button>
+                </div>
+                <div class="nav__logo">
+                    <img src="/assets/images/logo.webp" alt="logo" />
+                </div>
+                <div class="nav__links">
+                    <ul id="navLinks">
+                        <li>
+                            <a
+                                class="nav__links--active"
+                                aria-current="page"
+                                href="#"
+                                >Home</a
+                            >
+                        </li>
+                        <li><a href="#">Discover</a></li>
+                        <li><a href="#">Special Deals</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav__buttons">
+                    <div>
+                        <a class="nav__links link--login">Log In</a>
+                    </div>
+                    <div>
+                        <button class="btn btn--active">Sign Up</button>
+                    </div>
+                </div>
+                <div class="nav__collapsed--menu" id="hamMenu">
+                    <button
+                        class="cross-icon nav__buttons--close"
+                        aria-label="close main menu"
+                        id="crossIcon"
+                    >
+                        &#10006;
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <section class="hero">
+            <div class="hero__content">
+                <div>
+                    <button class="btn btn--outlined btn--explore">
+                        Explore the world!<i
+                            class="icon-work hero__button--icon"
+                        ></i>
+                    </button>
+                </div>
+                <div class="hero__heading">
+                    <h1 class="hero-heading">
+                        Travel
+                        <mark class="heading--highlight">top destination</mark>
+                        of the world
+                    </h1>
+                </div>
+                <div class="hero__paragraph">
+                    <p class="paragraph">
+                        We always make our customer happy by providing as many
+                        choices as possible
+                    </p>
+                </div>
+                <div class="hero__button">
+                    <button class="btn btn--active btn--start">
+                        Get Started
+                    </button>
+                    <button class="btn btn--outlined btn--watch">
+                        <i class="icon-play-button hero__button--play-icon"></i
+                        >Watch Demo
+                    </button>
+                </div>
+            </div>
+            <div class="hero__image">
+                <img
+                    src="/assets/images/hero-banner.webp"
+                    alt="a collage of travel images"
+                />
+            </div>
+        </section>
+        <section class="customers">
+            <img
+                src="/assets/images/tripadvisor-logo.webp"
+                alt="logo of tripadvisor"
+            />
+            <img src="/assets/images/expedia-logo.webp" alt="logo of expedia" />
+            <img src="/assets/images/booking-logo.webp" alt="logo of booking" />
+            <img src="/assets/images/airbnb-logo.webp" alt="logo of airbnb" />
+            <img src="/assets/images/orbitz-logo.webp" alt="logo of orbitz" />
+        </section>
+        <section class="services">
+            <div class="services__headings">
+                <h4 class="subheading">SERVICES</h4>
+                <h2 class="heading services--heading">
+                    Our top value categories for you
+                </h2>
+            </div>
+            <div class="services__cards">
+                <div class="service--card">
+                    <img
+                        src="/assets/images/globe.webp"
+                        alt="a globe with location pins"
+                    />
+                    <h3 class="card-subheading services--subheading">
+                        Best Tour Guide
+                    </h3>
+                    <p class="paragraph services--paragraph">
+                        What looked like a small patch of purple grass, above
+                        five feet.
+                    </p>
+                </div>
+                <div class="service--card service--booking-card">
+                    <img
+                        src="/assets/images/booking.webp"
+                        alt="an illustration of online booking"
+                    />
+                    <h3 class="card-subheading services--subheading">
+                        Easy Booking
+                    </h3>
+                    <p class="paragraph services--paragraph">
+                        Square, was moving across the sand in their direction.
+                    </p>
+                </div>
+                <div class="service--card">
+                    <img
+                        src="/assets/images/weather.webp"
+                        alt="an illustration of weather forecast"
+                    />
+                    <h3 class="card-subheading services--subheading">
+                        Weather Forecast
+                    </h3>
+                    <p class="paragraph services--paragraph">
+                        What looked like a small patch of purple grass, above
+                        five feet.
+                    </p>
+                </div>
+            </div>
+        </section>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
