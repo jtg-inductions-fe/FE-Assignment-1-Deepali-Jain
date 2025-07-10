@@ -15,12 +15,18 @@
 .heading {
     @include m.heading-font-size();
     font-weight: bold;
+    &.services--heading {
+        line-height: 1.2;
+    }
 }
 // section paragraphs
 .paragraph {
     font-size: f.pxToRem(16px);
     font-family: 'Inter', sans-serif;
     color: v.$muted-text-color;
+    &.services--paragraph {
+        font-size: f.pxToRem(18px);
+    }
 }
 //subheadings for the sections
 %subheading {
@@ -30,11 +36,16 @@
 .subheading {
     @extend %subheading;
     color: v.$highlight-color;
+    letter-spacing: 2px;
 }
 
 .card-subheading {
     @extend %subheading;
     color: v.$card-heading-color;
+    &.services--subheading {
+        font-size: f.pxToRem(24px);
+        color: v.$text-color;
+    }
 }
 @media screen and (min-width: 481px) {
     .paragraph {
@@ -42,17 +53,46 @@
     }
 }
 @media screen and (min-width: 481px) and (max-width: 786px) {
-    .paragraph {
-        padding: 0 f.pxToRem(150px);
+    .hero__paragraph {
+        .paragraph {
+            padding: 0 f.pxToRem(150px);
+        }
     }
 }
 @media screen and (min-width: 787px) and (max-width: 1024px) {
-    .paragraph {
-        padding: 0 f.pxToRem(290px);
+    .hero__paragraph {
+        .paragraph {
+            padding: 0 f.pxToRem(290px);
+        }
+    }
+
+    .subheading {
+        font-size: f.pxToRem(23px);
+        letter-spacing: 4px;
+    }
+    .services--heading {
+        font-size: f.pxToRem(40px);
+    }
+    .card-subheading {
+        &.services--subheading {
+            font-size: f.pxToRem(28px);
+        }
     }
 }
 @media screen and (min-width: 1025px) {
     .paragraph {
         max-width: f.pxToRem(420px);
+    }
+    .card-subheading {
+        &.services--subheading {
+            font-size: f.pxToRem(28px);
+        }
+    }
+    .subheading {
+        font-size: f.pxToRem(23px);
+        letter-spacing: 4px;
+    }
+    .services--heading {
+        font-size: f.pxToRem(44px);
     }
 }

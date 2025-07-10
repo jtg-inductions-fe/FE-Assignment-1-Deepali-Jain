@@ -36,7 +36,7 @@
     box-shadow: $shadow;
 }
 //For setting up section heading font size
-@mixin heading-font-size($size: 44px) {
+@mixin heading-font-size($size: 32px) {
     font-size: f.pxToRem($size);
 }
 @mixin text-clamp($lines: 3) {
@@ -50,6 +50,6 @@
     position: $position;
 }
 
-@mixin section-spacing($spacing) {
+@mixin section-spacing($spacing: f.pxToRem(64px)) {
     padding: $spacing;
 }
