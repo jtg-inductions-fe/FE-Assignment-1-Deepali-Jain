@@ -70,7 +70,6 @@
         & .service--card {
             padding: f.pxToRem(64px) f.pxToRem(64px) f.pxToRem(32px)
                 f.pxToRem(64px);
-            //row-gap: f.pxToRem(64px);
         }
     }
     .card-subheading {
@@ -82,7 +81,6 @@
 @media screen and (min-width: 1025px) {
     .services {
         flex-direction: row;
-        //margin: 0 f.pxToRem(100px);
     }
     .services__cards {
         flex-direction: row;
@@ -90,7 +88,6 @@
         column-gap: f.pxToRem(21px);
         align-items: stretch;
         margin-right: f.pxToRem(100px);
-        //padding-right: 60px;
         & .service--card {
             padding: f.pxToRem(74px) f.pxToRem(64px) f.pxToRem(94px)
                 f.pxToRem(64px);
