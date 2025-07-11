@@ -1,18 +1,26 @@
 //colors
 $primary-color: #5d50c6; //primary color used in buttons & icons
 $secondary-text-color: #eeeeee; //text color used in buttons & icons
-$secondary-color: #ffffff; //secondary color used in buttons & icons
+$white: #ffffff; //secondary color used in buttons & icons
 $active-link-color: #222831;
-$muted-text-color: #19182585; //color used in inactive links + some of the paragraphs
+$muted-text-color: rgba(
+    25,
+    24,
+    37,
+    0.522
+); //color used in inactive links + some of the paragraphs
 $highlight-color: #f85e95; //color used in headings to highlight some text
-$text-color: #000000; //primary text color
-$card-heading-color: #ff5722; //color used in card headings
-$newsletter-bg-color: #facd49; //color used in newsletter section background
-$twitter-logo-color: #f1f2f2;
+$black: #000000; //primary text color
+$orange: #ff5722; //color used in card headings
+$yellow: #facd49; //color used in newsletter section background
+$off-white: #f1f2f2;
+$border-color: lighten(rgba(25, 24, 37, 0.522), 60%);
 
 //fonts
 $font-family-base: 'Circular Std', sans-serif;
+$font-paragraph: 'Inter', sans-serif;
 $font-size: 16px;
+$hero-heading-size: 40px;
 
 //break-points
 $breakpoints: (

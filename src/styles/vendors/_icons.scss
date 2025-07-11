@@ -1,4 +1,4 @@
-@use '../abstracts/variables.scss' as v;
+@use '../abstracts/variables.scss' as var;
 @font-face {
     font-family: 'icomoon';
     src: url('./fonts/icomoon.woff?4etbac') format('woff2');
@@ -24,30 +24,29 @@
 
 .icon-ig-logo:before {
     content: '\e900';
-    color: v.$secondary-color;
 }
 .icon-star:before {
     content: '\e901';
-    color: v.$newsletter-bg-color;
+    color: var.$yellow;
 }
 .icon-play-button:before {
     content: '\e902';
-    color: v.$primary-color;
+    color: var.$primary-color;
 }
 .icon-email:before {
     content: '\e903';
 }
 .icon-hamburger-menu:before {
     content: '\e906';
-    color: v.$primary-color;
+    color: var.$primary-color;
 }
 .icon-twitter-logo:before {
     content: '\e905';
-    color: v.$twitter-logo-color;
+    color: var.$off-white;
 }
 .icon-fb-logo:before {
     content: '\e904';
-    color: v.$primary-color;
+    color: var.$primary-color;
 }
 .icon-cross:before {
     content: '\ea0f';

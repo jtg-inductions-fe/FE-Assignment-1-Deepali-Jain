@@ -1,29 +1,66 @@
-@use '../abstracts/functions.scss' as f;
-@use '../abstracts/mixins.scss' as m;
-@use '../abstracts/variables.scss' as v;
+@use '../abstracts/functions.scss' as func;
+@use '../abstracts/mixins.scss' as mix;
+@use '../abstracts/variables.scss' as var;
 
-//heading for hero section
+//Heading for hero section
 .hero-heading {
-    font-size: f.pxToRem(69px);
+    font-size: func.pxToRem(var.$hero-heading-size);
     font-weight: bold;
 }
-//section headings
+
+//Section headings
 .heading {
-    @include m.heading-font-size();
+    font-size: func.pxToRem(32px);
     font-weight: bold;
 }
-// section paragraphs
+
+//Section paragraphs
 .paragraph {
-    font-size: f.pxToRem(18px);
     font-family: 'Inter';
-    color: v.$muted-text-color;
+    color: var.$muted-text-color;
+    &--primary {
+        font-size: func.pxToRem(16px);
+    }
+    &--secondary {
+        font-size: func.pxToRem(18px);
+    }
 }
-//subheadings for the sections
+
+//Subheadings for the sections
 .subheading {
-    font-size: f.pxToRem(18px);
-    color: v.$highlight-color;
+    font-size: func.pxToRem(16px);
+    color: var.$highlight-color;
 }
+
+//Subheadings for the card
 .card-subheading {
-    font-size: f.pxToRem(18px);
-    color: v.$card-heading-color;
+    font-size: func.pxToRem(18px);
+    color: var.$orange;
+}
+@media screen and (min-width: 431px) and (max-width: 1024px) {
+    .heading {
+        font-size: func.pxToRem(40px);
+    }
+    .hero-heading {
+        font-size: func.pxToRem(56px);
+    }
+    .paragraph {
+        &--primary {
+            font-size: func.pxToRem(18px);
+        }
+    }
+    .subheading {
+        font-size: func.pxToRem(23px);
+    }
+}
+@media screen and (min-width: 1025px) {
+    .hero-heading {
+        font-size: func.pxToRem(69px);
+    }
+    .heading {
+        font-size: func.pxToRem(44px);
+    }
+    .subheading {
+        font-size: func.pxToRem(23px);
+    }
 }
