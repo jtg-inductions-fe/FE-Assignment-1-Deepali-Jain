@@ -1,0 +1,95 @@
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as v;
+.travel {
+    @include m.flexbox($direction: column);
+    margin-top: f.pxToRem(54px);
+    row-gap: 25px;
+}
+.travel__image {
+    max-width: f.pxToRem(398px);
+}
+.travel__image img {
+    width: 100%;
+    height: auto;
+}
+.travel__content {
+    @include m.flexbox($direction: column);
+    max-width: f.pxToRem(398px);
+    text-align: center;
+}
+.travel--heading {
+    padding-top: f.pxToRem(2px);
+}
+.travel--paragraph {
+    padding: f.pxToRem(20px);
+}
+.travel__cards {
+    @include m.flexbox($direction: column);
+    width: 100%;
+    max-width: f.pxToRem(398px);
+    row-gap: f.pxToRem(16px);
+    margin-top: f.pxToRem(20px);
+    .travel--card {
+        @include m.flexbox($direction: column);
+        row-gap: f.pxToRem(5px);
+        width: 100%;
+        border-radius: f.pxToRem(32px);
+        padding: f.pxToRem(32px) 0;
+        border: 0.5px solid lighten(v.$muted-text-color, 60%);
+    }
+}
+@media screen and (min-width: 431px) and (max-width: 1024px) {
+    .travel__image {
+        max-width: f.pxToRem(871px);
+        width: 100%;
+    }
+    .travel {
+        margin-top: f.pxToRem(80px);
+        margin-left: f.pxToRem(30px);
+        row-gap: 64px;
+    }
+    .travel__content {
+        max-width: f.pxToRem(896px);
+    }
+    .travel--paragraph {
+        padding: f.pxToRem(25px) f.pxToRem(32px);
+    }
+    .travel__cards {
+        @include m.flexbox($direction: row);
+        max-width: f.pxToRem(832px);
+        flex-wrap: wrap;
+        row-gap: 32px;
+        margin-top: f.pxToRem(40px);
+        .travel--card {
+            width: 48%;
+        }
+    }
+}
+@media screen and (min-width: 1025px) {
+    .travel {
+        @include m.flexbox($direction: row);
+    }
+    .travel__image {
+        max-width: f.pxToRem(871px);
+        width: 100%;
+    }
+    .travel__content {
+        align-items: flex-start;
+        max-width: f.pxToRem(896px);
+        text-align: left;
+    }
+    .travel--paragraph {
+        padding: f.pxToRem(25px) 0;
+    }
+    .travel__cards {
+        @include m.flexbox($direction: row);
+        max-width: f.pxToRem(832px);
+        flex-wrap: wrap;
+        row-gap: 32px;
+        margin-top: f.pxToRem(40px);
+        .travel--card {
+            width: 48%;
+        }
+    }
+}
