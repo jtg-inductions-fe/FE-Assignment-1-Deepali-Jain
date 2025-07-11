@@ -50,10 +50,10 @@
     font-size: func.pxToRem(16px);
     color: var.$highlight-color;
     @include mix.respond('lg') {
-        font-size: func.pxToRem(23px);
+        font-size: func.pxToRem(24px);
     }
     @include mix.respond('x-lg') {
-        font-size: func.pxToRem(23px);
+        font-size: func.pxToRem(24px);
     }
 }
 
