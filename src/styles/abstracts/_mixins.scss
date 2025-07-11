@@ -2,7 +2,7 @@
 @use './variables.scss' as var;
 
 // Mixin for media queries
-@mixin breakpoint($name) {
+@mixin respond($name) {
     @if not map-has-key(var.$breakpoints, $name) {
         @warn "Warning: `#{$name}` is not a valid breakpoint name.";
     } @else {
