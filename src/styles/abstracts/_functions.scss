@@ -1,4 +1,4 @@
-@use './variables.scss' as var;
+@use './variables' as var;
 
 // Function to convert px to rem
 @function pxToRem($size) {

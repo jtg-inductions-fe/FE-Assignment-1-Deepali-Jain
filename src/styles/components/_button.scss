@@ -1,6 +1,6 @@
-@use '../abstracts/functions.scss' as func;
-@use '../abstracts/mixins.scss' as mix;
-@use '../abstracts/variables.scss' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
 
 // ==============================
 // Base Button Styles
@@ -8,15 +8,13 @@
 
 .btn {
     // Minimum width and height for button size
-    min-width: func.pxToRem(114px);
-    min-height: func.pxToRem(48px);
 
     // Fully rounded pill-shaped button
     border-radius: func.pxToRem(100px);
 
     // Inner spacing
     padding: func.pxToRem(16px) func.pxToRem(32px);
-
+    min-inline-size: 8ch;
     // Basic styling
     border: none;
     font-weight: bold;

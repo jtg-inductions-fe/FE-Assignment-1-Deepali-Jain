@@ -8,18 +8,29 @@
     <body>
         <nav class="nav">
             <div class="nav__container">
-                <div class="nav__hamburger">
+                <div class="nav__hamburger" id="js-hamIcon">
                     <button
                         class="icon-hamburger-menu nav__hamburger--icon"
                         aria-label="open main menu"
-                        id="hamIcon"
+                        aria-controls="hamMenu"
+                        aria-expanded="false"
+                        type="button"
                     ></button>
                 </div>
                 <div class="nav__logo">
-                    <img src="/assets/images/logo.webp" alt="nav__logo" />
+                    <img src="/assets/images/logo.webp" alt="Travlog logo" />
                 </div>
-                <div class="nav__links">
-                    <ul id="navLinks">
+                <div class="nav__links" id="js-navLinks">
+                    <div id="crossIcon">
+                        <button
+                            class="cross-icon"
+                            aria-label="close main menu"
+                            aria-controls="hamMenu"
+                            aria-expanded="true"
+                            type="button"
+                        ></button>
+                    </div>
+                    <ul>
                         <li>
                             <a
                                 class="nav__links--active"
@@ -33,22 +44,10 @@
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
-                <div class="nav__buttons">
-                    <div>
-                        <button class="btn btn--outlined">Log In</button>
-                    </div>
-                    <div>
-                        <button class="btn btn--active">Sign Up</button>
-                    </div>
-                </div>
-                <div class="nav__collapsed--menu" id="hamMenu">
-                    <button
-                        class="cross-icon nav__buttons--close"
-                        aria-label="close main menu"
-                        id="crossIcon"
-                    >
-                        &#10006;
-                    </button>
+                <div class="nav__buttons" id="js-navButtons">
+                    <button class="btn btn--outlined">Log In</button>
+
+                    <button class="btn btn--active">Sign Up</button>
                 </div>
             </div>
         </nav>

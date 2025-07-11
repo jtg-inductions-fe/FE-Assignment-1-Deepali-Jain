@@ -19,7 +19,7 @@ $border-color: lighten(rgba(25, 24, 37, 0.522), 60%);
 // Fonts
 $font-family-base: 'Circular Std', sans-serif;
 $font-paragraph: 'Inter', sans-serif;
-$font-size: 10px;
+$font-size: 1rem;
 $font-size-primary: 16px;
 $font-size-root: 62.5%;
 $hero-heading-size: 40px;
@@ -28,9 +28,10 @@ $hero-heading-size: 40px;
 $breakpoints: (
     xs: 430px,
     sm: 480px,
-    md: 769px,
+    md: 768px,
     lg: 1204px,
     xl: 1440px,
+    xxl: 2650px,
 );
 
 //dimensions

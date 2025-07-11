@@ -1,6 +1,6 @@
-@use '../abstracts/functions.scss' as func;
-@use '../abstracts/mixins.scss' as mix;
-@use '../abstracts/variables.scss' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
 
 // ==============================
 // Hero Section Heading
@@ -46,7 +46,7 @@
 
     // Responsive override for extra-large screens
     @include mix.respond('xl') {
-        font-size: func.pxToRem(44px);
+        font-size: func.pxToRem(64px);
     }
 }
 
@@ -56,7 +56,7 @@
 
 .paragraph {
     // Set font family and default muted color
-    font-family: 'Inter';
+    font-family: var.$font-paragraph;
     color: var.$muted-text-color;
 
     // Modifier: smaller base font
@@ -105,30 +105,3 @@
     // Color (e.g., orange highlight)
     color: var.$orange;
 }
-// @media screen and (min-width: 431px) and (max-width: 1024px) {
-//     .heading {
-//         font-size: func.pxToRem(40px);
-//     }
-//     .hero-heading {
-//         font-size: func.pxToRem(56px);
-//     }
-//     .paragraph {
-//         &--primary {
-//             font-size: func.pxToRem(18px);
-//         }
-//     }
-//     .subheading {
-//         font-size: func.pxToRem(23px);
-//     }
-// }
-// @media screen and (min-width: 1025px) {
-//     .hero-heading {
-//         font-size: func.pxToRem(69px);
-//     }
-//     .heading {
-//         font-size: func.pxToRem(44px);
-//     }
-//     .subheading {
-//         font-size: func.pxToRem(23px);
-//     }
-// }
