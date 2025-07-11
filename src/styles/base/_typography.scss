@@ -2,19 +2,19 @@
 @use '../abstracts/mixins.scss' as mix;
 @use '../abstracts/variables.scss' as var;
 
-//Heading for hero section
+// Heading for hero section
 .hero-heading {
     font-size: func.pxToRem(var.$hero-heading-size);
     font-weight: bold;
 }
 
-//Section headings
+// Section headings
 .heading {
     font-size: func.pxToRem(32px);
     font-weight: bold;
 }
 
-//Section paragraphs
+// Section paragraphs
 .paragraph {
     font-family: 'Inter';
     color: var.$muted-text-color;
@@ -26,13 +26,13 @@
     }
 }
 
-//Subheadings for the sections
+// Subheadings for the sections
 .subheading {
     font-size: func.pxToRem(16px);
     color: var.$highlight-color;
 }
 
-//Subheadings for the card
+// Subheadings for the card
 .card-subheading {
     font-size: func.pxToRem(18px);
     color: var.$orange;

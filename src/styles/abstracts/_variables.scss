@@ -1,30 +1,32 @@
-//colors
-$primary-color: #5d50c6; //primary color used in buttons & icons
-$secondary-text-color: #eeeeee; //text color used in buttons & icons
-$white: #ffffff; //secondary color used in buttons & icons
+// Colors
+$primary-color: #5d50c6; // Primary color used in buttons & icons
+$secondary-text-color: #eeeeee; // Text color used in buttons & icons
+$white: #ffffff; // Secondary color used in buttons & icons
 $active-link-color: #222831;
 $muted-text-color: rgba(
     25,
     24,
     37,
     0.522
-); //color used in inactive links + some of the paragraphs
-$highlight-color: #f85e95; //color used in headings to highlight some text
-$black: #000000; //primary text color
-$orange: #ff5722; //color used in card headings
-$yellow: #facd49; //color used in newsletter section background
+); // Color used in inactive links + some of the paragraphs
+$highlight-color: #f85e95; // Color used in headings to highlight some text
+$black: #000000; // Primary text color
+$orange: #ff5722; // Color used in card headings
+$yellow: #facd49; // Color used in newsletter section background
 $off-white: #f1f2f2;
 $border-color: lighten(rgba(25, 24, 37, 0.522), 60%);
 
-//fonts
+// Fonts
 $font-family-base: 'Circular Std', sans-serif;
 $font-paragraph: 'Inter', sans-serif;
 $font-size: 16px;
 $hero-heading-size: 40px;
 
-//break-points
+// Break-points
 $breakpoints: (
-    small: 480px,
-    medium: 769px,
-    large: 1280px,
+    x-sm: 430px,
+    sm: 480px,
+    m: 769px,
+    lg: 1204px,
+    x-lg: 1440px,
 );
