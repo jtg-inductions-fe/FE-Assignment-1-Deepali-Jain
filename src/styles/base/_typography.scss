@@ -6,12 +6,28 @@
 .hero-heading {
     font-size: func.pxToRem(var.$hero-heading-size);
     font-weight: bold;
+    @include mix.flexbox();
+    @include mix.respond('lg') {
+        font-size: func.pxToRem(56px);
+    }
+    @include mix.respond('x-lg') {
+        font-size: func.pxToRem(68px);
+    }
 }
 
 // Section headings
 .heading {
     font-size: func.pxToRem(32px);
     font-weight: bold;
+    @include mix.respond('m') {
+        font-size: func.pxToRem(40px);
+    }
+    @include mix.respond('lg') {
+        font-size: func.pxToRem(56px);
+    }
+    @include mix.respond('x-lg') {
+        font-size: func.pxToRem(44px);
+    }
 }
 
 // Section paragraphs
@@ -24,43 +40,25 @@
     &--secondary {
         font-size: func.pxToRem(18px);
     }
+    @include mix.respond('lg') {
+        font-size: func.pxToRem(18px);
+    }
 }
 
 // Subheadings for the sections
 .subheading {
     font-size: func.pxToRem(16px);
     color: var.$highlight-color;
+    @include mix.respond('lg') {
+        font-size: func.pxToRem(23px);
+    }
+    @include mix.respond('x-lg') {
+        font-size: func.pxToRem(23px);
+    }
 }
 
 // Subheadings for the card
 .card-subheading {
     font-size: func.pxToRem(18px);
     color: var.$orange;
-}
-@media screen and (min-width: 431px) and (max-width: 1024px) {
-    .heading {
-        font-size: func.pxToRem(40px);
-    }
-    .hero-heading {
-        font-size: func.pxToRem(56px);
-    }
-    .paragraph {
-        &--primary {
-            font-size: func.pxToRem(18px);
-        }
-    }
-    .subheading {
-        font-size: func.pxToRem(23px);
-    }
-}
-@media screen and (min-width: 1025px) {
-    .hero-heading {
-        font-size: func.pxToRem(69px);
-    }
-    .heading {
-        font-size: func.pxToRem(44px);
-    }
-    .subheading {
-        font-size: func.pxToRem(23px);
-    }
 }

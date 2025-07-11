@@ -21,9 +21,6 @@
     flex-direction: $direction;
 }
 
-@mixin custom-utils($line-clamp: 3, $section-spacing: null) {
+@mixin line-clamp($line-clamp: 3) {
     -webkit-line-clamp: $line-clamp;
-    @if ($section-spacing!=null) {
-        padding: $section-spacing;
-    }
 }

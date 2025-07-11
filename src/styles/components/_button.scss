@@ -2,19 +2,39 @@
 @use '../abstracts/mixins.scss' as mix;
 @use '../abstracts/variables.scss' as var;
 
-.btn-base {
-    width: func.pxToRem(115px);
-    height: func.pxToRem(49px);
-    border-radius: func.pxToRem(100px);
-    padding: func.pxToRem(16px) func.pxToRem(32px);
+.btn {
+    min-width: f.pxToRem(115px);
+    min-height: f.pxToRem(49px);
+    border-radius: f.pxToRem(100px);
+    padding: f.pxToRem(16px) f.pxToRem(32px);
     border: none;
     font-weight: bold;
-    &.btn-active {
-        background-color: var.$primary-color;
-        color: var.$white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-    &.btn-outlined {
-        background-color: var.$white;
-        color: var.$black;
+    &.btn--active {
+        background-color: v.$primary-color;
+        color: v.$secondary-color;
+        &:hover {
+            background-color: darken(v.$primary-color, 10%);
+        }
+        &:focus {
+            background-color: darken(v.$primary-color, 10%);
+            outline: solid $border-color;
+        }
+    }
+    &.btn--outlined {
+        background-color: v.$secondary-color;
+        color: v.$text-color;
+        &:hover {
+            background-color: darken(v.$secondary-color, 10%);
+        }
+        &:focus {
+            background-color: darken(v.$secondary-color, 10%);
+            outline: solid $border-color;
+        }
     }
 }
