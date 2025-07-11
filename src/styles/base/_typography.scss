@@ -105,3 +105,30 @@
     // Color (e.g., orange highlight)
     color: var.$orange;
 }
+// @media screen and (min-width: 431px) and (max-width: 1024px) {
+//     .heading {
+//         font-size: func.pxToRem(40px);
+//     }
+//     .hero-heading {
+//         font-size: func.pxToRem(56px);
+//     }
+//     .paragraph {
+//         &--primary {
+//             font-size: func.pxToRem(18px);
+//         }
+//     }
+//     .subheading {
+//         font-size: func.pxToRem(23px);
+//     }
+// }
+// @media screen and (min-width: 1025px) {
+//     .hero-heading {
+//         font-size: func.pxToRem(69px);
+//     }
+//     .heading {
+//         font-size: func.pxToRem(44px);
+//     }
+//     .subheading {
+//         font-size: func.pxToRem(23px);
+//     }
+// }
