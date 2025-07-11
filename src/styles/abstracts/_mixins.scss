@@ -1,7 +1,10 @@
 @use './functions.scss' as func;
 @use './variables.scss' as var;
 
-// Mixin for media queries
+// =============================================
+// Mixin: respond($name)
+// Creates media queries based on named breakpoints from the variables map.
+// =============================================
 @mixin respond($name) {
     @if not map-has-key(var.$breakpoints, $name) {
         @warn "Warning: `#{$name}` is not a valid breakpoint name.";
@@ -12,8 +15,13 @@
     }
 }
 
-/* For using a flexbox with default properties as space-between,center and row for the justify-content, align-items
-& flex-direction respectively */
+// =============================================
+// Mixin: flexbox($justify, $align, $direction)
+// Shorthand for common flexbox layout properties.
+// Defaults: justify-content: space-between;
+//           align-items: center;
+//           flex-direction: row;
+// =============================================
 @mixin flexbox($justify: space-between, $align: center, $direction: row) {
     display: flex;
     justify-content: $justify;
@@ -21,6 +29,20 @@
     flex-direction: $direction;
 }
 
-@mixin line-clamp($line-clamp: 3) {
-    -webkit-line-clamp: $line-clamp;
+// =============================================
+// Mixin: line-clamp($lines)
+// Limits text to a specified number of lines with ellipsis overflow.
+// =============================================
+@mixin line-clamp($lines: 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @if $lines == 1 {
+        white-space: nowrap;
+        display: block;
+    } @else {
+        display: -webkit-box;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }
 }

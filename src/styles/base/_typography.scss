@@ -2,63 +2,106 @@
 @use '../abstracts/mixins.scss' as mix;
 @use '../abstracts/variables.scss' as var;
 
-// Heading for hero section
+// ==============================
+// Hero Section Heading
+// ==============================
+
 .hero-heading {
+    // Base font size using custom pxToRem function
     font-size: func.pxToRem(var.$hero-heading-size);
     font-weight: bold;
+
+    // Apply flexbox layout (likely centers content)
     @include mix.flexbox();
+
+    // Font size adjustment for large screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(56px);
     }
-    @include mix.respond('x-lg') {
+
+    // Font size adjustment for extra-large screens
+    @include mix.respond('xl') {
         font-size: func.pxToRem(68px);
     }
 }
 
-// Section headings
+// ==============================
+// Section Headings
+// ==============================
+
 .heading {
+    // Base font size and weight
     font-size: func.pxToRem(32px);
     font-weight: bold;
-    @include mix.respond('m') {
+
+    // Responsive scaling for medium screens
+    @include mix.respond('md') {
         font-size: func.pxToRem(40px);
     }
+
+    // Responsive scaling for large screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(56px);
     }
-    @include mix.respond('x-lg') {
+
+    // Responsive override for extra-large screens
+    @include mix.respond('xl') {
         font-size: func.pxToRem(44px);
     }
 }
 
-// Section paragraphs
+// ==============================
+// Paragraph Styles
+// ==============================
+
 .paragraph {
+    // Set font family and default muted color
     font-family: 'Inter';
     color: var.$muted-text-color;
+
+    // Modifier: smaller base font
     &--primary {
         font-size: func.pxToRem(16px);
     }
+
+    // Modifier: slightly larger font
     &--secondary {
         font-size: func.pxToRem(18px);
     }
+
+    // Increase font size on large screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(18px);
     }
 }
 
-// Subheadings for the sections
+// ==============================
+// Section Subheadings
+// ==============================
+
 .subheading {
+    // Base size and highlight color
     font-size: func.pxToRem(16px);
     color: var.$highlight-color;
+
+    // Responsive scaling for larger screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(24px);
     }
-    @include mix.respond('x-lg') {
+
+    @include mix.respond('xl') {
         font-size: func.pxToRem(24px);
     }
 }
 
-// Subheadings for the card
+// ==============================
+// Card Subheadings
+// ==============================
+
 .card-subheading {
+    // Font size for card stat heading
     font-size: func.pxToRem(18px);
+
+    // Color (e.g., orange highlight)
     color: var.$orange;
 }
