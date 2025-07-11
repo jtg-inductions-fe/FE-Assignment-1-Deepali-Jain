@@ -1,0 +1,86 @@
+@use '../abstracts/variables.scss' as var;
+@font-face {
+    font-family: 'icomoon';
+    src: url('./fonts/icomoon.woff?4etbac') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+[class^='icon-'],
+[class*=' icon-'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// =============================================
+// Icon: Instagram Logo
+// =============================================
+.icon-ig-logo:before {
+    content: '\e900'; // Unicode from icon font
+}
+
+// =============================================
+// Icon: Star
+// Used for ratings or highlights
+// =============================================
+.icon-star:before {
+    content: '\e901';
+    color: var.$yellow;
+}
+
+// =============================================
+// Icon: Play Button
+// Used in video sections or CTA buttons
+// =============================================
+.icon-play-button:before {
+    content: '\e902';
+    color: var.$primary-color;
+}
+
+// =============================================
+// Icon: Email / Newsletter
+// =============================================
+.icon-email:before {
+    content: '\e903';
+}
+
+// =============================================
+// Icon: Hamburger Menu (mobile nav)
+// =============================================
+.icon-hamburger-menu:before {
+    content: '\e906';
+    color: var.$primary-color;
+}
+
+// =============================================
+// Icon: Twitter Logo (Footer or Social links)
+// =============================================
+.icon-twitter-logo:before {
+    content: '\e905';
+    color: var.$off-white;
+}
+
+// =============================================
+// Icon: Facebook Logo
+// =============================================
+.icon-fb-logo:before {
+    content: '\e904';
+    color: var.$primary-color;
+}
+
+// =============================================
+// Icon: Cross / Close Button
+// =============================================
+.icon-cross:before {
+    content: '\ea0f';
+}

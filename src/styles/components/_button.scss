@@ -1,0 +1,80 @@
+@use '../abstracts/functions.scss' as func;
+@use '../abstracts/mixins.scss' as mix;
+@use '../abstracts/variables.scss' as var;
+
+// ==============================
+// Base Button Styles
+// ==============================
+
+.btn {
+    // Minimum width and height for button size
+    min-width: func.pxToRem(114px);
+    min-height: func.pxToRem(48px);
+
+    // Fully rounded pill-shaped button
+    border-radius: func.pxToRem(100px);
+
+    // Inner spacing
+    padding: func.pxToRem(16px) func.pxToRem(32px);
+
+    // Basic styling
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+
+    // Smooth interaction effects
+    transition: all 0.2s ease;
+
+    // Hover effect: lift slightly and add shadow
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    // Focus effect: visible outline
+    &:focus {
+        outline: 1px solid var.$border-color;
+    }
+
+    // ==============================
+    // Active Button Modifier
+    // ==============================
+
+    &.btn--active {
+        // Filled background style
+        background-color: var.$primary-color;
+        color: var.$white;
+
+        // Darker background on hover
+        &:hover {
+            background-color: darken(var.$primary-color, 10%);
+        }
+
+        // Darker background and outline on focus
+        &:focus {
+            background-color: darken(var.$primary-color, 10%);
+            outline: 1px solid var.$border-color;
+        }
+    }
+
+    // ==============================
+    // Outlined Button Modifier
+    // ==============================
+
+    &.btn--outlined {
+        // Outlined button style: white background, black text
+        background-color: var.$white;
+        color: var.$black;
+
+        // Slightly darker background on hover
+        &:hover {
+            background-color: darken(var.$white, 10%);
+        }
+
+        // Same as hover + outline for focus
+        &:focus {
+            background-color: darken(var.$white, 10%);
+            outline: 1px solid var.$border-color;
+        }
+    }
+}

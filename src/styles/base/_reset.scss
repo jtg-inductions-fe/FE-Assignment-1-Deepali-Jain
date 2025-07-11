@@ -1,0 +1,44 @@
+@use '../abstracts/variables.scss' as var;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: var.$font-size-root;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+ul,
+ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: var.$muted-text-color;
+    &.current {
+        color: var.$active-link-color;
+    }
+}
+li {
+    list-style: none;
+}
+body {
+    font-family: var.$font-family-base;
+    font-size: var.$font-size-primary;
+    line-height: 1.5;
+    color: var.$black;
+}

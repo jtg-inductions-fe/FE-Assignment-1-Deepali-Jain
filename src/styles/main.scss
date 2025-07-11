@@ -1,1 +1,8 @@
-// TODO: Add styles as per the requirement
+@use 'abstracts/_variables.scss';
+@use 'abstracts/_functions.scss';
+@use 'abstracts/_mixins.scss';
+@use 'vendors/_icons.scss';
+@use 'base/_reset.scss';
+@use 'base/_fonts.scss';
+@use 'base/_typography.scss';
+@use 'components/_button.scss';
