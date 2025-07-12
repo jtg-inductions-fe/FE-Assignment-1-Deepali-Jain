@@ -128,7 +128,7 @@
     }
     @include mix.respond('lg') {
         margin-left: 0;
-        padding-left: 100px;
+        padding-left: func.pxToRem(100px);
     }
 }
 .nav__hamburger {

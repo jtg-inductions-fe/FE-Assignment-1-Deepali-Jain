@@ -63,7 +63,7 @@
 
     // Modifier: slightly larger font
     &--secondary {
-        font-size: func.pxToRem(18px);
+        font-size: func.pxToRem(20px);
     }
 
     // Increase font size on large screens
@@ -83,10 +83,6 @@
 
     // Responsive scaling for larger screens
     @include mix.respond('lg') {
-        font-size: func.pxToRem(24px);
-    }
-
-    @include mix.respond('xl') {
         font-size: func.pxToRem(24px);
     }
 }
