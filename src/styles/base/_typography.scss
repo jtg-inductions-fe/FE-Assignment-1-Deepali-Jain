@@ -12,11 +12,11 @@
     font-weight: bold;
     & .heading--highlight {
         background-color: transparent;
-        color: v.$highlight-color;
+        color: var.$highlight-color;
     }
 
     // Font size adjustment for large screens
-    @include mix.respond('lg') {
+    @include mix.respond('sm') {
         font-size: func.pxToRem(56px);
     }
 
@@ -71,7 +71,7 @@
     }
 
     // Increase font size on large screens
-    @include mix.respond('lg') {
+    @include mix.respond('sm') {
         font-size: func.pxToRem(18px);
     }
 }
@@ -101,68 +101,4 @@
 
     // Color (e.g., orange highlight)
     color: var.$orange;
-}
-@media screen and (min-width: 481px) {
-    .paragraph {
-        font-size: f.pxToRem(18px);
-    }
-}
-@media screen and (min-width: 481px) and (max-width: 786px) {
-    .paragraph {
-        // padding: 0 f.pxToRem(230px);
-        padding: 0 f.pxToRem(150px);
-    }
-}
-@media screen and (min-width: 787px) and (max-width: 1024px) {
-    .paragraph {
-        // padding: 0 f.pxToRem(230px);
-        padding: 0 f.pxToRem(290px);
-    }
-}
-@media screen and (min-width: 1025px) {
-    .paragraph {
-        max-width: f.pxToRem(420px);
-    }
-}
-@media screen and (min-width: 481px) {
-    .paragraph {
-        font-size: f.pxToRem(18px);
-    }
-}
-@media screen and (min-width: 481px) and (max-width: 786px) {
-    .paragraph {
-        // padding: 0 f.pxToRem(230px);
-        padding: 0 f.pxToRem(150px);
-    }
-}
-@media screen and (min-width: 787px) and (max-width: 1024px) {
-    .paragraph {
-        // padding: 0 f.pxToRem(230px);
-        padding: 0 f.pxToRem(290px);
-    }
-}
-@media screen and (min-width: 1025px) {
-    .paragraph {
-        max-width: f.pxToRem(420px);
-    }
-}
-@media screen and (min-width: 481px) {
-    .paragraph {
-        font-size: f.pxToRem(18px);
-    }
-}
-@media screen and (min-width: 481px) and (max-width: 786px) {
-    .paragraph {
-        padding: 0 f.pxToRem(150px);
-    }
-}
-@media screen and (min-width: 787px) and (max-width: 1024px) {
-    .paragraph {
-        padding: 0 f.pxToRem(290px);
-    }
-}
-@media screen and (min-width: 1025px) {
-    .paragraph {
-        max-width: f.pxToRem(420px);
-    }
 }

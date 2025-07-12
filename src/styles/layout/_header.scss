@@ -71,7 +71,10 @@
         padding: func.pxToRem(30px) func.pxToRem(64px);
     }
     @include mix.respond('lg') {
-        padding: func.pxToRem(58px) func.pxToRem(50px);
+        padding: func.pxToRem(30px) func.pxToRem(64px);
+    }
+    @include mix.respond('xl') {
+        padding: func.pxToRem(58px) func.pxToRem(64px);
     }
 }
 .nav__buttons {
@@ -85,7 +88,7 @@
         @include mix.flexbox();
         margin-right: func.pxToRem(10px);
     }
-    @include mix.respond('lg') {
+    @include mix.respond('xl') {
         padding-right: func.pxToRem(40px);
     }
 }
@@ -128,11 +131,11 @@
     }
     @include mix.respond('lg') {
         margin-left: 0;
-        padding-left: func.pxToRem(100px);
+        padding-left: func.pxToRem(80px);
     }
     .nav__links {
         li {
-            padding: f.pxToRem(30px) f.pxToRem(50px);
+            padding: func.pxToRem(30px) func.pxToRem(50px);
         }
     }
 }

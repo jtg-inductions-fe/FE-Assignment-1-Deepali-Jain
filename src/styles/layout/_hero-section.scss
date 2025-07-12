@@ -1,10 +1,17 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/functions' as f;
-@use '../abstracts//mixins' as m;
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts//mixins' as mix;
 .hero {
-    @include m.flexbox($direction: column-reverse);
-    padding-top: f.pxToRem(32px);
+    @include mix.flexbox($direction: column-reverse);
+    padding-top: func.pxToRem(32px);
     position: relative;
+    @include mix.respond('sm') {
+        padding: func.pxToRem(65px) 0;
+    }
+    @include mix.respond('xl') {
+        @include mix.flexbox($direction: row);
+        padding: func.pxToRem(40px) func.pxToRem(130px);
+    }
 }
 .hero::before {
     content: '';
@@ -13,15 +20,17 @@
     left: -150px;
     width: 600px;
     height: 590px;
-    background: radial-gradient(
-        circle at center,
-        v.$card-heading-color,
-        v.$secondary-color
-    );
+    background: radial-gradient(circle at center, var.$orange, var.$white);
     filter: blur(140px);
     border-radius: 50%;
     z-index: -1;
     opacity: 0.5;
+}
+.hero__image {
+    @include mix.respond('sm') {
+        max-width: func.pxToRem(782px);
+        width: 100%;
+    }
 }
 .hero__image img {
     width: 100%;
@@ -29,112 +38,113 @@
     display: block;
 }
 .hero__heading {
-    padding: f.pxToRem(8px) f.pxToRem(10px);
     line-height: 1.2;
+    padding: func.pxToRem(8px) func.pxToRem(42px);
+    @include mix.respond('xs') {
+        padding: func.pxToRem(8px) 0;
+    }
+    @include mix.respond('xl') {
+        padding: 0;
+    }
 }
 .hero__content {
-    @include m.flexbox($direction: column);
-    gap: f.pxToRem(16px);
+    @include mix.flexbox($direction: column);
+    gap: func.pxToRem(16px);
     text-align: center;
-    padding-top: f.pxToRem(10px);
-}
-.hero-heading {
-    font-size: f.pxToRem(40px);
-}
-.hero__button {
-    @include m.flexbox($direction: column);
-    gap: f.pxToRem(24px);
-    padding: f.pxToRem(20px) 0;
-}
-.hero__paragraph {
-    padding: 0 f.pxToRem(2px);
-}
-.hero__button--icon {
-    font-size: f.pxToRem(24px);
-    margin-left: f.pxToRem(16px);
-}
-.hero__button--play-icon {
-    font-size: f.pxToRem(24px);
-    margin-right: f.pxToRem(10px);
-}
-// //mobile
-@media screen and (max-width: 430px) {
-    .hero__button {
-        max-width: f.pxToRem(398px);
-        width: 100%;
+    padding-top: func.pxToRem(10px);
+    max-width: func.pxToRem(320px);
+    @include mix.respond('xs') {
+        max-width: func.pxToRem(396px);
     }
-    .btn--start {
-        width: 100%;
-        height: f.pxToRem(65px);
-    }
-    .btn--watch {
-        width: 100%;
-        height: f.pxToRem(65px);
-    }
-    .hero__heading {
-        padding: f.pxToRem(8px) f.pxToRem(42px);
-        line-height: 1.2;
-    }
-}
-// //tablet
-@media screen and (min-width: 431px) and (max-width: 1024px) {
-    .hero__image {
-        max-width: f.pxToRem(782px);
-        width: 100%;
-    }
-    .hero {
-        padding: f.pxToRem(65px) 0;
-    }
-    .hero__content {
-        padding-top: f.pxToRem(30px);
+    @include mix.respond('sm') {
+        padding-top: func.pxToRem(30px);
         text-align: center;
     }
-    .hero__heading {
-        max-width: f.pxToRem(756px);
-        width: 100%;
-        line-height: 1.2;
-        padding: 30px 70px;
+    @include mix.respond('md') {
+        max-width: func.pxToRem(896px);
     }
-    .hero-heading {
-        font-size: f.pxToRem(56px);
-    }
-    .hero__paragraph {
-        font-size: f.pxToRem(18px);
-    }
-    .hero__button {
-        @include m.flexbox;
-        gap: f.pxToRem(24px);
-        padding: f.pxToRem(25px) 0;
-    }
-}
-//desktop
-@media screen and (min-width: 1025px) {
-    .hero {
-        @include m.flexbox($direction: row);
-    }
-    .hero__content {
-        @include m.flexbox($align: flex-start, $direction: column);
-        gap: f.pxToRem(43px);
-        padding: f.pxToRem(50px) 0;
+    @include mix.respond('xl') {
+        @include mix.flexbox($align: flex-start, $direction: column);
+        max-width: func.pxToRem(420px);
+        gap: func.pxToRem(43px);
+        padding: func.pxToRem(50px) 0;
         text-align: left;
     }
-    .hero__image {
-        width: f.pxToRem(782px);
-        padding: 0 f.pxToRem(20px);
-    }
-    .hero {
-        padding: f.pxToRem(40px) f.pxToRem(130px);
-    }
-    .hero__heading {
-        width: f.pxToRem(420px);
+}
+.hero-heading {
+    @include mix.respond('sm') {
+        max-width: func.pxToRem(756px);
+        width: 100%;
         line-height: 1.2;
+        padding: func.pxToRem(30px) func.pxToRem(70px);
     }
-    .hero-heading {
-        font-size: f.pxToRem(69px);
+    @include mix.respond('xl') {
+        width: func.pxToRem(420px);
+        line-height: 1.2;
+        padding: 0;
     }
-    .hero__button {
-        @include m.flexbox;
-        gap: f.pxToRem(24px);
-        padding: f.pxToRem(15px) 0;
+}
+.hero__button {
+    @include mix.flexbox($direction: column);
+    gap: func.pxToRem(24px);
+    padding: func.pxToRem(20px) 0;
+    max-width: func.pxToRem(398px);
+    width: 100%;
+    @include mix.respond('sm') {
+        @include mix.flexbox;
+        max-width: func.pxToRem(338px);
+        gap: func.pxToRem(16px);
+        padding: func.pxToRem(25px) 0;
+    }
+    @include mix.respond('xl') {
+        @include mix.flexbox;
+        gap: func.pxToRem(24px);
+        padding: func.pxToRem(15px) 0;
+    }
+}
+.hero__paragraph {
+    @include mix.respond('xs') {
+        padding: 0 func.pxToRem(10px);
+    }
+    @include mix.respond('sm') {
+        padding: 0;
+    }
+    @include mix.respond('md') {
+        padding: 0 func.pxToRem(230px);
+    }
+    @include mix.respond('xl') {
+        padding: 0;
+    }
+}
+.hero__button--icon {
+    font-size: func.pxToRem(24px);
+    margin-left: func.pxToRem(16px);
+}
+.hero__button--play-icon {
+    font-size: func.pxToRem(24px);
+    margin-right: func.pxToRem(10px);
+}
+.btn--start {
+    width: 100%;
+    height: func.pxToRem(65px);
+    @include mix.respond('md') {
+        height: func.pxToRem(49px);
+    }
+    @include mix.respond('sm') {
+        padding: func.pxToRem(16px);
+    }
+}
+.btn--watch {
+    width: 100%;
+    height: func.pxToRem(65px);
+    border: 1px solid var.$border-color;
+    @include mix.respond('xs') {
+        @include mix.flexbox($justify: center);
+    }
+    @include mix.respond('md') {
+        height: func.pxToRem(49px);
+    }
+    @include mix.respond('sm') {
+        padding: func.pxToRem(16px);
     }
 }
