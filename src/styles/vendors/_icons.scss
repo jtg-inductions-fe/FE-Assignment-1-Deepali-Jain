@@ -26,7 +26,7 @@
 // Icon: Instagram Logo
 // =============================================
 .icon-ig-logo:before {
-    content: '\e900'; // Unicode from icon font
+    content: '\e902'; // Unicode from icon font
 }
 
 // =============================================
@@ -43,7 +43,7 @@
 // Used in video sections or CTA buttons
 // =============================================
 .icon-play-button:before {
-    content: '\e902';
+    content: '\e900';
     color: var.$primary-color;
 }
 
@@ -86,5 +86,5 @@
 }
 .icon-work:before {
     content: '\e903';
-    color: v.$highlight-color;
+    color: var.$highlight-color;
 }
