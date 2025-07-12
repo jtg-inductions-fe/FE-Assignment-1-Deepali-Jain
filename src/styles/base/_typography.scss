@@ -41,13 +41,8 @@
     }
 
     // Responsive scaling for large screens
-    @include mix.respond('lg') {
-        font-size: func.pxToRem(56px);
-    }
-
-    // Responsive override for extra-large screens
     @include mix.respond('xl') {
-        font-size: func.pxToRem(64px);
+        font-size: func.pxToRem(44px);
     }
 }
 
@@ -88,6 +83,7 @@
     // Responsive scaling for larger screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(24px);
+        letter-spacing: func.pxToRem(5px);
     }
 }
 
@@ -98,7 +94,13 @@
 .card-subheading {
     // Font size for card stat heading
     font-size: func.pxToRem(18px);
-
     // Color (e.g., orange highlight)
     color: var.$orange;
+    &--services {
+        font-size: func.pxToRem(24px);
+        color: var.$black;
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(28px);
+        }
+    }
 }

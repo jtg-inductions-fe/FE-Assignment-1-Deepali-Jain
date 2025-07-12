@@ -1,110 +1,107 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/functions' as f;
-@use '../abstracts//mixins' as m;
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts//mixins' as mix;
 
 .services {
-    @include m.flexbox($direction: column);
+    @include mix.flexbox($direction: column);
     text-align: center;
-    @include m.section-spacing(14px);
-    row-gap: f.pxToRem(32px);
+    margin-top: func.pxToRem(14px);
+    row-gap: func.pxToRem(32px);
+    @include mix.respond('sm') {
+        margin-top: func.pxToRem(45px);
+        row-gap: func.pxToRem(64px);
+    }
+    @include mix.respond('xl') {
+        flex-direction: row;
+    }
 }
 .services__headings {
-    @include m.flexbox($direction: column);
-    row-gap: f.pxToRem(13px);
+    @include mix.flexbox($direction: column);
+    row-gap: func.pxToRem(13px);
+    max-width: func.pxToRem(398px);
+    @include mix.respond('lg') {
+        max-width: func.pxToRem(896px);
+    }
+    @include mix.respond('xl') {
+        align-items: flex-start;
+        text-align: left;
+        max-width: func.pxToRem(400px);
+        margin-left: func.pxToRem(130px);
+    }
 }
 .services__cards {
-    @include m.flexbox($direction: column);
+    @include mix.flexbox($direction: column);
     align-items: stretch;
-    row-gap: f.pxToRem(16px);
-    max-width: f.pxToRem(398px);
+    row-gap: func.pxToRem(16px);
+    max-width: func.pxToRem(398px);
     & .service--card {
-        @include m.flexbox($direction: column);
+        @include mix.flexbox($direction: column);
         width: 100%;
-        row-gap: f.pxToRem(30px);
-        padding: f.pxToRem(32px) f.pxToRem(35px);
-        border-radius: f.pxToRem(32px);
-        border: 0.5px solid lighten(v.$muted-text-color, 60%);
+        row-gap: func.pxToRem(30px);
+        padding: func.pxToRem(32px) func.pxToRem(50px);
+        border-radius: func.pxToRem(32px);
+        border: 0.5px solid lighten(var.$muted-text-color, 60%);
+        @include mix.respond('sm') {
+            padding: func.pxToRem(64px) func.pxToRem(34px) func.pxToRem(32px)
+                func.pxToRem(34px);
+            row-gap: func.pxToRem(16px);
+        }
+        @include mix.respond('md') {
+            padding: func.pxToRem(64px) func.pxToRem(64px) func.pxToRem(32px)
+                func.pxToRem(64px);
+        }
+        @include mix.respond('xl') {
+            padding: func.pxToRem(74px) func.pxToRem(64px) func.pxToRem(94px)
+                func.pxToRem(64px);
+        }
         &.service--booking-card {
             box-shadow: 0 20px 20px rgba(0, 0, 0, 0.065);
         }
     }
     img {
-        width: f.pxToRem(64px);
+        width: func.pxToRem(64px);
         height: auto;
     }
-}
-@media screen and (min-width: 481px) and (max-width: 815px) {
-    .services {
-        @include m.section-spacing(45px);
-        row-gap: f.pxToRem(64px);
-    }
-    .services__cards {
-        @include m.flexbox($direction: row);
+    @include mix.respond('sm') {
+        @include mix.flexbox($direction: row);
         align-items: stretch;
         justify-content: flex-start;
-        max-width: f.pxToRem(596px);
-        column-gap: f.pxToRem(16px);
-        & .service--card {
-            padding: f.pxToRem(64px) f.pxToRem(34px) f.pxToRem(32px)
-                f.pxToRem(34px);
-            row-gap: f.pxToRem(16px);
-        }
+        max-width: func.pxToRem(596px);
+        column-gap: func.pxToRem(16px);
     }
-    .card-subheading {
-        &.services--subheading {
-            padding-top: f.pxToRem(14px);
-        }
-    }
-}
-@media screen and (min-width: 815px) and (max-width: 1024px) {
-    .services {
-        @include m.section-spacing(45px);
-        row-gap: f.pxToRem(64px);
-    }
-    .services__cards {
-        @include m.flexbox($direction: row);
+    @include mix.respond('md') {
+        @include mix.flexbox($direction: row);
         align-items: stretch;
         justify-content: flex-start;
-        max-width: f.pxToRem(896px);
-        column-gap: f.pxToRem(16px);
-        & .service--card {
-            padding: f.pxToRem(64px) f.pxToRem(64px) f.pxToRem(32px)
-                f.pxToRem(64px);
-        }
+        max-width: func.pxToRem(896px);
     }
-    .card-subheading {
-        &.services--subheading {
-            padding-top: f.pxToRem(24px);
-        }
+    @include mix.respond('xl') {
+        flex-direction: row;
+        max-width: func.pxToRem(793px);
+        column-gap: func.pxToRem(21px);
+        align-items: stretch;
+        margin-right: func.pxToRem(100px);
     }
 }
-@media screen and (min-width: 1025px) {
-    .services {
-        flex-direction: row;
-    }
-    .services__cards {
-        flex-direction: row;
-        max-width: f.pxToRem(793px);
-        column-gap: f.pxToRem(21px);
-        align-items: stretch;
-        margin-right: f.pxToRem(100px);
-        & .service--card {
-            padding: f.pxToRem(74px) f.pxToRem(64px) f.pxToRem(94px)
-                f.pxToRem(64px);
-        }
-    }
-    .service--card:nth-child(3) {
+.service--card:nth-child(3) {
+    @include mix.respond('xl') {
         display: none;
     }
-    .services__headings {
-        align-items: flex-start;
-        text-align: left;
-        max-width: f.pxToRem(400px);
-        margin-left: f.pxToRem(115px);
+}
+.card-subheading {
+    &--services {
+        @include mix.respond('sm') {
+            padding-top: func.pxToRem(14px);
+        }
+        @include mix.respond('md') {
+            padding-top: func.pxToRem(34px);
+        }
     }
-    .card-subheading {
-        &.services--subheading {
-            padding-top: f.pxToRem(34px);
+}
+.paragraph {
+    &--services {
+        @include mix.respond('lg') {
+            padding-top: func.pxToRem(10px);
         }
     }
 }
