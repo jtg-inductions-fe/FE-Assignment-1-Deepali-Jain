@@ -1,12 +1,25 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/functions' as f;
-@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
 .customers {
-    @include m.flexbox($justify: center);
+    @include mix.flexbox($justify: center);
     flex-wrap: wrap;
-    gap: f.pxToRem(32px) f.pxToRem(27px);
-    padding: f.pxToRem(47px) 0;
+    gap: func.pxToRem(32px) func.pxToRem(27px);
+    padding: func.pxToRem(47px) 0;
     position: relative;
+    @include mix.respond('xs') {
+        max-width: func.pxToRem(896px);
+        margin: 0 auto;
+        padding: func.pxToRem(47px) func.pxToRem(10px);
+    }
+    @include mix.respond('md') {
+        padding: func.pxToRem(80px) func.pxToRem(100px);
+    }
+    @include mix.respond('xl') {
+        max-width: func.pxToRem(1320px);
+        padding: func.pxToRem(72px) 0;
+        column-gap: func.pxToRem(100px);
+    }
 }
 .customers::before {
     content: '';
@@ -15,62 +28,29 @@
     bottom: 0;
     width: 200px;
     height: 300px;
-    background: radial-gradient(
-        circle at center,
-        v.$newsletter-bg-color,
-        v.$secondary-color
-    );
+    background: radial-gradient(circle at center, var.$yellow, var.$white);
     filter: blur(100px);
     border-radius: 50%;
     z-index: 1;
     opacity: 0.5;
+    display: none;
+    @include mix.respond('xs') {
+        transform: translateX(150px) translateY(-10px);
+        width: 100px;
+        height: 200px;
+    }
+    @include mix.respond('lg') {
+        transform: translateX(500px) translateY(-20px);
+    }
 }
 .customers img {
     max-width: 100%;
     height: auto;
     display: block;
-}
-@media screen and (max-width: 430px) {
-    .customers::before {
-        display: none;
+    @include mix.respond('xs') {
+        height: func.pxToRem(22px);
     }
-}
-@media screen and (min-width: 431px) and (max-width: 768px) {
-    .customers {
-        max-width: f.pxToRem(896px);
-        margin: 0 auto;
-        padding: 0 f.pxToRem(10px);
-    }
-    .customers img {
-        height: f.pxToRem(22px);
-    }
-    .customers::before {
-        transform: translateX(150px) translateY(-10px);
-        width: 100px;
-        height: 200px;
-    }
-}
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .customers {
-        max-width: f.pxToRem(896px);
-        margin: 0 auto;
-        padding: f.pxToRem(80px) f.pxToRem(100px);
-    }
-    .customers img {
-        height: f.pxToRem(32px);
-    }
-}
-@media screen and (min-width: 1025px) {
-    .customers {
-        max-width: f.pxToRem(1320px);
-        margin: 0 auto;
-        padding: f.pxToRem(95px) 0;
-        column-gap: f.pxToRem(100px);
-    }
-    .customers img {
-        height: f.pxToRem(32px);
-    }
-    .customers::before {
-        transform: translateX(500px) translateY(-20px);
+    @include mix.respond('md') {
+        height: func.pxToRem(32px);
     }
 }
