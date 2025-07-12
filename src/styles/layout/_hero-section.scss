@@ -148,3 +148,18 @@
         padding: func.pxToRem(16px);
     }
 }
+.hero__arrow {
+    display: none;
+    @include mix.respond('md') {
+        display: block;
+        position: absolute;
+        left: func.pxToRem(40px);
+        bottom: func.pxToRem(30px);
+    }
+    @include mix.respond('xl') {
+        display: block;
+        position: absolute;
+        left: func.pxToRem(40px);
+        bottom: func.pxToRem(-70px);
+    }
+}
