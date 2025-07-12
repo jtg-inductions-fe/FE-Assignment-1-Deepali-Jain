@@ -1,7 +1,7 @@
 import '../styles/main.scss';
 
 const hamIcon = document.getElementById('js-hamIcon');
-const crossIcon = document.getElementById('crossIcon');
+const crossIcon = document.getElementById('js-crossIcon');
 const navLinks = document.getElementById('js-navLinks');
 
 hamIcon.addEventListener('click', () => {

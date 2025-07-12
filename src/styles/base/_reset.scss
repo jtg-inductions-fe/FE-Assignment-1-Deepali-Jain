@@ -32,6 +32,9 @@ a {
     &:focus {
         color: var.$active-link-color;
     }
+    &:focus-visible {
+        outline: 2px solid var.$active-link-color;
+    }
 }
 ul,
 ol,
@@ -47,6 +50,6 @@ body {
 section,
 nav,
 footer {
-    max-width: 1440px;
+    max-width: map-get(var.$breakpoints, 'xl');
     margin: 0 auto;
 }

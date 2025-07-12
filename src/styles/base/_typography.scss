@@ -11,9 +11,6 @@
     font-size: func.pxToRem(var.$hero-heading-size);
     font-weight: bold;
 
-    // Apply flexbox layout (likely centers content)
-    @include mix.flexbox();
-
     // Font size adjustment for large screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(56px);

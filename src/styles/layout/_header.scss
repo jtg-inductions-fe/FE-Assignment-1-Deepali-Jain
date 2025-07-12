@@ -6,6 +6,9 @@
     display: inline-block;
     background-color: transparent;
     border: none;
+    cursor: pointer;
+}
+.nav__hamburger {
     @include mix.respond('xl') {
         display: none;
     }
@@ -39,17 +42,13 @@
     right: 0;
     top: 0;
     background-color: var.$white;
-    width: 200px;
+    width: func.pxToRem(200px);
     height: 100vh;
-    box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.335);
-    @include mix.respond('sm') {
-        left: 0;
-    }
+    box-shadow: inset 0 10px 10px var.$border-color;
+    padding: func.pxToRem(30px) func.pxToRem(15px);
     @include mix.respond('md') {
         left: 0;
-    }
-    @include mix.respond('lg') {
-        left: 0;
+        width: func.pxToRem(300px);
     }
 }
 .open ul {
@@ -58,7 +57,7 @@
 .open + .nav__buttons {
     display: flex;
     position: fixed;
-    top: 300px;
+    top: 350px;
     right: 20px;
     background-color: var.$white;
     @include mix.respond('md') {
@@ -66,7 +65,7 @@
     }
 }
 .nav__container {
-    @include mix.flexbox;
+    @include mix.flexbox();
     padding: func.pxToRem(34px) func.pxToRem(18px);
     @include mix.respond('sm') {
         padding: func.pxToRem(30px) func.pxToRem(64px);
@@ -76,18 +75,18 @@
     }
 }
 .nav__buttons {
-    @include mix.flexbox;
-    gap: 5px;
+    @include mix.flexbox();
+    gap: func.pxToRem(5px);
     margin-right: func.pxToRem(50px);
     flex-direction: column;
     display: none;
     order: 4;
     @include mix.respond('md') {
-        @include mix.flexbox;
+        @include mix.flexbox();
         margin-right: func.pxToRem(10px);
     }
     @include mix.respond('lg') {
-        margin-right: func.pxToRem(10px);
+        padding-right: func.pxToRem(40px);
     }
 }
 .cross-icon {
@@ -98,8 +97,9 @@
     position: relative;
     height: 24px;
     width: 24px;
-    cursor: pointer;
-    @include mix.respond('lg') {
+}
+.nav__cross {
+    @include mix.respond('xl') {
         display: none;
     }
 }
@@ -127,10 +127,8 @@
         order: 2;
     }
     @include mix.respond('lg') {
-        margin-left: 0px;
-    }
-    @include mix.respond('xl') {
-        margin-left: 0px;
+        margin-left: 0;
+        padding-left: 100px;
     }
 }
 .nav__hamburger {
