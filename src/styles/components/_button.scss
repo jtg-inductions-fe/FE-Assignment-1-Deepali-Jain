@@ -1,5 +1,6 @@
 @use '../abstracts/functions' as func;
 @use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
 
 // ==============================
 // Base Button Styles
@@ -73,5 +74,13 @@
             background-color: darken(var.$white, 10%);
             outline: 1px solid var.$border-color;
         }
+    }
+    &.btn--explore {
+        @include mix.flexbox();
+        width: func.pxToRem(224px);
+        height: func.pxToRem(56px);
+        color: var.$highlight-color;
+        box-shadow: 0 5px 10px rgba(21, 21, 21, 0.034);
+        background-color: transparent;
     }
 }

@@ -1,7 +1,7 @@
 @use '../abstracts/variables' as var;
 @font-face {
     font-family: 'icomoon';
-    src: url('./fonts/icomoon.woff?4etbac') format('woff2');
+    src: url('./fonts/icomoon.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -26,7 +26,7 @@
 // Icon: Instagram Logo
 // =============================================
 .icon-ig-logo:before {
-    content: '\e900'; // Unicode from icon font
+    content: '\e902'; // Unicode from icon font
 }
 
 // =============================================
@@ -43,7 +43,7 @@
 // Used in video sections or CTA buttons
 // =============================================
 .icon-play-button:before {
-    content: '\e902';
+    content: '\e900';
     color: var.$primary-color;
 }
 
@@ -51,7 +51,7 @@
 // Icon: Email / Newsletter
 // =============================================
 .icon-email:before {
-    content: '\e903';
+    content: '\e907';
 }
 
 // =============================================
@@ -83,4 +83,8 @@
 // =============================================
 .icon-cross:before {
     content: '\ea0f';
+}
+.icon-work:before {
+    content: '\e903';
+    color: var.$highlight-color;
 }
