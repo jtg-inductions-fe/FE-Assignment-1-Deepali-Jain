@@ -46,6 +46,7 @@
     height: 100vh;
     box-shadow: inset 0 10px 10px var.$border-color;
     padding: func.pxToRem(30px) func.pxToRem(15px);
+    z-index: 1;
     @include mix.respond('md') {
         left: 0;
         width: func.pxToRem(300px);
