@@ -1,0 +1,145 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+.nav__hamburger--icon {
+    font-size: func.pxToRem(47px);
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.nav__hamburger {
+    @include mix.respond('xl') {
+        display: none;
+    }
+}
+.nav__links {
+    display: none;
+    order: 3;
+    ul {
+        padding: 0 0;
+    }
+    li {
+        padding: func.pxToRem(20px) func.pxToRem(15px);
+        @include mix.respond('md') {
+            padding: func.pxToRem(30px) func.pxToRem(50px);
+        }
+        @include mix.respond('lg') {
+            padding: func.pxToRem(30px) func.pxToRem(50px);
+        }
+        @include mix.respond('xl') {
+            padding: func.pxToRem(20px) func.pxToRem(20px);
+        }
+    }
+    @include mix.respond('xl') {
+        @include mix.flexbox();
+        gap: func.pxToRem(24px);
+    }
+}
+.open {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: var.$white;
+    width: func.pxToRem(200px);
+    height: 100vh;
+    box-shadow: inset 0 10px 10px var.$border-color;
+    padding: func.pxToRem(30px) func.pxToRem(15px);
+    @include mix.respond('md') {
+        left: 0;
+        width: func.pxToRem(300px);
+    }
+}
+.open ul {
+    display: block;
+}
+.open + .nav__buttons {
+    display: flex;
+    position: fixed;
+    top: 350px;
+    right: 20px;
+    background-color: var.$white;
+    @include mix.respond('md') {
+        position: inherit;
+    }
+}
+.nav__container {
+    @include mix.flexbox();
+    padding: func.pxToRem(34px) func.pxToRem(18px);
+    @include mix.respond('sm') {
+        padding: func.pxToRem(30px) func.pxToRem(64px);
+    }
+    @include mix.respond('lg') {
+        padding: func.pxToRem(58px) func.pxToRem(50px);
+    }
+}
+.nav__buttons {
+    @include mix.flexbox();
+    gap: func.pxToRem(5px);
+    margin-right: func.pxToRem(50px);
+    flex-direction: column;
+    display: none;
+    order: 4;
+    @include mix.respond('md') {
+        @include mix.flexbox();
+        margin-right: func.pxToRem(10px);
+    }
+    @include mix.respond('lg') {
+        padding-right: func.pxToRem(40px);
+    }
+}
+.cross-icon {
+    padding: 0 func.pxToRem(15px);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    height: 24px;
+    width: 24px;
+}
+.nav__cross {
+    @include mix.respond('xl') {
+        display: none;
+    }
+}
+.cross-icon::before,
+.cross-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 24px;
+    width: 4px;
+    background-color: var.$black;
+    transform-origin: center;
+}
+.cross-icon::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.cross-icon::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.nav__logo {
+    order: 1;
+    @include mix.respond('md') {
+        margin-left: func.pxToRem(180px);
+        order: 2;
+    }
+    @include mix.respond('lg') {
+        margin-left: 0;
+        padding-left: func.pxToRem(100px);
+    }
+}
+.nav__hamburger {
+    order: 2;
+    @include mix.respond('md') {
+        order: 1;
+    }
+}
+.nav__links ul {
+    @include mix.respond('xl') {
+        @include mix.flexbox();
+        gap: func.pxToRem(24px);
+    }
+}
