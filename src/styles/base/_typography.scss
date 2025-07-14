@@ -64,7 +64,9 @@
     &--secondary {
         font-size: func.pxToRem(20px);
     }
-
+    &--travel {
+        color: var.$black;
+    }
     // Increase font size on large screens
     @include mix.respond('sm') {
         font-size: func.pxToRem(18px);
@@ -103,16 +105,7 @@
             font-size: func.pxToRem(28px);
         }
     }
-    .card-subheading {
-        &.services--subheading {
-            font-size: f.pxToRem(28px);
-        }
-    }
-    .subheading {
-        font-size: f.pxToRem(23px);
-        letter-spacing: 4px;
-    }
-    .services--heading {
-        font-size: f.pxToRem(44px);
+    &--travel {
+        font-size: func.pxToRem(35px);
     }
 }
