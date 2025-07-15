@@ -22,20 +22,6 @@ ul {
     margin: 0;
     padding: 0;
 }
-a {
-    text-decoration: none;
-    color: var.$muted-text-color;
-    &:visited {
-        color: lighten(var.$muted-text-color, 20%);
-    }
-    &:hover,
-    &:focus {
-        color: var.$active-link-color;
-    }
-    &:focus-visible {
-        outline: 2px solid var.$active-link-color;
-    }
-}
 ul,
 ol,
 li {
@@ -46,10 +32,4 @@ body {
     font-size: var.$font-size-primary;
     line-height: 1.5;
     color: var.$black;
-}
-section,
-nav,
-footer {
-    max-width: map-get(var.$breakpoints, 'xl');
-    margin: 0 auto;
 }
