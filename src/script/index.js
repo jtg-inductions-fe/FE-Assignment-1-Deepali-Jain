@@ -21,7 +21,7 @@ const navLinkContainer = document.getElementById('js-navLinkContainer');
  * Triggered when the hamburger icon is clicked.
  */
 hamIcon.addEventListener('click', () => {
-    navLinkContainer.classList.add('open');
+    navLinkContainer.classList.add('nav--open');
 });
 
 /**
@@ -29,7 +29,7 @@ hamIcon.addEventListener('click', () => {
  * Triggered when the cross icon is clicked.
  */
 crossIcon.addEventListener('click', () => {
-    navLinkContainer.classList.remove('open');
+    navLinkContainer.classList.remove('nav--open');
 });
 
 /**
@@ -37,8 +37,8 @@ crossIcon.addEventListener('click', () => {
  * Useful for hiding the mobile menu when resizing to a larger view.
  */
 function closeSidebar() {
-    if (navLinkContainer.classList.contains('open')) {
-        navLinkContainer.classList.remove('open');
+    if (navLinkContainer.classList.contains('nav--open')) {
+        navLinkContainer.classList.remove('nav--open');
     }
 }
 

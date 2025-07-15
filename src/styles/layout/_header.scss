@@ -161,42 +161,42 @@
             padding-left: func.pxToRem(80px);
         }
     }
-}
 
-// Mobile menu open state
-.open {
-    display: block;
-    position: fixed;
-    right: 0;
-    top: 0;
-    background-color: var.$white;
-    width: func.pxToRem(200px);
-    height: 100vh;
-    box-shadow: inset 0 10px 10px var.$border-color;
-    padding: func.pxToRem(30px) func.pxToRem(15px);
-
-    // Expand menu leftwards and increase width on medium screens
-    @include mix.respond('md') {
-        left: 0;
-        width: func.pxToRem(300px);
-    }
-
-    // Show nav list inside open menu
-    .nav__list {
+    // Mobile menu open state
+    &--open {
         display: block;
-    }
-
-    // Show nav buttons below open menu
-    + .nav__buttons {
-        display: flex;
         position: fixed;
-        top: 350px;
-        right: 20px;
+        right: 0;
+        top: 0;
         background-color: var.$white;
+        width: func.pxToRem(200px);
+        height: 100vh;
+        box-shadow: inset 0 10px 10px var.$border-color;
+        padding: func.pxToRem(30px) func.pxToRem(15px);
 
-        // Return to normal flow on medium screens
+        // Expand menu leftwards and increase width on medium screens
         @include mix.respond('md') {
-            position: inherit;
+            left: 0;
+            width: func.pxToRem(300px);
+        }
+
+        // Show nav list inside open menu
+        .nav__list {
+            display: block;
+        }
+
+        // Show nav buttons below open menu
+        + .nav__buttons {
+            display: flex;
+            position: fixed;
+            top: 350px;
+            right: 20px;
+            background-color: var.$white;
+
+            // Return to normal flow on medium screens
+            @include mix.respond('md') {
+                position: inherit;
+            }
         }
     }
 }
