@@ -42,7 +42,7 @@
 
     // Responsive scaling for large screens
     @include mix.respond('xl') {
-        font-size: func.pxToRem(64px);
+        font-size: func.pxToRem(44px);
     }
 }
 
@@ -66,6 +66,9 @@
     }
     &--travel {
         color: var.$black;
+    }
+    &--services {
+        font-size: func.pxToRem(18px);
     }
     // Increase font size on large screens
     @include mix.respond('sm') {
