@@ -1,6 +1,5 @@
-@use '../abstracts/functions.scss' as func;
-@use '../abstracts/mixins.scss' as mix;
-@use '../abstracts/variables.scss' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as var;
 
 // ==============================
 // Base Button Styles
@@ -8,8 +7,6 @@
 
 .btn {
     // Minimum width and height for button size
-    min-width: func.pxToRem(114px);
-    min-height: func.pxToRem(48px);
 
     // Fully rounded pill-shaped button
     border-radius: func.pxToRem(100px);
@@ -23,7 +20,11 @@
     cursor: pointer;
 
     // Smooth interaction effects
-    transition: all 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
 
     // Hover effect: lift slightly and add shadow
     &:hover {
@@ -40,7 +41,7 @@
     // Active Button Modifier
     // ==============================
 
-    &.btn--active {
+    &--active {
         // Filled background style
         background-color: var.$primary-color;
         color: var.$white;
@@ -61,7 +62,7 @@
     // Outlined Button Modifier
     // ==============================
 
-    &.btn--outlined {
+    &--outlined {
         // Outlined button style: white background, black text
         background-color: var.$white;
         color: var.$black;

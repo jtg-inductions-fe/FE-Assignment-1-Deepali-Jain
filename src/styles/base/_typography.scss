@@ -1,6 +1,6 @@
-@use '../abstracts/functions.scss' as func;
-@use '../abstracts/mixins.scss' as mix;
-@use '../abstracts/variables.scss' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
 
 // ==============================
 // Hero Section Heading
@@ -10,9 +10,6 @@
     // Base font size using custom pxToRem function
     font-size: func.pxToRem(var.$hero-heading-size);
     font-weight: bold;
-
-    // Apply flexbox layout (likely centers content)
-    @include mix.flexbox();
 
     // Font size adjustment for large screens
     @include mix.respond('lg') {
@@ -46,7 +43,7 @@
 
     // Responsive override for extra-large screens
     @include mix.respond('xl') {
-        font-size: func.pxToRem(44px);
+        font-size: func.pxToRem(64px);
     }
 }
 
@@ -56,7 +53,7 @@
 
 .paragraph {
     // Set font family and default muted color
-    font-family: 'Inter';
+    font-family: var.$font-paragraph;
     color: var.$muted-text-color;
 
     // Modifier: smaller base font
@@ -66,7 +63,7 @@
 
     // Modifier: slightly larger font
     &--secondary {
-        font-size: func.pxToRem(18px);
+        font-size: func.pxToRem(20px);
     }
 
     // Increase font size on large screens
@@ -86,10 +83,6 @@
 
     // Responsive scaling for larger screens
     @include mix.respond('lg') {
-        font-size: func.pxToRem(24px);
-    }
-
-    @include mix.respond('xl') {
         font-size: func.pxToRem(24px);
     }
 }

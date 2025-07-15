@@ -1,4 +1,4 @@
-@use '../abstracts/variables.scss' as var;
+@use '../abstracts/variables' as var;
 @font-face {
     font-family: 'icomoon';
     src: url('./fonts/icomoon.woff?4etbac') format('woff2');
@@ -57,7 +57,7 @@
 // =============================================
 // Icon: Hamburger Menu (mobile nav)
 // =============================================
-.icon-hamburger-menu:before {
+.nav__hamburger-icon:before {
     content: '\e906';
     color: var.$primary-color;
 }

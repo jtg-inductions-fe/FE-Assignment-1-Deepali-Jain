@@ -1,0 +1,34 @@
+// Import variables, functions, and mixins from SCSS abstracts
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+
+// Global anchor (link) styles
+a {
+    text-decoration: none;
+    color: var.$muted-text-color;
+
+    // Visited links — slightly lighter version of muted text
+    &:visited {
+        color: lighten(var.$muted-text-color, 20%);
+    }
+
+    // Hover and focus — highlight the link
+    &:hover,
+    &:focus {
+        color: var.$active-link-color;
+    }
+
+    // Visible keyboard focus (accessibility enhancement)
+    &:focus-visible {
+        outline: 2px solid var.$active-link-color;
+    }
+}
+
+// Set a max width and center alignment for major layout containers
+section,
+nav,
+footer {
+    max-width: map-get(var.$breakpoints, 'xl');
+    margin: 0 auto;
+}
