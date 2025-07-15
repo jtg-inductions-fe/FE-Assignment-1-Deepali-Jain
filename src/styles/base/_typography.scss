@@ -41,11 +41,6 @@
     }
 
     // Responsive scaling for large screens
-    @include mix.respond('lg') {
-        font-size: func.pxToRem(56px);
-    }
-
-    // Responsive override for extra-large screens
     @include mix.respond('xl') {
         font-size: func.pxToRem(64px);
     }
@@ -69,7 +64,9 @@
     &--secondary {
         font-size: func.pxToRem(20px);
     }
-
+    &--travel {
+        color: var.$black;
+    }
     // Increase font size on large screens
     @include mix.respond('sm') {
         font-size: func.pxToRem(18px);
@@ -84,10 +81,11 @@
     // Base size and highlight color
     font-size: func.pxToRem(16px);
     color: var.$highlight-color;
-
+    letter-spacing: func.pxToRem(4px);
     // Responsive scaling for larger screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(24px);
+        letter-spacing: func.pxToRem(5px);
     }
 }
 
@@ -98,7 +96,23 @@
 .card-subheading {
     // Font size for card stat heading
     font-size: func.pxToRem(18px);
-
     // Color (e.g., orange highlight)
     color: var.$orange;
+    &--services {
+        font-size: func.pxToRem(24px);
+        color: var.$black;
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(28px);
+        }
+    }
+    &--features {
+        font-size: func.pxToRem(24px);
+        color: var.$black;
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(23px);
+        }
+    }
+    &--travel {
+        font-size: func.pxToRem(35px);
+    }
 }
