@@ -15,67 +15,79 @@
         margin-left: auto;
         @include mix.flexbox($direction: row);
     }
-}
-.travel__image {
-    max-width: func.pxToRem(398px);
-    @include mix.respond('sm') {
-        max-width: func.pxToRem(871px);
-        width: 100%;
-    }
-}
-.travel__image img {
-    width: 100%;
-    height: auto;
-}
-.travel__content {
-    @include mix.flexbox($direction: column);
-    max-width: func.pxToRem(398px);
-    text-align: center;
-    @include mix.respond('sm') {
-        max-width: func.pxToRem(896px);
-    }
-    @include mix.respond('xl') {
-        align-items: flex-start;
-        max-width: func.pxToRem(450px);
-        text-align: left;
-        margin-right: func.pxToRem(114px);
-        padding-top: func.pxToRem(52px);
-    }
-}
-.travel--heading {
-    padding-top: func.pxToRem(2px);
-}
-.travel--paragraph {
-    padding: func.pxToRem(20px);
-    @include mix.respond('sm') {
-        padding: func.pxToRem(25px) func.pxToRem(32px);
-    }
-    @include mix.respond('xl') {
-        padding: func.pxToRem(25px) 0;
-    }
-}
-.travel__cards {
-    @include mix.flexbox($direction: column);
-    width: 100%;
-    max-width: func.pxToRem(398px);
-    row-gap: func.pxToRem(16px);
-    margin-top: func.pxToRem(20px);
-    .travel--card {
-        @include mix.flexbox($direction: column);
-        row-gap: func.pxToRem(5px);
-        width: 100%;
-        border-radius: func.pxToRem(32px);
-        padding: func.pxToRem(32px) 0;
-        border: 0.5px solid lighten(var.$muted-text-color, 60%);
+
+    // Image in travel section
+    &__image {
+        max-width: func.pxToRem(398px);
         @include mix.respond('sm') {
-            width: 48%;
+            max-width: func.pxToRem(871px);
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            height: auto;
         }
     }
-    @include mix.respond('sm') {
-        @include mix.flexbox($direction: row);
-        max-width: func.pxToRem(832px);
-        flex-wrap: wrap;
-        row-gap: func.pxToRem(32px);
-        margin-top: func.pxToRem(40px);
+
+    // Content in travel section
+    &__content {
+        @include mix.flexbox($direction: column);
+        max-width: func.pxToRem(398px);
+        text-align: center;
+        @include mix.respond('sm') {
+            max-width: func.pxToRem(896px);
+        }
+        @include mix.respond('xl') {
+            align-items: flex-start;
+            max-width: func.pxToRem(450px);
+            text-align: left;
+            margin-right: func.pxToRem(114px);
+            padding-top: func.pxToRem(52px);
+        }
+    }
+
+    // Heading of travel section
+    &--heading {
+        padding-top: func.pxToRem(2px);
+    }
+
+    // Paragraph of travel section
+    &--paragraph {
+        padding: func.pxToRem(20px);
+        @include mix.respond('sm') {
+            padding: func.pxToRem(25px) func.pxToRem(32px);
+        }
+        @include mix.respond('xl') {
+            padding: func.pxToRem(25px) 0;
+        }
+    }
+
+    // Container of cards in travel section
+    &__cards {
+        @include mix.flexbox($direction: column);
+        width: 100%;
+        max-width: func.pxToRem(398px);
+        row-gap: func.pxToRem(16px);
+        margin-top: func.pxToRem(20px);
+
+        // Individual card of travel section
+        .travel--card {
+            @include mix.flexbox($direction: column);
+            row-gap: func.pxToRem(5px);
+            width: 100%;
+            border-radius: func.pxToRem(32px);
+            padding: func.pxToRem(32px) 0;
+            border: 0.5px solid lighten(var.$muted-text-color, 60%);
+            @include mix.respond('sm') {
+                width: 48%;
+            }
+        }
+        @include mix.respond('sm') {
+            @include mix.flexbox($direction: row);
+            max-width: func.pxToRem(832px);
+            flex-wrap: wrap;
+            row-gap: func.pxToRem(32px);
+            margin-top: func.pxToRem(40px);
+        }
     }
 }

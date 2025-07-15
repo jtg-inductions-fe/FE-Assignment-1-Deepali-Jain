@@ -2,9 +2,12 @@
 @use '../abstracts/functions' as func;
 @use '../abstracts//mixins' as mix;
 .hero {
+    // Flexbox container for the hero section
     @include mix.flexbox($direction: column-reverse);
     padding-top: func.pxToRem(32px);
     position: relative;
+
+    // Responsive styles for the hero section
     @include mix.respond('sm') {
         padding: func.pxToRem(65px) 0;
     }
@@ -12,6 +15,8 @@
         @include mix.flexbox($direction: row);
         padding: func.pxToRem(40px) func.pxToRem(130px);
     }
+
+    // Background gradient for the hero section
     &::before {
         content: '';
         position: absolute;
@@ -25,6 +30,8 @@
         z-index: -1;
         opacity: 0.5;
     }
+
+    // Hero section image
     &__image {
         @include mix.respond('sm') {
             max-width: func.pxToRem(782px);
@@ -36,6 +43,8 @@
             display: block;
         }
     }
+
+    // Hero section heading
     &__heading {
         line-height: 1.2;
         padding: func.pxToRem(8px) func.pxToRem(42px);
@@ -49,6 +58,8 @@
             padding: 0;
         }
     }
+
+    // Hero section paragraph
     &__content {
         @include mix.flexbox($direction: column);
         gap: func.pxToRem(16px);
@@ -73,6 +84,7 @@
             text-align: left;
         }
     }
+
     &-heading {
         @include mix.respond('sm') {
             max-width: func.pxToRem(756px);
@@ -86,6 +98,8 @@
             padding: 0;
         }
     }
+
+    // Hero section button
     &__button {
         @include mix.flexbox($direction: column);
         gap: func.pxToRem(24px);
@@ -112,6 +126,8 @@
             margin-right: func.pxToRem(10px);
         }
     }
+
+    // Hero section paragraph
     &__paragraph {
         @include mix.respond('xs') {
             padding: 0 func.pxToRem(10px);
@@ -126,6 +142,8 @@
             padding: 0;
         }
     }
+
+    // Hero section arrows image
     &__arrow {
         display: none;
         @include mix.respond('md') {
@@ -139,32 +157,6 @@
             position: absolute;
             left: func.pxToRem(40px);
             bottom: func.pxToRem(-70px);
-        }
-    }
-}
-.btn {
-    &--start {
-        width: 100%;
-        height: func.pxToRem(65px);
-        @include mix.respond('md') {
-            height: func.pxToRem(49px);
-        }
-        @include mix.respond('sm') {
-            padding: func.pxToRem(16px);
-        }
-    }
-    &--watch {
-        width: 100%;
-        height: func.pxToRem(65px);
-        border: 1px solid var.$border-color;
-        @include mix.respond('xs') {
-            @include mix.flexbox($justify: center);
-        }
-        @include mix.respond('md') {
-            height: func.pxToRem(49px);
-        }
-        @include mix.respond('sm') {
-            padding: func.pxToRem(16px);
         }
     }
 }

@@ -88,10 +88,30 @@
     }
     &.btn--start {
         box-shadow: 0 15px 10px rgba(0, 0, 0, 0.148);
+        width: 100%;
+        height: func.pxToRem(65px);
+        @include mix.respond('md') {
+            height: func.pxToRem(49px);
+        }
+        @include mix.respond('sm') {
+            padding: func.pxToRem(16px);
+        }
     }
     &.btn--watch {
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        height: func.pxToRem(65px);
+        border: 1px solid var.$border-color;
+        @include mix.respond('xs') {
+            @include mix.flexbox($justify: center);
+        }
+        @include mix.respond('md') {
+            height: func.pxToRem(49px);
+        }
+        @include mix.respond('sm') {
+            padding: func.pxToRem(16px);
+        }
     }
 }

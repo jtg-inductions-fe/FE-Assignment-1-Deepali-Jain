@@ -1,12 +1,16 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/functions' as func;
 @use '../abstracts/mixins' as mix;
+
 .customers {
+    // Flexbox container for customer section
     @include mix.flexbox($justify: center);
     flex-wrap: wrap;
     gap: func.pxToRem(32px) func.pxToRem(27px);
     padding: func.pxToRem(47px) 0;
     position: relative;
+
+    // Responsive styles
     @include mix.respond('xs') {
         max-width: func.pxToRem(896px);
         margin: 0 auto;
@@ -20,6 +24,8 @@
         padding: func.pxToRem(72px) 0;
         column-gap: func.pxToRem(100px);
     }
+
+    // Background gradient for the section
     &::before {
         content: '';
         position: absolute;
@@ -33,6 +39,8 @@
         z-index: 1;
         opacity: 0.5;
         display: none;
+
+        // Responsive styles for the gradient
         @include mix.respond('lg') {
             transform: translateX(350px) translateY(-10px);
             width: 300px;
