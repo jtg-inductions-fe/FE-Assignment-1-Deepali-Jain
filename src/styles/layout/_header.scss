@@ -29,22 +29,28 @@
 
     // Navigation Links Container
     &__links {
-        display: none; // Hidden by default (mobile)
+        display: none;
         order: 3;
 
-        // Unordered list inside nav links
-        ul {
-            padding: 0;
+        // Display nav links horizontally on desktop
+        @include mix.respond('xl') {
+            @include mix.flexbox();
+            gap: func.pxToRem(24px);
+        }
+    }
 
-            // Show list as horizontal flex on extra-large screens
-            @include mix.respond('xl') {
-                @include mix.flexbox();
-                gap: func.pxToRem(24px);
-            }
+    // Navigation List
+    &__list {
+        padding: 0;
+
+        // Show list as horizontal flex on extra-large screens
+        @include mix.respond('xl') {
+            @include mix.flexbox();
+            gap: func.pxToRem(24px);
         }
 
-        // List item styles across breakpoints
-        li {
+        // Navigation list items
+        &-item {
             padding: func.pxToRem(20px) func.pxToRem(15px);
 
             @include mix.respond('md') {
@@ -58,12 +64,6 @@
             @include mix.respond('xl') {
                 padding: func.pxToRem(20px) func.pxToRem(20px);
             }
-        }
-
-        // Display nav links horizontally on desktop
-        @include mix.respond('xl') {
-            @include mix.flexbox();
-            gap: func.pxToRem(24px);
         }
     }
 
@@ -94,7 +94,7 @@
         gap: func.pxToRem(5px);
         margin-right: func.pxToRem(50px);
         order: 4;
-        display: none; // Hidden by default (mobile)
+        display: none;
 
         // Show and adjust layout on medium screens
         @include mix.respond('md') {
@@ -182,7 +182,7 @@
     }
 
     // Show nav list inside open menu
-    ul {
+    .nav__list {
         display: block;
     }
 

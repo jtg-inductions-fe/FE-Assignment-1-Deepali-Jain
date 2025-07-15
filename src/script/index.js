@@ -1,29 +1,48 @@
 // Import the main SCSS file for styling
 import '../styles/main.scss';
 
-// Get references to the DOM elements by their IDs
-const hamIcon = document.getElementById('js-hamIcon'); // Hamburger icon (menu open)
-const crossIcon = document.getElementById('js-crossIcon'); // Cross icon (menu close)
-const navLinkContainer = document.getElementById('js-navLinkContainer'); // Navigation links container
+/**
+ * Hamburger icon element for opening the navigation menu
+ */
+const hamIcon = document.getElementById('js-hamIcon');
 
-// Add event listener to hamburger icon to open the navigation menu
+/**
+ * Cross icon element for closing the navigation menu
+ */
+const crossIcon = document.getElementById('js-crossIcon');
+
+/**
+ * Navigation links container element (sidebar)
+ */
+const navLinkContainer = document.getElementById('js-navLinkContainer');
+
+/**
+ * Opens the navigation menu by adding the 'open' class to the container.
+ * Triggered when the hamburger icon is clicked.
+ */
 hamIcon.addEventListener('click', () => {
-    navLinkContainer.classList.add('open'); // Adds 'open' class to show nav links
+    navLinkContainer.classList.add('open');
 });
 
-// Add event listener to cross icon to close the navigation menu
+/**
+ * Closes the navigation menu by removing the 'open' class from the container.
+ * Triggered when the cross icon is clicked.
+ */
 crossIcon.addEventListener('click', () => {
-    navLinkContainer.classList.remove('open'); // Removes 'open' class to hide nav links
+    navLinkContainer.classList.remove('open');
 });
 
-// Function to close sidebar if its open and the screen width exceeds 1440px
+/**
+ * Closes the sidebar if it's open and the screen is resized.
+ * Useful for hiding the mobile menu when resizing to a larger view.
+ */
 function closeSidebar() {
-    if (window.innerWidth >= 1440) {
-        if (navLinkContainer.classList.contains('open')) {
-            navLinkContainer.classList.remove('open'); // Removes 'open' class to close the sidebar
-        }
+    if (navLinkContainer.classList.contains('open')) {
+        navLinkContainer.classList.remove('open');
     }
 }
 
-// Function closeSidebar() gets called whenever screen is resized
+/**
+ * Calls closeSidebar() whenever the window is resized.
+ */
 window.addEventListener('resize', closeSidebar);

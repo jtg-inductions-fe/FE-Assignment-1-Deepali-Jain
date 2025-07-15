@@ -1,18 +1,13 @@
 // Colors
-$primary-color: #5d50c6; // Primary color used in buttons & icons
-$secondary-text-color: #eeeeee; // Text color used in buttons & icons
-$white: #ffffff; // Secondary color used in buttons & icons
+$primary-color: #5d50c6;
+$secondary-text-color: #eeeeee;
+$white: #ffffff;
 $active-link-color: #222831;
-$muted-text-color: rgba(
-    25,
-    24,
-    37,
-    0.522
-); // Color used in inactive links + some of the paragraphs
-$highlight-color: #f85e95; // Color used in headings to highlight some text
-$black: #000000; // Primary text color
-$orange: #ff5722; // Color used in card headings
-$yellow: #facd49; // Color used in newsletter section background
+$muted-text-color: rgba(25, 24, 37, 0.522);
+$highlight-color: #f85e95;
+$black: #000000;
+$orange: #ff5722;
+$yellow: #facd49;
 $off-white: #f1f2f2;
 $border-color: lighten(rgba(25, 24, 37, 0.522), 60%);
 

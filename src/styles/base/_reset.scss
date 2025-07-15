@@ -1,4 +1,6 @@
 @use '../abstracts/variables' as var;
+
+// Reset styles to ensure consistency across browsers
 *,
 *::before,
 *::after {
@@ -6,9 +8,13 @@
     margin: 0;
     padding: 0;
 }
+
+// Set default font size
 html {
     font-size: var.$font-size-root;
 }
+
+// Set default styles for body and text elements
 body,
 h1,
 h2,
@@ -22,11 +28,15 @@ ul {
     margin: 0;
     padding: 0;
 }
+
+// Set default styles for lists
 ul,
 ol,
 li {
     list-style: none;
 }
+
+// Set default styles for body
 body {
     font-family: var.$font-family-base;
     font-size: var.$font-size-primary;

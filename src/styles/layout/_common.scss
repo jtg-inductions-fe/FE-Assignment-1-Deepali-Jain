@@ -5,8 +5,8 @@
 
 // Global anchor (link) styles
 a {
-    text-decoration: none; // Remove underline by default
-    color: var.$muted-text-color; // Set base text color
+    text-decoration: none;
+    color: var.$muted-text-color;
 
     // Visited links — slightly lighter version of muted text
     &:visited {
@@ -16,12 +16,12 @@ a {
     // Hover and focus — highlight the link
     &:hover,
     &:focus {
-        color: var.$active-link-color; // Use theme-defined active color
+        color: var.$active-link-color;
     }
 
     // Visible keyboard focus (accessibility enhancement)
     &:focus-visible {
-        outline: 2px solid var.$active-link-color; // Add a visible outline
+        outline: 2px solid var.$active-link-color;
     }
 }
 
@@ -29,6 +29,6 @@ a {
 section,
 nav,
 footer {
-    max-width: map-get(var.$breakpoints, 'xl'); // Limit width to XL breakpoint
-    margin: 0 auto; // Center horizontally within the viewport
+    max-width: map-get(var.$breakpoints, 'xl');
+    margin: 0 auto;
 }
