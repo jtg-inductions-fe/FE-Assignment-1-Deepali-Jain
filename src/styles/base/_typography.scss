@@ -64,7 +64,9 @@
     &--secondary {
         font-size: func.pxToRem(20px);
     }
-
+    &--travel {
+        color: var.$black;
+    }
     // Increase font size on large screens
     @include mix.respond('sm') {
         font-size: func.pxToRem(18px);
@@ -79,7 +81,7 @@
     // Base size and highlight color
     font-size: func.pxToRem(16px);
     color: var.$highlight-color;
-
+    letter-spacing: func.pxToRem(4px);
     // Responsive scaling for larger screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(24px);
@@ -102,5 +104,15 @@
         @include mix.respond('lg') {
             font-size: func.pxToRem(28px);
         }
+    }
+    &--features {
+        font-size: func.pxToRem(24px);
+        color: var.$black;
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(23px);
+        }
+    }
+    &--travel {
+        font-size: func.pxToRem(35px);
     }
 }
