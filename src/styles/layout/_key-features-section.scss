@@ -1,0 +1,84 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts//mixins' as mix;
+.features {
+    margin: func.pxToRem(112px) auto;
+    max-width: func.pxToRem(320px);
+    &--paragraph {
+        padding: 15px 5px;
+    }
+    @include mix.respond('xs') {
+        max-width: func.pxToRem(350px);
+    }
+    @include mix.respond('lg') {
+        max-width: func.pxToRem(896px);
+    }
+    @include mix.respond('xl') {
+        @include mix.flexbox($direction: row-reverse);
+        max-width: func.pxToRem(1321px);
+    }
+}
+.features__content {
+    @include mix.flexbox($direction: column);
+    padding-top: func.pxToRem(98px);
+    row-gap: func.pxToRem(16px);
+    text-align: center;
+    @include mix.respond('xs') {
+        max-width: func.pxToRem(334px);
+    }
+    @include mix.respond('lg') {
+        padding-top: func.pxToRem(80px);
+        max-width: func.pxToRem(896px);
+    }
+    @include mix.respond('xl') {
+        max-width: func.pxToRem(558px);
+        align-items: flex-start;
+        text-align: left;
+        padding-top: 0;
+    }
+}
+.features__cards {
+    @include mix.flexbox($direction: column);
+    row-gap: func.pxToRem(16px);
+    padding-top: func.pxToRem(10px);
+    @include mix.respond('lg') {
+        max-width: func.pxToRem(832px);
+        width: 100%;
+        padding-top: func.pxToRem(26px);
+        row-gap: 0;
+    }
+}
+.features__card {
+    @include mix.flexbox($align: flex-start, $direction: column);
+    width: 100%;
+    padding: func.pxToRem(32px);
+    text-align: left;
+    row-gap: func.pxToRem(8px);
+    @include mix.respond('lg') {
+        @include mix.flexbox($justify: flex-start);
+        column-gap: func.pxToRem(32px);
+    }
+}
+.features__card:nth-child(2) {
+    border: 1px solid var.$border-color;
+    border-radius: func.pxToRem(32px);
+}
+.card-subheading--features {
+    padding-top: func.pxToRem(24px);
+}
+.paragraph--features {
+    padding-right: func.pxToRem(50px);
+}
+.features__img {
+    @include mix.respond('lg') {
+        max-width: func.pxToRem(693px);
+        margin: 0 auto;
+    }
+    @include mix.respond('xl') {
+        max-width: func.pxToRem(650px);
+        width: 100%;
+    }
+    img {
+        width: 100%;
+    }
+}
