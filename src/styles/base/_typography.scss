@@ -81,7 +81,7 @@
     // Base size and highlight color
     font-size: func.pxToRem(16px);
     color: var.$highlight-color;
-
+    letter-spacing: func.pxToRem(4px);
     // Responsive scaling for larger screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(24px);
@@ -103,6 +103,13 @@
         color: var.$black;
         @include mix.respond('lg') {
             font-size: func.pxToRem(28px);
+        }
+    }
+    &--features {
+        font-size: func.pxToRem(24px);
+        color: var.$black;
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(23px);
         }
     }
     &--travel {
