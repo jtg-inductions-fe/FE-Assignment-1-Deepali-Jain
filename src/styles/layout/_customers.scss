@@ -20,45 +20,42 @@
         padding: func.pxToRem(72px) 0;
         column-gap: func.pxToRem(100px);
     }
-}
-.customers::before {
-    content: '';
-    position: absolute;
-    transform: translateX(300px) translateY(-20px);
-    bottom: 0;
-    width: 200px;
-    height: 300px;
-    background: radial-gradient(circle at center, var.$yellow, var.$white);
-    filter: blur(40px);
-    border-radius: 50%;
-    z-index: 1;
-    opacity: 0.5;
-    display: none;
-    @include mix.respond('lg') {
-        transform: translateX(350px) translateY(-10px);
-        width: 300px;
-        height: 200px;
+    &::before {
+        content: '';
+        position: absolute;
+        transform: translateX(300px) translateY(-20px);
+        bottom: 0;
+        width: 200px;
+        height: 300px;
+        background: radial-gradient(circle at center, var.$yellow, var.$white);
+        filter: blur(40px);
+        border-radius: 50%;
+        z-index: 1;
+        opacity: 0.5;
+        display: none;
+        @include mix.respond('lg') {
+            transform: translateX(350px) translateY(-10px);
+            width: 300px;
+            height: 200px;
+            display: block;
+        }
+        @include mix.respond('xl') {
+            transform: translateX(500px) translateY(-20px);
+            width: 300px;
+        }
+    }
+    img {
+        max-width: 100%;
+        height: auto;
         display: block;
+        @include mix.respond('xs') {
+            height: func.pxToRem(22px);
+        }
+        @include mix.respond('md') {
+            height: func.pxToRem(32px);
+        }
+        .customers::before {
+            transform: translateX(500px) translateY(-20px);
+        }
     }
-    @include mix.respond('xl') {
-        transform: translateX(500px) translateY(-20px);
-        width: 300px;
-    }
-}
-.customers img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    @include mix.respond('xs') {
-        height: func.pxToRem(22px);
-    }
-    @include mix.respond('md') {
-        height: func.pxToRem(32px);
-    }
-    .customers::before {
-        transform: translateX(500px) translateY(-20px);
-    }
-}
-.services--heading {
-    line-height: 1.2;
 }
