@@ -1,0 +1,107 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts//mixins' as mix;
+
+.services {
+    @include mix.flexbox($direction: column);
+    text-align: center;
+    margin-top: func.pxToRem(14px);
+    row-gap: func.pxToRem(32px);
+    @include mix.respond('sm') {
+        margin-top: func.pxToRem(45px);
+        row-gap: func.pxToRem(64px);
+    }
+    @include mix.respond('xl') {
+        flex-direction: row;
+    }
+}
+.services__headings {
+    @include mix.flexbox($direction: column);
+    row-gap: func.pxToRem(13px);
+    max-width: func.pxToRem(398px);
+    @include mix.respond('lg') {
+        max-width: func.pxToRem(896px);
+    }
+    @include mix.respond('xl') {
+        align-items: flex-start;
+        text-align: left;
+        max-width: func.pxToRem(400px);
+        margin-left: func.pxToRem(130px);
+    }
+}
+.services__cards {
+    @include mix.flexbox($direction: column);
+    align-items: stretch;
+    row-gap: func.pxToRem(16px);
+    max-width: func.pxToRem(398px);
+    & .service--card {
+        @include mix.flexbox($direction: column);
+        width: 100%;
+        row-gap: func.pxToRem(30px);
+        padding: func.pxToRem(32px) func.pxToRem(50px);
+        border-radius: func.pxToRem(32px);
+        border: 0.5px solid lighten(var.$muted-text-color, 60%);
+        @include mix.respond('sm') {
+            padding: func.pxToRem(64px) func.pxToRem(34px) func.pxToRem(32px)
+                func.pxToRem(34px);
+            row-gap: func.pxToRem(16px);
+        }
+        @include mix.respond('md') {
+            padding: func.pxToRem(64px) func.pxToRem(64px) func.pxToRem(32px)
+                func.pxToRem(64px);
+        }
+        @include mix.respond('xl') {
+            padding: func.pxToRem(74px) func.pxToRem(64px) func.pxToRem(94px)
+                func.pxToRem(64px);
+        }
+        &.service--booking-card {
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.065);
+        }
+    }
+    img {
+        width: func.pxToRem(64px);
+        height: auto;
+    }
+    @include mix.respond('sm') {
+        @include mix.flexbox($direction: row);
+        align-items: stretch;
+        justify-content: flex-start;
+        max-width: func.pxToRem(596px);
+        column-gap: func.pxToRem(16px);
+    }
+    @include mix.respond('md') {
+        @include mix.flexbox($direction: row);
+        align-items: stretch;
+        justify-content: flex-start;
+        max-width: func.pxToRem(896px);
+    }
+    @include mix.respond('xl') {
+        flex-direction: row;
+        max-width: func.pxToRem(793px);
+        column-gap: func.pxToRem(21px);
+        align-items: stretch;
+        margin-right: func.pxToRem(100px);
+    }
+}
+.service--card:nth-child(3) {
+    @include mix.respond('xl') {
+        display: none;
+    }
+}
+.card-subheading {
+    &--services {
+        @include mix.respond('sm') {
+            padding-top: func.pxToRem(14px);
+        }
+        @include mix.respond('md') {
+            padding-top: func.pxToRem(34px);
+        }
+    }
+}
+.paragraph {
+    &--services {
+        @include mix.respond('lg') {
+            padding-top: func.pxToRem(10px);
+        }
+    }
+}
