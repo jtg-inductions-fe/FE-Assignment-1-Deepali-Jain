@@ -3,12 +3,15 @@
 @use '../abstracts/variables' as var;
 .travel {
     @include mix.flexbox($direction: column);
-    margin-top: func.pxToRem(80px);
+    margin-top: func.pxToRem(66px);
     row-gap: func.pxToRem(25px);
     @include mix.respond('sm') {
         margin-top: func.pxToRem(130px);
         margin-left: func.pxToRem(30px);
         row-gap: func.pxToRem(64px);
+    }
+    @include mix.respond('lg') {
+        margin-left: auto;
     }
     @include mix.respond('xl') {
         margin-top: func.pxToRem(116px);

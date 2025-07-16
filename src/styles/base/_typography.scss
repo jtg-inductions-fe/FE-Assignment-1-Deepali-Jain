@@ -65,6 +65,7 @@
         font-size: func.pxToRem(20px);
     }
     &--travel {
+        font-size: func.pxToRem(18px);
         color: var.$black;
     }
     &--services {

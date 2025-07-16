@@ -2,10 +2,13 @@
 @use '../abstracts/functions' as func;
 @use '../abstracts//mixins' as mix;
 .features {
-    margin: func.pxToRem(112px) auto;
+    margin: func.pxToRem(98px) auto;
     max-width: func.pxToRem(320px);
     &--paragraph {
         padding: 15px 5px;
+        @include mix.respond('lg') {
+            padding: func.pxToRem(15px) func.pxToRem(42px);
+        }
     }
 
     // Responsive styles
@@ -14,10 +17,12 @@
     }
     @include mix.respond('lg') {
         max-width: func.pxToRem(896px);
+        margin-top: func.pxToRem(132px);
     }
     @include mix.respond('xl') {
         @include mix.flexbox($direction: row-reverse);
         max-width: func.pxToRem(1321px);
+        margin-top: func.pxToRem(88px);
     }
 
     // Content of features section
@@ -30,7 +35,7 @@
             max-width: func.pxToRem(334px);
         }
         @include mix.respond('lg') {
-            padding-top: func.pxToRem(80px);
+            padding-top: func.pxToRem(62px);
             max-width: func.pxToRem(896px);
         }
         @include mix.respond('xl') {
@@ -75,6 +80,9 @@
     // Subheading for feature cards
     &__card-subheading {
         padding-top: func.pxToRem(24px);
+        @include mix.respond('lg') {
+            padding-top: func.pxToRem(10px);
+        }
     }
 
     // Image in feature cards
