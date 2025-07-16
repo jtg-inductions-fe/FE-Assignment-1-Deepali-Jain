@@ -15,6 +15,7 @@
     // Responsive styles
     @include mix.respond('xs') {
         max-width: func.pxToRem(350px);
+        margin-bottom: 0;
     }
     @include mix.respond('lg') {
         max-width: func.pxToRem(896px);

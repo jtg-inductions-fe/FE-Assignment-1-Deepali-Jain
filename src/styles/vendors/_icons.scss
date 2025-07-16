@@ -92,3 +92,10 @@
     content: '\e903';
     color: var.$highlight-color;
 }
+.icon-arrow-left:before {
+    content: '\e908';
+}
+.icon-arrow-right:before {
+    content: '\e909';
+    color: var.$white;
+}

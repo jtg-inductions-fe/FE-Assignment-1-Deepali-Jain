@@ -54,7 +54,10 @@
     // Set font family and default muted color
     font-family: var.$font-paragraph;
     color: var.$muted-text-color;
-
+    // Increase font size on large screens
+    @include mix.respond('sm') {
+        font-size: func.pxToRem(18px);
+    }
     // Modifier: smaller base font
     &--primary {
         font-size: func.pxToRem(16px);
@@ -79,6 +82,10 @@
     // Increase font size on large screens
     @include mix.respond('sm') {
         font-size: func.pxToRem(18px);
+        color: var.$black;
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(23px);
+        }
     }
 }
 
@@ -127,5 +134,14 @@
     // Font adjustments for travel section
     &--travel {
         font-size: func.pxToRem(35px);
+    }
+    &--testimonial {
+        font-size: func.pxToRem(22px);
+        color: var.$muted-text-color;
+    }
+    &--highlight {
+        font-size: func.pxToRem(28px);
+        background-color: transparent;
+        color: var.$orange;
     }
 }
