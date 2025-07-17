@@ -92,9 +92,17 @@
     content: '\e903';
     color: var.$highlight-color;
 }
+
+// =============================================
+// Icon: Left Arrow Button
+// =============================================
 .icon-arrow-left:before {
     content: '\e908';
 }
+
+// =============================================
+// Icon: Right Arrow Button
+// =============================================
 .icon-arrow-right:before {
     content: '\e909';
     color: var.$white;

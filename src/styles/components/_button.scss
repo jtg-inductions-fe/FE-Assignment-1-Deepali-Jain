@@ -130,4 +130,21 @@
             padding: func.pxToRem(16px);
         }
     }
+
+    // ==============================
+    //Subscribe Button Modifier
+    // ==============================
+
+    &--subscribe {
+        width: 100%;
+        height: func.pxToRem(66px);
+        border-radius: func.pxToRem(16px);
+        font-size: func.pxToRem(16px);
+        @include mix.respond('lg') {
+            width: func.pxToRem(235px);
+            height: func.pxToRem(96px);
+            border-radius: func.pxToRem(32px);
+            font-size: func.pxToRem(23px);
+        }
+    }
 }

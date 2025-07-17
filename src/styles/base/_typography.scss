@@ -44,6 +44,13 @@
     @include mix.respond('xl') {
         font-size: func.pxToRem(44px);
     }
+
+    // Font adjustments for heading in newsletter section
+    &--newsletter {
+        @include mix.respond('xl') {
+            font-size: func.pxToRem(55px);
+        }
+    }
 }
 
 // ==============================
@@ -54,10 +61,12 @@
     // Set font family and default muted color
     font-family: var.$font-paragraph;
     color: var.$muted-text-color;
+
     // Increase font size on large screens
     @include mix.respond('sm') {
         font-size: func.pxToRem(18px);
     }
+
     // Modifier: smaller base font
     &--primary {
         font-size: func.pxToRem(16px);
@@ -68,19 +77,19 @@
         font-size: func.pxToRem(20px);
     }
 
-    // Font adjustments for travel section
+    // Font adjustments for travel section paragraph
     &--travel {
         font-size: func.pxToRem(18px);
         color: var.$black;
     }
 
-    // Font adjustments for services section
+    // Font adjustments for services section paragraph
     &--services {
         font-size: func.pxToRem(18px);
     }
 
-    // Increase font size on large screens
-    @include mix.respond('sm') {
+    // Font adjustments for testimonial section paragraph
+    &--testimonial {
         font-size: func.pxToRem(18px);
         color: var.$black;
         @include mix.respond('lg') {
@@ -98,6 +107,7 @@
     font-size: func.pxToRem(16px);
     color: var.$highlight-color;
     letter-spacing: func.pxToRem(4px);
+
     // Responsive scaling for larger screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(24px);
@@ -135,13 +145,27 @@
     &--travel {
         font-size: func.pxToRem(35px);
     }
+
+    // Font adjustments for testimonial section
     &--testimonial {
         font-size: func.pxToRem(22px);
         color: var.$muted-text-color;
     }
+
+    // Font adjustments for highlighted part of testimonial section
     &--highlight {
         font-size: func.pxToRem(28px);
         background-color: transparent;
         color: var.$orange;
+    }
+}
+
+// Font styles for the input field of newsletter section
+.newsletter__form-input {
+    font-size: func.pxToRem(14px);
+    font-weight: bold;
+    color: var.$muted-text-color;
+    @include mix.respond('lg') {
+        font-size: func.pxToRem(23px);
     }
 }

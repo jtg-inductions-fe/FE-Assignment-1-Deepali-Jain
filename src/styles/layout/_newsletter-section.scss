@@ -1,0 +1,113 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts//mixins' as mix;
+.newsletter {
+    max-width: func.pxToRem(334px);
+    text-align: center;
+    margin-top: func.pxToRem(170px);
+    position: relative;
+
+    // Responsive styles
+    @include mix.respond('lg') {
+        max-width: func.pxToRem(897px);
+        background-color: var.$light-yellow;
+        padding: func.pxToRem(128px) func.pxToRem(64px);
+        margin-top: func.pxToRem(104px);
+    }
+    @include mix.respond('xl') {
+        max-width: func.pxToRem(1192px);
+        margin-top: func.pxToRem(160px);
+    }
+
+    // Content of newsletter section
+    &__content {
+        max-width: func.pxToRem(769px);
+        @include mix.flexbox($direction: column);
+        gap: func.pxToRem(32px);
+        @include mix.respond('xl') {
+            max-width: func.pxToRem(1065px);
+        }
+    }
+
+    // Heading of newsletter content section
+    &__heading {
+        padding: 0 func.pxToRem(16px);
+        line-height: 1.2;
+    }
+
+    // Form of newsletter section
+    &__form {
+        @include mix.flexbox($direction: column);
+        width: 100%;
+        gap: func.pxToRem(32px);
+        @include mix.respond('lg') {
+            @include mix.flexbox();
+            padding-top: func.pxToRem(30px);
+        }
+
+        // Wrapper for the email input in newsletter section's form
+        &-email {
+            @include mix.flexbox();
+            gap: func.pxToRem(16px);
+            width: 100%;
+            padding: func.pxToRem(24px) func.pxToRem(32px);
+            margin-top: func.pxToRem(28px);
+            background-color: var.$white;
+            @include mix.respond('lg') {
+                width: func.pxToRem(502px);
+                height: func.pxToRem(96px);
+                border-radius: func.pxToRem(32px);
+                margin-top: 0;
+            }
+            @include mix.respond('xl') {
+                width: func.pxToRem(765px);
+            }
+        }
+
+        // Email icon present in the input of newsletter section's form
+        &-icon {
+            font-size: func.pxToRem(24px);
+            @include mix.respond('lg') {
+                font-size: func.pxToRem(32px);
+            }
+        }
+
+        // Input box for email present in newsletter section's form
+        &-input {
+            border: none;
+            width: 100%;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    // Dots image present along the top-left edge of newsletter section
+    &__dots {
+        position: absolute;
+        top: func.pxToRem(-48px);
+        left: func.pxToRem(-38px);
+        display: none;
+        @include mix.respond('lg') {
+            display: block;
+        }
+        @include mix.respond('xl') {
+            opacity: 0.2;
+        }
+    }
+
+    // Object present along the top-right edge of newsletter section
+    &__object {
+        position: absolute;
+        top: func.pxToRem(-326px);
+        right: func.pxToRem(-62px);
+        display: none;
+        @include mix.respond('lg') {
+            display: block;
+        }
+        @include mix.respond('xl') {
+            top: func.pxToRem(500px);
+            right: func.pxToRem(-122px);
+        }
+    }
+}
