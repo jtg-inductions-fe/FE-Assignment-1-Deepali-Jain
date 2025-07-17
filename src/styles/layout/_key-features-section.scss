@@ -7,7 +7,8 @@
     &--paragraph {
         padding: 15px 5px;
         @include mix.respond('lg') {
-            padding: func.pxToRem(15px) func.pxToRem(42px);
+            padding: func.pxToRem(15px) 0;
+            padding-right: func.pxToRem(48px);
         }
     }
 
@@ -70,11 +71,11 @@
             @include mix.flexbox($justify: flex-start);
             column-gap: func.pxToRem(32px);
         }
-    }
 
-    &__card:nth-child(2) {
-        border: 1px solid var.$border-color;
-        border-radius: func.pxToRem(32px);
+        &:hover {
+            border: 1px solid var.$border-color;
+            border-radius: func.pxToRem(32px);
+        }
     }
 
     // Subheading for feature cards

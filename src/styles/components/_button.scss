@@ -83,6 +83,7 @@
     // ==============================
     // Explore Button Modifier
     // ==============================
+
     &--explore {
         @include mix.flexbox();
         width: func.pxToRem(224px);
@@ -95,6 +96,7 @@
     // ==============================
     // Start Button Modifier
     // ==============================
+
     &--start {
         box-shadow: 0 15px 10px rgba(0, 0, 0, 0.148);
         width: 100%;
@@ -110,6 +112,7 @@
     // ==============================
     // Watch Button Modifier
     // ==============================
+
     &--watch {
         display: flex;
         justify-content: center;
