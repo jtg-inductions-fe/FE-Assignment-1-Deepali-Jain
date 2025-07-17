@@ -1,6 +1,11 @@
 import Splide from '@splidejs/splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
+/**
+ * Initializes a Splide slider for testimonials with fade effect and custom classes.
+ * The slider will rewind after the last slide and has custom pagination and arrow classes.
+ * The slider is mounted to the element with the class 'splide'.
+ */
 var splide = new Splide('.splide', {
     type: 'fade',
     rewind: true,
@@ -13,4 +18,8 @@ var splide = new Splide('.splide', {
         next: 'testimonial__arrows__next',
     },
 });
+
+/**
+ * Mounts the Splide slider to apply the defined settings and styles.
+ */
 splide.mount();

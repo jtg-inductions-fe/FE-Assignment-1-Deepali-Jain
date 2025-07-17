@@ -48,12 +48,22 @@
 
         // Individual social media icon styles
         &-icon {
+            @include mix.flexbox();
+            justify-content: center;
+            align-items: center;
+            align-content: center;
             background-color: var.$primary-color;
             border-radius: 50%;
             cursor: pointer;
             height: 32px;
             width: 32px;
             border: none;
+            &:hover {
+                background-color: darken(var.$primary-color, 10%);
+            }
+            &:active {
+                transform: scale(0.96);
+            }
         }
     }
 
@@ -116,4 +126,11 @@
     @include mix.respond('lg') {
         display: none;
     }
+}
+
+// Individual icons for social media links
+.icon-fb-logo,
+.icon-twitter-logo,
+.icon-ig-logo {
+    font-size: func.pxToRem(16px);
 }

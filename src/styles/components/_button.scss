@@ -38,6 +38,10 @@
         outline: 1px solid var.$border-color;
     }
 
+    // Active effect: slightly shrink
+    &:active {
+        transform: scale(0.96);
+    }
     // ==============================
     // Active Button Modifier
     // ==============================
@@ -98,7 +102,6 @@
     // ==============================
 
     &--start {
-        box-shadow: 0 15px 10px rgba(0, 0, 0, 0.148);
         width: 100%;
         height: func.pxToRem(65px);
         @include mix.respond('md') {
@@ -106,6 +109,9 @@
         }
         @include mix.respond('sm') {
             padding: func.pxToRem(16px);
+        }
+        &:hover {
+            box-shadow: 0 15px 10px rgba(0, 0, 0, 0.148);
         }
     }
 
