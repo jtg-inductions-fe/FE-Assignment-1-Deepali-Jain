@@ -26,7 +26,8 @@
 // Icon: Instagram Logo
 // =============================================
 .icon-ig-logo:before {
-    content: '\e902'; // Unicode from icon font
+    content: '\e902';
+    color: var.$white;
 }
 
 // =============================================
@@ -52,6 +53,7 @@
 // =============================================
 .icon-email:before {
     content: '\e907';
+    color: var.$muted-text-color;
 }
 
 // =============================================
@@ -75,7 +77,7 @@
 // =============================================
 .icon-fb-logo:before {
     content: '\e904';
-    color: var.$primary-color;
+    color: var.$white;
 }
 
 // =============================================
@@ -106,4 +108,7 @@
 .icon-arrow-right:before {
     content: '\e909';
     color: var.$white;
+}
+.icon-circle-down:before {
+    content: '\e910';
 }

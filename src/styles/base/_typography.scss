@@ -51,6 +51,10 @@
             font-size: func.pxToRem(55px);
         }
     }
+
+    &--footer {
+        font-size: func.pxToRem(24px);
+    }
 }
 
 // ==============================
@@ -91,9 +95,17 @@
     // Font adjustments for testimonial section paragraph
     &--testimonial {
         font-size: func.pxToRem(18px);
+        font-family: var.$font-family-base;
         color: var.$black;
         @include mix.respond('lg') {
             font-size: func.pxToRem(23px);
+        }
+    }
+    &--footer {
+        font-family: var.$font-family-base;
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(22px);
+            line-height: 1.7;
         }
     }
 }
@@ -160,12 +172,25 @@
     }
 }
 
-// Font styles for the input field of newsletter section
 .newsletter__form-input {
     font-size: func.pxToRem(14px);
     font-weight: bold;
     color: var.$muted-text-color;
     @include mix.respond('lg') {
         font-size: func.pxToRem(23px);
+    }
+}
+
+.footer {
+    &__accordion {
+        &-toggle {
+            font-size: func.pxToRem(23px);
+            font-weight: bold;
+        }
+        &-list {
+            font-family: var.$font-paragraph;
+            font-size: func.pxToRem(18px);
+            color: var.$muted-text-color;
+        }
     }
 }
