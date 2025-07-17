@@ -5,6 +5,8 @@
 .footer {
     max-width: func.pxToRem(320px);
     margin-top: func.pxToRem(96px);
+
+    // Responsive styles
     @include mix.respond('xs') {
         max-width: func.pxToRem(398px);
     }
@@ -18,6 +20,8 @@
         gap: func.pxToRem(64px);
         padding: func.pxToRem(64px) 0;
     }
+
+    // Content of footer section
     &__content {
         @include mix.flexbox($direction: column, $align: flex-start);
         gap: func.pxToRem(32px);
@@ -27,16 +31,22 @@
             padding-left: func.pxToRem(8px);
         }
     }
+
+    // Container for logo and title in footer section
     &__title {
         @include mix.flexbox($justify: flex-start);
         gap: func.pxToRem(16px);
     }
+
+    // Container for social media icons in footer section
     &__social {
         @include mix.flexbox();
         gap: func.pxToRem(32px);
         @include mix.respond('xl') {
             padding-top: func.pxToRem(32px);
         }
+
+        // Individual social media icon styles
         &-icon {
             background-color: var.$primary-color;
             border-radius: 50%;
@@ -46,6 +56,8 @@
             border: none;
         }
     }
+
+    // Footer section links
     &__links {
         margin-top: func.pxToRem(100px);
         @include mix.flexbox($direction: column, $align: flex-start);
@@ -60,14 +72,20 @@
             padding-left: func.pxToRem(10px);
         }
     }
+
+    // Container for individual accordions in footer
     &__accordion {
         width: 100%;
+
+        // Toggle for accordion
         &-toggle {
             @include mix.flexbox();
             width: 100%;
             background-color: var.$white;
             border: none;
         }
+
+        // List of items in accordion
         &-list {
             display: none;
             @include mix.respond('lg') {
@@ -80,6 +98,7 @@
     }
 }
 
+// List styles for accordion when opened
 .footer__accordion.active {
     .footer__accordion-list {
         display: block;
@@ -92,6 +111,7 @@
     }
 }
 
+// Individual icon for toggling accordion
 .icon-circle-down {
     @include mix.respond('lg') {
         display: none;

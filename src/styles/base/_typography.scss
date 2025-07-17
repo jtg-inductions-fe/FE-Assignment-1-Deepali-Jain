@@ -52,6 +52,7 @@
         }
     }
 
+    // Font adjustments for heading in footer section
     &--footer {
         font-size: func.pxToRem(24px);
     }
@@ -101,6 +102,8 @@
             font-size: func.pxToRem(23px);
         }
     }
+
+    // Font adjustments for footer section paragraph
     &--footer {
         font-family: var.$font-family-base;
         @include mix.respond('lg') {
@@ -172,6 +175,10 @@
     }
 }
 
+// ==============================
+// Newsletter Form Input
+// ==============================
+
 .newsletter__form-input {
     font-size: func.pxToRem(14px);
     font-weight: bold;
@@ -180,6 +187,10 @@
         font-size: func.pxToRem(23px);
     }
 }
+
+// ==============================
+// Footer Section Accordion
+// ==============================
 
 .footer {
     &__accordion {
