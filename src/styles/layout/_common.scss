@@ -27,7 +27,7 @@ a {
 
 // Set a max width and center alignment for major layout containers
 section,
-nav,
+header,
 footer {
     max-width: map-get(var.$breakpoints, 'xl');
     margin: 0 auto;

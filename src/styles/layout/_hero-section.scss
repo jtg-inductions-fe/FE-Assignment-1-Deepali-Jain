@@ -1,0 +1,162 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts//mixins' as mix;
+.hero {
+    // Flexbox container for the hero section
+    @include mix.flexbox($direction: column-reverse);
+    padding-top: func.pxToRem(32px);
+    position: relative;
+
+    // Responsive styles for the hero section
+    @include mix.respond('sm') {
+        padding: func.pxToRem(65px) 0;
+    }
+    @include mix.respond('xl') {
+        @include mix.flexbox($direction: row);
+        padding: func.pxToRem(40px) func.pxToRem(130px);
+    }
+
+    // Background gradient for the hero section
+    &::before {
+        content: '';
+        position: absolute;
+        top: -130px;
+        left: -400px;
+        width: 100vw;
+        height: 590px;
+        background: radial-gradient(circle at center, var.$orange, var.$white);
+        filter: blur(140px);
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.5;
+    }
+
+    // Hero section image
+    &__image {
+        @include mix.respond('sm') {
+            max-width: func.pxToRem(782px);
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    // Hero section heading
+    &__heading {
+        line-height: 1.2;
+        padding: func.pxToRem(8px) func.pxToRem(42px);
+        @include mix.respond('xs') {
+            padding: func.pxToRem(8px) 0;
+        }
+        @include mix.respond('sm') {
+            padding: 0;
+        }
+        @include mix.respond('xl') {
+            padding: 0;
+        }
+    }
+
+    // Hero section paragraph
+    &__content {
+        @include mix.flexbox($direction: column);
+        gap: func.pxToRem(16px);
+        text-align: center;
+        padding-top: func.pxToRem(10px);
+        max-width: func.pxToRem(320px);
+        @include mix.respond('xs') {
+            max-width: func.pxToRem(396px);
+        }
+        @include mix.respond('sm') {
+            padding-top: func.pxToRem(44px);
+            text-align: center;
+        }
+        @include mix.respond('md') {
+            max-width: func.pxToRem(896px);
+        }
+        @include mix.respond('xl') {
+            @include mix.flexbox($align: flex-start, $direction: column);
+            max-width: func.pxToRem(420px);
+            gap: func.pxToRem(43px);
+            padding: func.pxToRem(50px) 0;
+            text-align: left;
+        }
+    }
+
+    &-heading {
+        @include mix.respond('sm') {
+            max-width: func.pxToRem(756px);
+            width: 100%;
+            line-height: 1.2;
+            padding: func.pxToRem(30px) func.pxToRem(70px);
+        }
+        @include mix.respond('xl') {
+            width: func.pxToRem(420px);
+            line-height: 1.2;
+            padding: 0;
+        }
+    }
+
+    // Hero section button
+    &__button {
+        @include mix.flexbox($direction: column);
+        gap: func.pxToRem(24px);
+        padding: func.pxToRem(20px) 0;
+        max-width: func.pxToRem(398px);
+        width: 100%;
+        @include mix.respond('sm') {
+            @include mix.flexbox;
+            max-width: func.pxToRem(338px);
+            gap: func.pxToRem(16px);
+            padding: func.pxToRem(25px) 0;
+        }
+        @include mix.respond('xl') {
+            @include mix.flexbox;
+            gap: func.pxToRem(24px);
+            padding: func.pxToRem(15px) 0;
+        }
+        &--icon {
+            font-size: func.pxToRem(24px);
+            margin-left: func.pxToRem(16px);
+        }
+        &--play-icon {
+            font-size: func.pxToRem(24px);
+            margin-right: func.pxToRem(10px);
+        }
+    }
+
+    // Hero section paragraph
+    &__paragraph {
+        @include mix.respond('xs') {
+            padding: 0 func.pxToRem(10px);
+        }
+        @include mix.respond('sm') {
+            padding: 0;
+        }
+        @include mix.respond('md') {
+            padding: 0 func.pxToRem(230px);
+        }
+        @include mix.respond('xl') {
+            padding: 0;
+        }
+    }
+
+    // Hero section arrows image
+    &__arrow {
+        display: none;
+        @include mix.respond('md') {
+            display: block;
+            position: absolute;
+            left: func.pxToRem(40px);
+            bottom: func.pxToRem(30px);
+        }
+        @include mix.respond('xl') {
+            display: block;
+            position: absolute;
+            left: func.pxToRem(40px);
+            bottom: func.pxToRem(-70px);
+        }
+    }
+}

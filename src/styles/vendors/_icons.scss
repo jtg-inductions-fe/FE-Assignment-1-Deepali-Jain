@@ -1,7 +1,7 @@
 @use '../abstracts/variables' as var;
 @font-face {
     font-family: 'icomoon';
-    src: url('./fonts/icomoon.woff?4etbac') format('woff2');
+    src: url('./fonts/icomoon.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -26,7 +26,8 @@
 // Icon: Instagram Logo
 // =============================================
 .icon-ig-logo:before {
-    content: '\e900'; // Unicode from icon font
+    content: '\e902';
+    color: var.$white;
 }
 
 // =============================================
@@ -43,7 +44,7 @@
 // Used in video sections or CTA buttons
 // =============================================
 .icon-play-button:before {
-    content: '\e902';
+    content: '\e900';
     color: var.$primary-color;
 }
 
@@ -51,7 +52,8 @@
 // Icon: Email / Newsletter
 // =============================================
 .icon-email:before {
-    content: '\e903';
+    content: '\e907';
+    color: var.$muted-text-color;
 }
 
 // =============================================
@@ -75,7 +77,7 @@
 // =============================================
 .icon-fb-logo:before {
     content: '\e904';
-    color: var.$primary-color;
+    color: var.$white;
 }
 
 // =============================================
@@ -83,4 +85,34 @@
 // =============================================
 .icon-cross:before {
     content: '\ea0f';
+}
+
+// =============================================
+// Icon: Work
+// =============================================
+.icon-work:before {
+    content: '\e903';
+    color: var.$highlight-color;
+}
+
+// =============================================
+// Icon: Left Arrow Button
+// =============================================
+.icon-arrow-left:before {
+    content: '\e908';
+}
+
+// =============================================
+// Icon: Right Arrow Button
+// =============================================
+.icon-arrow-right:before {
+    content: '\e909';
+    color: var.$white;
+}
+
+// =============================================
+// Icon: Circle Down Arrow
+// =============================================
+.icon-circle-down:before {
+    content: '\e910';
 }

@@ -17,19 +17,37 @@ const crossIcon = document.getElementById('js-crossIcon');
 const navLinkContainer = document.getElementById('js-navLinkContainer');
 
 /**
+ * Newsletter button element for subscribing to the newsletter
+ */
+const newsletterForm = document.getElementById('js-newsletterForm');
+
+/**
  * Opens the navigation menu by adding the 'open' class to the container.
  * Triggered when the hamburger icon is clicked.
+ * This also prevents body scrolling while the menu is open.
  */
 hamIcon.addEventListener('click', () => {
     navLinkContainer.classList.add('nav--open');
+    document.body.classList.add('no-scroll');
 });
 
 /**
  * Closes the navigation menu by removing the 'open' class from the container.
  * Triggered when the cross icon is clicked.
+ * This also allows body scrolling again when the menu is closed.
  */
 crossIcon.addEventListener('click', () => {
     navLinkContainer.classList.remove('nav--open');
+    document.body.classList.remove('no-scroll');
+});
+
+/**
+ * Handles the newsletter subscription form submission.
+ * Prevents the default form submission behavior and displays a thank you message.
+ */
+newsletterForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert('Thank you for subscribing to our newsletter!');
 });
 
 /**
@@ -39,6 +57,9 @@ crossIcon.addEventListener('click', () => {
 function closeSidebar() {
     if (navLinkContainer.classList.contains('nav--open')) {
         navLinkContainer.classList.remove('nav--open');
+    }
+    if (document.body.classList.contains('no-scroll')) {
+        document.body.classList.remove('no-scroll');
     }
 }
 

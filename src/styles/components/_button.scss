@@ -1,5 +1,6 @@
 @use '../abstracts/functions' as func;
 @use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
 
 // ==============================
 // Base Button Styles
@@ -37,6 +38,10 @@
         outline: 1px solid var.$border-color;
     }
 
+    // Active effect: slightly shrink
+    &:active {
+        transform: scale(0.96);
+    }
     // ==============================
     // Active Button Modifier
     // ==============================
@@ -76,6 +81,76 @@
         &:focus {
             background-color: darken(var.$white, 10%);
             outline: 1px solid var.$border-color;
+        }
+    }
+
+    // ==============================
+    // Explore Button Modifier
+    // ==============================
+
+    &--explore {
+        @include mix.flexbox();
+        width: func.pxToRem(224px);
+        height: func.pxToRem(56px);
+        color: var.$highlight-color;
+        box-shadow: 0 5px 10px rgba(21, 21, 21, 0.034);
+        background-color: transparent;
+    }
+
+    // ==============================
+    // Start Button Modifier
+    // ==============================
+
+    &--start {
+        width: 100%;
+        height: func.pxToRem(65px);
+        @include mix.respond('md') {
+            height: func.pxToRem(49px);
+        }
+        @include mix.respond('sm') {
+            padding: func.pxToRem(16px);
+        }
+        &:hover {
+            box-shadow: 0 15px 10px rgba(0, 0, 0, 0.148);
+        }
+    }
+
+    // ==============================
+    // Watch Button Modifier
+    // ==============================
+
+    &--watch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: func.pxToRem(65px);
+        border: 1px solid var.$border-color;
+        @include mix.respond('xs') {
+            @include mix.flexbox($justify: center);
+        }
+        @include mix.respond('md') {
+            height: func.pxToRem(49px);
+        }
+        @include mix.respond('sm') {
+            padding: func.pxToRem(16px);
+        }
+    }
+
+    // ==============================
+    //Subscribe Button Modifier
+    // ==============================
+
+    &--subscribe {
+        width: 100%;
+        height: func.pxToRem(66px);
+        border-radius: func.pxToRem(16px);
+        font-size: func.pxToRem(16px);
+        @include mix.respond('lg') {
+            width: func.pxToRem(235px);
+            height: func.pxToRem(96px);
+            border-radius: func.pxToRem(32px);
+            font-size: func.pxToRem(23px);
         }
     }
 }

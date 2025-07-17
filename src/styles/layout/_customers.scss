@@ -1,0 +1,69 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+
+.customers {
+    // Flexbox container for customer section
+    @include mix.flexbox($justify: center);
+    flex-wrap: wrap;
+    gap: func.pxToRem(32px) func.pxToRem(27px);
+    padding: func.pxToRem(47px) 0;
+    position: relative;
+
+    // Responsive styles
+    @include mix.respond('xs') {
+        max-width: func.pxToRem(896px);
+        margin: 0 auto;
+        padding: func.pxToRem(47px) func.pxToRem(10px);
+    }
+    @include mix.respond('md') {
+        padding: func.pxToRem(80px) func.pxToRem(100px);
+    }
+    @include mix.respond('xl') {
+        max-width: func.pxToRem(1320px);
+        padding: func.pxToRem(72px) 0;
+        column-gap: func.pxToRem(100px);
+    }
+
+    // Background gradient for the section
+    &::before {
+        content: '';
+        position: absolute;
+        transform: translateX(300px) translateY(-20px);
+        bottom: 0;
+        width: 200px;
+        height: 300px;
+        background: radial-gradient(circle at center, var.$yellow, var.$white);
+        filter: blur(40px);
+        border-radius: 50%;
+        z-index: 1;
+        opacity: 0.5;
+        display: none;
+
+        // Responsive styles for the gradient
+        @include mix.respond('lg') {
+            transform: translateX(350px) translateY(-10px);
+            width: 300px;
+            height: 200px;
+            display: block;
+        }
+        @include mix.respond('xl') {
+            transform: translateX(500px) translateY(-20px);
+            width: 300px;
+        }
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        @include mix.respond('xs') {
+            height: func.pxToRem(22px);
+        }
+        @include mix.respond('md') {
+            height: func.pxToRem(32px);
+        }
+        .customers::before {
+            transform: translateX(500px) translateY(-20px);
+        }
+    }
+}

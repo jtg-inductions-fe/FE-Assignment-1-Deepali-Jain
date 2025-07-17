@@ -1,0 +1,114 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts//mixins' as mix;
+
+.testimonial {
+    position: relative;
+    margin-top: func.pxToRem(76px);
+    @include mix.flexbox($direction: column);
+    @include mix.respond('lg') {
+        background: url('/assets/images/testimonial-bg.webp') no-repeat center;
+        background-size: cover;
+        margin-top: func.pxToRem(126px);
+    }
+    @include mix.respond('xl') {
+        margin-top: func.pxToRem(142px);
+    }
+    &__slide {
+        @include mix.flexbox($direction: column);
+        gap: func.pxToRem(54px);
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    &__track {
+        max-width: func.pxToRem(310px);
+        margin-top: func.pxToRem(64px);
+        @include mix.respond('xs') {
+            max-width: func.pxToRem(398px);
+        }
+        @include mix.respond('lg') {
+            max-width: func.pxToRem(584px);
+            margin-top: func.pxToRem(44px);
+        }
+        @include mix.respond('xl') {
+            max-width: func.pxToRem(880px);
+        }
+    }
+    &__title {
+        @include mix.flexbox($direction: column);
+        gap: func.pxToRem(32px);
+    }
+    &__arrows {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        margin-top: func.pxToRem(74px);
+        @include mix.respond('lg') {
+            width: 90%;
+            top: 50%;
+            margin-top: 0;
+        }
+    }
+    &__heading {
+        padding-top: func.pxToRem(10px);
+    }
+    &__stars {
+        @include mix.flexbox();
+        gap: func.pxToRem(16px);
+        font-size: func.pxToRem(32px);
+    }
+    &__pagination {
+        @include mix.flexbox();
+        margin-top: func.pxToRem(74px);
+        gap: func.pxToRem(24px);
+        @include mix.respond('lg') {
+            margin-top: func.pxToRem(64px);
+        }
+        &__page {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            border: none;
+            &.is-active {
+                background-color: var.$highlight-color;
+            }
+        }
+    }
+}
+
+.splide {
+    &__pagination {
+        position: absolute;
+        top: 100%;
+    }
+    &__arrow {
+        &.testimonial {
+            &__arrow {
+                &--next {
+                    background-color: var.$primary-color;
+                    height: func.pxToRem(64px);
+                    width: func.pxToRem(64px);
+                    @include mix.respond('lg') {
+                        height: func.pxToRem(100px);
+                        width: func.pxToRem(100px);
+                    }
+                }
+                &--prev {
+                    background-color: var.$white;
+                    border: 1px solid var.$border-color;
+                    height: func.pxToRem(64px);
+                    width: func.pxToRem(64px);
+                    @include mix.respond('lg') {
+                        height: func.pxToRem(100px);
+                        width: func.pxToRem(100px);
+                    }
+                }
+            }
+        }
+    }
+}
+.icon-arrow-left,
+.icon-arrow-right {
+    font-size: func.pxToRem(24px);
+}

@@ -10,9 +10,13 @@
     // Base font size using custom pxToRem function
     font-size: func.pxToRem(var.$hero-heading-size);
     font-weight: bold;
+    & .heading--highlight {
+        background-color: transparent;
+        color: var.$highlight-color;
+    }
 
     // Font size adjustment for large screens
-    @include mix.respond('lg') {
+    @include mix.respond('sm') {
         font-size: func.pxToRem(56px);
     }
 
@@ -37,13 +41,20 @@
     }
 
     // Responsive scaling for large screens
-    @include mix.respond('lg') {
-        font-size: func.pxToRem(56px);
+    @include mix.respond('xl') {
+        font-size: func.pxToRem(44px);
     }
 
-    // Responsive override for extra-large screens
-    @include mix.respond('xl') {
-        font-size: func.pxToRem(64px);
+    // Font adjustments for heading in newsletter section
+    &--newsletter {
+        @include mix.respond('xl') {
+            font-size: func.pxToRem(55px);
+        }
+    }
+
+    // Font adjustments for heading in footer section
+    &--footer {
+        font-size: func.pxToRem(24px);
     }
 }
 
@@ -56,6 +67,11 @@
     font-family: var.$font-paragraph;
     color: var.$muted-text-color;
 
+    // Increase font size on large screens
+    @include mix.respond('sm') {
+        font-size: func.pxToRem(18px);
+    }
+
     // Modifier: smaller base font
     &--primary {
         font-size: func.pxToRem(16px);
@@ -66,9 +82,34 @@
         font-size: func.pxToRem(20px);
     }
 
-    // Increase font size on large screens
-    @include mix.respond('lg') {
+    // Font adjustments for travel section paragraph
+    &--travel {
         font-size: func.pxToRem(18px);
+        color: var.$black;
+    }
+
+    // Font adjustments for services section paragraph
+    &--services {
+        font-size: func.pxToRem(18px);
+    }
+
+    // Font adjustments for testimonial section paragraph
+    &--testimonial {
+        font-size: func.pxToRem(18px);
+        font-family: var.$font-family-base;
+        color: var.$black;
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(23px);
+        }
+    }
+
+    // Font adjustments for footer section paragraph
+    &--footer {
+        font-family: var.$font-family-base;
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(22px);
+            line-height: 1.7;
+        }
     }
 }
 
@@ -80,10 +121,12 @@
     // Base size and highlight color
     font-size: func.pxToRem(16px);
     color: var.$highlight-color;
+    letter-spacing: func.pxToRem(4px);
 
     // Responsive scaling for larger screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(24px);
+        letter-spacing: func.pxToRem(5px);
     }
 }
 
@@ -92,9 +135,73 @@
 // ==============================
 
 .card-subheading {
-    // Font size for card stat heading
     font-size: func.pxToRem(18px);
-
-    // Color (e.g., orange highlight)
     color: var.$orange;
+
+    // Font adjustments for services section
+    &--services {
+        font-size: func.pxToRem(24px);
+        color: var.$black;
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(28px);
+        }
+    }
+
+    // Font adjustments for features section
+    &--features {
+        font-size: func.pxToRem(24px);
+        color: var.$black;
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(23px);
+        }
+    }
+
+    // Font adjustments for travel section
+    &--travel {
+        font-size: func.pxToRem(35px);
+    }
+
+    // Font adjustments for testimonial section
+    &--testimonial {
+        font-size: func.pxToRem(22px);
+        color: var.$muted-text-color;
+    }
+
+    // Font adjustments for highlighted part of testimonial section
+    &--highlight {
+        font-size: func.pxToRem(28px);
+        background-color: transparent;
+        color: var.$orange;
+    }
+}
+
+// ==============================
+// Newsletter Form Input
+// ==============================
+
+.newsletter__form-input {
+    font-size: func.pxToRem(14px);
+    font-weight: bold;
+    color: var.$muted-text-color;
+    @include mix.respond('lg') {
+        font-size: func.pxToRem(23px);
+    }
+}
+
+// ==============================
+// Footer Section Accordion
+// ==============================
+
+.footer {
+    &__accordion {
+        &-toggle {
+            font-size: func.pxToRem(23px);
+            font-weight: bold;
+        }
+        &-list {
+            font-family: var.$font-paragraph;
+            font-size: func.pxToRem(18px);
+            color: var.$muted-text-color;
+        }
+    }
 }
