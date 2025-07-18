@@ -19,7 +19,7 @@
 
         // Hamburger button styles
         &-icon {
-            font-size: func.pxToRem(47px);
+            font-size: func.pxToRem(47);
             display: inline-block;
             background-color: transparent;
             border: none;
@@ -35,7 +35,7 @@
         // Display nav links horizontally on desktop
         @include mix.respond('xl') {
             @include mix.flexbox();
-            gap: func.pxToRem(24px);
+            gap: func.pxToRem(24);
         }
     }
 
@@ -46,23 +46,23 @@
         // Show list as horizontal flex on extra-large screens
         @include mix.respond('xl') {
             @include mix.flexbox();
-            gap: func.pxToRem(24px);
+            gap: func.pxToRem(24);
         }
 
         // Navigation list items
         &-item {
-            padding: func.pxToRem(20px) func.pxToRem(15px);
+            padding: func.pxToRem(20) func.pxToRem(15);
 
             @include mix.respond('md') {
-                padding: func.pxToRem(30px) func.pxToRem(50px);
+                padding: func.pxToRem(30) func.pxToRem(50);
             }
 
             @include mix.respond('lg') {
-                padding: func.pxToRem(30px) func.pxToRem(50px);
+                padding: func.pxToRem(30) func.pxToRem(50);
             }
 
             @include mix.respond('xl') {
-                padding: func.pxToRem(20px) func.pxToRem(20px);
+                padding: func.pxToRem(20) func.pxToRem(20);
             }
         }
     }
@@ -70,20 +70,20 @@
     // Container for all nav sections
     &__container {
         @include mix.flexbox();
-        padding: func.pxToRem(34px) func.pxToRem(18px);
+        padding: func.pxToRem(34) func.pxToRem(18);
 
         // Small screen padding
         @include mix.respond('sm') {
-            padding: func.pxToRem(30px) func.pxToRem(64px);
+            padding: func.pxToRem(30) func.pxToRem(64);
         }
 
         // Large and XL screen padding
         @include mix.respond('lg') {
-            padding: func.pxToRem(30px) func.pxToRem(64px);
+            padding: func.pxToRem(30) func.pxToRem(64);
         }
 
         @include mix.respond('xl') {
-            padding: func.pxToRem(58px) func.pxToRem(64px);
+            padding: func.pxToRem(58) func.pxToRem(64);
         }
     }
 
@@ -91,20 +91,20 @@
     &__buttons {
         @include mix.flexbox();
         flex-direction: column;
-        gap: func.pxToRem(5px);
-        margin-right: func.pxToRem(50px);
+        gap: func.pxToRem(5);
+        margin-right: func.pxToRem(50);
         order: 4;
         display: none;
 
         // Show and adjust layout on medium screens
         @include mix.respond('md') {
             @include mix.flexbox();
-            margin-right: func.pxToRem(10px);
+            margin-right: func.pxToRem(10);
         }
 
         // Add padding on extra-large screens
         @include mix.respond('xl') {
-            padding-right: func.pxToRem(40px);
+            padding-right: func.pxToRem(40);
         }
     }
 
@@ -117,7 +117,7 @@
 
         // Close icon button styling
         &--icon {
-            padding: 0 func.pxToRem(15px);
+            padding: 0 func.pxToRem(15);
             background-color: transparent;
             border: none;
             cursor: pointer;
@@ -151,14 +151,14 @@
 
         // Center logo on medium screens
         @include mix.respond('md') {
-            margin-left: func.pxToRem(180px);
+            margin-left: func.pxToRem(180);
             order: 2;
         }
 
         // Shift logo to the left on large screens
         @include mix.respond('lg') {
             margin-left: 0;
-            padding-left: func.pxToRem(80px);
+            padding-left: func.pxToRem(80);
         }
     }
 
@@ -169,12 +169,12 @@
         right: 0;
         top: 0;
         background: linear-gradient(135deg, var.$white, var.$off-white);
-        width: func.pxToRem(250px);
+        width: func.pxToRem(250);
         height: 100vh;
         box-shadow: -8px 0 24px rgba(0, 0, 0, 0.1);
-        border-top-left-radius: func.pxToRem(20px);
-        border-bottom-left-radius: func.pxToRem(20px);
-        padding: func.pxToRem(30px) func.pxToRem(20px);
+        border-top-left-radius: func.pxToRem(20);
+        border-bottom-left-radius: func.pxToRem(20);
+        padding: func.pxToRem(30) func.pxToRem(20);
         transition:
             transform 0.4s ease-in-out,
             opacity 0.3s ease-in-out;
@@ -185,22 +185,22 @@
         // Expand menu leftwards and increase width on medium screens
         @include mix.respond('md') {
             left: 0;
-            width: func.pxToRem(300px);
+            width: func.pxToRem(300);
         }
         @include mix.respond('lg') {
-            width: func.pxToRem(400px);
+            width: func.pxToRem(400);
         }
 
         // Show nav list inside open menu
         .nav__list {
             @include mix.flexbox($direction: column);
-            gap: func.pxToRem(30px);
-            margin-top: func.pxToRem(70px);
+            gap: func.pxToRem(30);
+            margin-top: func.pxToRem(70);
             text-align: center;
             &-item {
                 width: 100%;
-                border-radius: func.pxToRem(12px);
-                padding: func.pxToRem(12px) func.pxToRem(18px);
+                border-radius: func.pxToRem(12);
+                padding: func.pxToRem(12) func.pxToRem(18);
                 transition:
                     background-color 0.3s,
                     transform 0.3s;
@@ -208,7 +208,7 @@
                     text-decoration: none;
                     color: var.$black;
                     font-weight: 600;
-                    font-size: func.pxToRem(16px);
+                    font-size: func.pxToRem(16);
 
                     &:focus {
                         color: var.$primary-color;
@@ -222,9 +222,9 @@
             display: flex;
             position: fixed;
             bottom: 20px;
-            right: 30px;
+            right: 10px;
             z-index: 2;
-            gap: func.pxToRem(12px);
+            gap: func.pxToRem(12);
             // Return to normal flow on medium screens
             @include mix.respond('md') {
                 position: inherit;
@@ -235,12 +235,12 @@
         .nav__close--icon {
             background: transparent;
             border: none;
-            font-size: func.pxToRem(28px);
+            font-size: func.pxToRem(28);
             cursor: pointer;
             color: var.$black;
             position: absolute;
-            top: func.pxToRem(20px);
-            right: func.pxToRem(20px);
+            top: func.pxToRem(20);
+            right: func.pxToRem(20);
             transition: color 0.3s;
         }
     }

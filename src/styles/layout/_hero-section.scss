@@ -1,19 +1,19 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/functions' as func;
-@use '../abstracts//mixins' as mix;
+@use '../abstracts/mixins' as mix;
 .hero {
     // Flexbox container for the hero section
     @include mix.flexbox($direction: column-reverse);
-    padding-top: func.pxToRem(32px);
+    padding-top: func.pxToRem(32);
     position: relative;
 
     // Responsive styles for the hero section
     @include mix.respond('sm') {
-        padding: func.pxToRem(65px) 0;
+        padding: func.pxToRem(65) 0;
     }
     @include mix.respond('xl') {
         @include mix.flexbox($direction: row);
-        padding: func.pxToRem(40px) func.pxToRem(130px);
+        padding: func.pxToRem(40) func.pxToRem(130);
     }
 
     // Background gradient for the hero section
@@ -34,7 +34,7 @@
     // Hero section image
     &__image {
         @include mix.respond('sm') {
-            max-width: func.pxToRem(782px);
+            max-width: func.pxToRem(782);
             width: 100%;
         }
         img {
@@ -47,9 +47,9 @@
     // Hero section heading
     &__heading {
         line-height: 1.2;
-        padding: func.pxToRem(8px) func.pxToRem(42px);
+        padding: func.pxToRem(8) func.pxToRem(42);
         @include mix.respond('xs') {
-            padding: func.pxToRem(8px) 0;
+            padding: func.pxToRem(8) 0;
         }
         @include mix.respond('sm') {
             padding: 0;
@@ -62,38 +62,38 @@
     // Hero section paragraph
     &__content {
         @include mix.flexbox($direction: column);
-        gap: func.pxToRem(16px);
+        gap: func.pxToRem(16);
         text-align: center;
-        padding-top: func.pxToRem(10px);
-        max-width: func.pxToRem(320px);
+        padding-top: func.pxToRem(10);
+        max-width: func.pxToRem(320);
         @include mix.respond('xs') {
-            max-width: func.pxToRem(396px);
+            max-width: func.pxToRem(396);
         }
         @include mix.respond('sm') {
-            padding-top: func.pxToRem(44px);
+            padding-top: func.pxToRem(44);
             text-align: center;
         }
         @include mix.respond('md') {
-            max-width: func.pxToRem(896px);
+            max-width: func.pxToRem(896);
         }
         @include mix.respond('xl') {
             @include mix.flexbox($align: flex-start, $direction: column);
-            max-width: func.pxToRem(420px);
-            gap: func.pxToRem(43px);
-            padding: func.pxToRem(50px) 0;
+            max-width: func.pxToRem(420);
+            gap: func.pxToRem(43);
+            padding: func.pxToRem(50) 0;
             text-align: left;
         }
     }
 
     &-heading {
         @include mix.respond('sm') {
-            max-width: func.pxToRem(756px);
+            max-width: func.pxToRem(756);
             width: 100%;
             line-height: 1.2;
-            padding: func.pxToRem(30px) func.pxToRem(70px);
+            padding: func.pxToRem(30) func.pxToRem(70);
         }
         @include mix.respond('xl') {
-            width: func.pxToRem(420px);
+            width: func.pxToRem(420);
             line-height: 1.2;
             padding: 0;
         }
@@ -102,41 +102,41 @@
     // Hero section button
     &__button {
         @include mix.flexbox($direction: column);
-        gap: func.pxToRem(24px);
-        padding: func.pxToRem(20px) 0;
-        max-width: func.pxToRem(398px);
+        gap: func.pxToRem(24);
+        padding: func.pxToRem(20) 0;
+        max-width: func.pxToRem(398);
         width: 100%;
         @include mix.respond('sm') {
             @include mix.flexbox;
-            max-width: func.pxToRem(338px);
-            gap: func.pxToRem(16px);
-            padding: func.pxToRem(25px) 0;
+            max-width: func.pxToRem(338);
+            gap: func.pxToRem(16);
+            padding: func.pxToRem(25) 0;
         }
         @include mix.respond('xl') {
             @include mix.flexbox;
-            gap: func.pxToRem(24px);
-            padding: func.pxToRem(15px) 0;
+            gap: func.pxToRem(24);
+            padding: func.pxToRem(15) 0;
         }
         &--icon {
-            font-size: func.pxToRem(24px);
-            margin-left: func.pxToRem(16px);
+            font-size: func.pxToRem(24);
+            margin-left: func.pxToRem(16);
         }
         &--play-icon {
-            font-size: func.pxToRem(24px);
-            margin-right: func.pxToRem(10px);
+            font-size: func.pxToRem(24);
+            margin-right: func.pxToRem(10);
         }
     }
 
     // Hero section paragraph
     &__paragraph {
         @include mix.respond('xs') {
-            padding: 0 func.pxToRem(10px);
+            padding: 0 func.pxToRem(10);
         }
         @include mix.respond('sm') {
             padding: 0;
         }
         @include mix.respond('md') {
-            padding: 0 func.pxToRem(230px);
+            padding: 0 func.pxToRem(230);
         }
         @include mix.respond('xl') {
             padding: 0;
@@ -149,14 +149,14 @@
         @include mix.respond('md') {
             display: block;
             position: absolute;
-            left: func.pxToRem(40px);
-            bottom: func.pxToRem(30px);
+            left: func.pxToRem(40);
+            bottom: func.pxToRem(30);
         }
         @include mix.respond('xl') {
             display: block;
             position: absolute;
-            left: func.pxToRem(40px);
-            bottom: func.pxToRem(-70px);
+            left: func.pxToRem(40);
+            bottom: func.pxToRem(-70);
         }
     }
 }

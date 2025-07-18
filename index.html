@@ -41,39 +41,40 @@
                     <nav>
                         <ul class="nav__list">
                             <li class="nav__list-item">
-                                <a
-                                    class="nav__links--active"
-                                    aria-current="page"
-                                    href="#"
-                                    >Home</a
-                                >
+                                <a aria-current="page" href="#"> Home </a>
                             </li>
                             <li class="nav__list-item">
-                                <a href="#">Discover</a>
+                                <a href="#discover">Discover</a>
                             </li>
                             <li class="nav__list-item">
-                                <a href="#">Special Deals</a>
+                                <a href="#deals">Special Deals</a>
                             </li>
                             <li class="nav__list-item">
-                                <a href="#">Contact</a>
+                                <a href="#contact">Contact</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
                 <div class="nav__buttons" id="js-navButtons">
-                    <button class="btn btn--outlined">Log In</button>
+                    <button class="btn btn--outlined" type="button">
+                        Log In
+                    </button>
 
-                    <button class="btn btn--active">Sign Up</button>
+                    <button class="btn btn--active" type="button">
+                        Sign Up
+                    </button>
                 </div>
             </div>
         </header>
-        <section class="hero">
+        <main class="hero">
             <div class="hero__content">
                 <div>
-                    <button class="btn btn--outlined btn--explore">
-                        Explore the world!<i
-                            class="icon-work hero__button--icon"
-                        ></i>
+                    <button
+                        class="btn btn--outlined btn__explore"
+                        type="button"
+                    >
+                        Explore the world!
+                        <i class="icon-work hero__button--icon"></i>
                     </button>
                 </div>
                 <div class="hero__heading">
@@ -90,12 +91,12 @@
                     </p>
                 </div>
                 <div class="hero__button">
-                    <button class="btn btn--active btn--start">
+                    <button class="btn btn--active btn__start" type="button">
                         Get Started
                     </button>
-                    <button class="btn btn--outlined btn--watch">
-                        <i class="icon-play-button hero__button--play-icon"></i
-                        >Watch Demo
+                    <button class="btn btn--outlined btn__watch" type="button">
+                        <i class="icon-play-button hero__button--play-icon"></i>
+                        Watch Demo
                     </button>
                 </div>
                 <img
@@ -111,7 +112,7 @@
                     alt="a collage of travel images"
                 />
             </div>
-        </section>
+        </main>
         <section class="customers">
             <img
                 src="/assets/images/tripadvisor-logo.webp"
@@ -147,7 +148,7 @@
                 </h2>
             </div>
             <div class="services__cards">
-                <div class="service--card">
+                <div class="service__card">
                     <img
                         src="/assets/images/globe.webp"
                         alt="a globe with location pins"
@@ -160,7 +161,7 @@
                         five feet.
                     </p>
                 </div>
-                <div class="service--card">
+                <div class="service__card">
                     <img
                         src="/assets/images/booking.webp"
                         alt="an illustration of online booking"
@@ -172,7 +173,7 @@
                         Square, was moving across the sand in their direction.
                     </p>
                 </div>
-                <div class="service--card">
+                <div class="service__card">
                     <img
                         src="/assets/images/weather.webp"
                         alt="an illustration of weather forecast"
@@ -187,9 +188,12 @@
                 </div>
             </div>
         </section>
-        <section class="travel">
+        <section class="travel" id="discover">
             <div class="travel__image">
-                <img src="/assets/images/travel-image.webp" alt="" />
+                <img
+                    src="/assets/images/travel-image.webp"
+                    alt="A collage of travel images"
+                />
             </div>
             <div class="travel__content">
                 <h4 class="subheading">TRAVEL POINT</h4>
@@ -202,7 +206,7 @@
                     from 45 BC.
                 </p>
                 <div class="travel__cards">
-                    <div class="travel--card">
+                    <div class="travel__card">
                         <h4 class="card-subheading card-subheading--travel">
                             500+
                         </h4>
@@ -210,13 +214,13 @@
                             Holiday Package
                         </p>
                     </div>
-                    <div class="travel--card">
+                    <div class="travel__card">
                         <h4 class="card-subheading card-subheading--travel">
                             100
                         </h4>
                         <p class="paragraph paragraph--travel">Luxury Hotel</p>
                     </div>
-                    <div class="travel--card">
+                    <div class="travel__card">
                         <h4 class="card-subheading card-subheading--travel">
                             7
                         </h4>
@@ -224,7 +228,7 @@
                             Premium Airlines
                         </p>
                     </div>
-                    <div class="travel--card">
+                    <div class="travel__card">
                         <h4 class="card-subheading card-subheading--travel">
                             2k+
                         </h4>
@@ -235,7 +239,7 @@
                 </div>
             </div>
         </section>
-        <section class="features">
+        <section class="features" id="deals">
             <div class="features__img">
                 <img
                     src="/assets/images/key-features-img.webp"
@@ -313,7 +317,10 @@
             <div class="splide__track testimonial__track">
                 <ul class="splide__list">
                     <li class="splide__slide testimonial__slide">
-                        <img src="/assets/images/testimonial_pfp.webp" alt="" />
+                        <img
+                            src="/assets/images/testimonial_pfp.webp"
+                            alt="testimonial profile picture"
+                        />
                         <div class="splide__title testimonial__title">
                             <h5 class="card-subheading--testimonial">
                                 <mark class="card-subheading--highlight"
@@ -335,7 +342,10 @@
                         </p>
                     </li>
                     <li class="splide__slide testimonial__slide">
-                        <img src="/assets/images/testimonial_pfp.webp" alt="" />
+                        <img
+                            src="/assets/images/testimonial_pfp.webp"
+                            alt="testimonial profile picture"
+                        />
                         <div class="splide__title testimonial__title">
                             <h5 class="card-subheading--testimonial">
                                 <mark class="card-subheading--highlight"
@@ -357,7 +367,10 @@
                         </p>
                     </li>
                     <li class="splide__slide testimonial__slide">
-                        <img src="/assets/images/testimonial_pfp.webp" alt="" />
+                        <img
+                            src="/assets/images/testimonial_pfp.webp"
+                            alt="testimonial profile picture"
+                        />
                         <div class="splide__title testimonial__title">
                             <h5 class="card-subheading--testimonial">
                                 <mark class="card-subheading--highlight"
@@ -383,18 +396,22 @@
             <div class="splide__arrows testimonial__arrows">
                 <button
                     class="splide__arrow splide__arrow--prev testimonial__arrow--prev"
+                    type="button"
+                    aria-label="Previous slide"
                 >
                     <i class="icon-arrow-left"></i>
                 </button>
                 <button
                     class="splide__arrow splide__arrow--next testimonial__arrow--next"
+                    type="button"
+                    aria-label="Next slide"
                 >
                     <i class="icon-arrow-right"></i>
                 </button>
             </div>
         </section>
 
-        <section class="newsletter">
+        <section class="newsletter" id="contact">
             <div class="newsletter__content">
                 <h4 class="subheading">SUBSCRIBE TO OUR NEWSLETTER</h4>
                 <h2 class="heading newsletter__heading heading--newsletter">
@@ -407,12 +424,13 @@
                             placeholder="Your Email"
                             class="newsletter__form-input"
                             type="email"
+                            aria-label="Email address"
                             pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                             required
                         />
                     </div>
                     <button
-                        class="btn btn--active btn--subscribe"
+                        class="btn btn--active btn__subscribe"
                         type="submit"
                     >
                         Subscribe
@@ -448,20 +466,36 @@
                 </p>
 
                 <div class="footer__social">
-                    <button class="footer__social-icon">
+                    <button
+                        class="footer__social-icon"
+                        aria-label="Facebook"
+                        type="button"
+                    >
                         <i class="icon-fb-logo"></i>
                     </button>
-                    <button class="footer__social-icon">
+                    <button
+                        class="footer__social-icon"
+                        aria-label="Instagram"
+                        type="button"
+                    >
                         <i class="icon-twitter-logo"></i>
                     </button>
-                    <button class="footer__social-icon">
+                    <button
+                        class="footer__social-icon"
+                        aria-label="Twitter"
+                        type="button"
+                    >
                         <i class="icon-ig-logo"></i>
                     </button>
                 </div>
             </div>
             <div class="footer__links">
                 <div class="footer__accordion">
-                    <button class="footer__accordion-toggle">
+                    <button
+                        class="footer__accordion-toggle"
+                        aria-label="Company"
+                        type="button"
+                    >
                         Company<i class="icon-circle-down"></i>
                     </button>
                     <ul class="footer__accordion-list">
@@ -471,7 +505,11 @@
                     </ul>
                 </div>
                 <div class="footer__accordion">
-                    <button class="footer__accordion-toggle">
+                    <button
+                        class="footer__accordion-toggle"
+                        aria-label="Contact Us"
+                        type="button"
+                    >
                         Contact Us<i class="icon-circle-down"></i>
                     </button>
                     <ul class="footer__accordion-list">
@@ -482,7 +520,11 @@
                     </ul>
                 </div>
                 <div class="footer__accordion">
-                    <button class="footer__accordion-toggle">
+                    <button
+                        class="footer__accordion-toggle"
+                        aria-label="Meet Us"
+                        type="button"
+                    >
                         Meet Us<i class="icon-circle-down"></i>
                     </button>
                     <ul class="footer__accordion-list">

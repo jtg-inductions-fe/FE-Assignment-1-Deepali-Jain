@@ -1,49 +1,49 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/functions' as func;
-@use '../abstracts//mixins' as mix;
+@use '../abstracts/mixins' as mix;
 
 .footer {
-    max-width: func.pxToRem(320px);
-    margin-top: func.pxToRem(96px);
+    max-width: func.pxToRem(320);
+    margin-top: func.pxToRem(96);
 
     // Responsive styles
     @include mix.respond('xs') {
-        max-width: func.pxToRem(398px);
+        max-width: func.pxToRem(398);
     }
     @include mix.respond('lg') {
-        max-width: func.pxToRem(897px);
-        margin-top: func.pxToRem(64px);
+        max-width: func.pxToRem(897);
+        margin-top: func.pxToRem(64);
     }
     @include mix.respond('xl') {
         @include mix.flexbox();
-        max-width: func.pxToRem(1192px);
-        gap: func.pxToRem(64px);
-        padding: func.pxToRem(64px) 0;
+        max-width: func.pxToRem(1192);
+        gap: func.pxToRem(64);
+        padding: func.pxToRem(64) 0;
     }
 
     // Content of footer section
     &__content {
         @include mix.flexbox($direction: column, $align: flex-start);
-        gap: func.pxToRem(32px);
+        gap: func.pxToRem(32);
         @include mix.respond('xl') {
-            max-width: func.pxToRem(564px);
-            padding-top: func.pxToRem(62px);
-            padding-left: func.pxToRem(8px);
+            max-width: func.pxToRem(564);
+            padding-top: func.pxToRem(62);
+            padding-left: func.pxToRem(8);
         }
     }
 
     // Container for logo and title in footer section
     &__title {
         @include mix.flexbox($justify: flex-start);
-        gap: func.pxToRem(16px);
+        gap: func.pxToRem(16);
     }
 
     // Container for social media icons in footer section
     &__social {
         @include mix.flexbox();
-        gap: func.pxToRem(32px);
+        gap: func.pxToRem(32);
         @include mix.respond('xl') {
-            padding-top: func.pxToRem(32px);
+            padding-top: func.pxToRem(32);
         }
 
         // Individual social media icon styles
@@ -69,17 +69,17 @@
 
     // Footer section links
     &__links {
-        margin-top: func.pxToRem(100px);
+        margin-top: func.pxToRem(100);
         @include mix.flexbox($direction: column, $align: flex-start);
-        gap: func.pxToRem(70px);
+        gap: func.pxToRem(70);
         @include mix.respond('lg') {
             @include mix.flexbox($align: stretch);
-            gap: func.pxToRem(32px);
-            margin-top: func.pxToRem(64px);
+            gap: func.pxToRem(32);
+            margin-top: func.pxToRem(64);
         }
         @include mix.respond('xl') {
-            margin-top: func.pxToRem(52px);
-            padding-left: func.pxToRem(10px);
+            margin-top: func.pxToRem(52);
+            padding-left: func.pxToRem(10);
         }
     }
 
@@ -101,8 +101,8 @@
             @include mix.respond('lg') {
                 display: block;
                 @include mix.flexbox($direction: column, $align: flex-start);
-                gap: func.pxToRem(32px);
-                margin-top: func.pxToRem(32px);
+                gap: func.pxToRem(32);
+                margin-top: func.pxToRem(32);
             }
         }
     }
@@ -113,8 +113,8 @@
     .footer__accordion-list {
         display: block;
         @include mix.flexbox($direction: column, $align: flex-start);
-        gap: func.pxToRem(32px);
-        margin-top: func.pxToRem(32px);
+        gap: func.pxToRem(32);
+        margin-top: func.pxToRem(32);
     }
     .icon-circle-down {
         transform: rotate(180deg);
@@ -132,5 +132,5 @@
 .icon-fb-logo,
 .icon-twitter-logo,
 .icon-ig-logo {
-    font-size: func.pxToRem(16px);
+    font-size: func.pxToRem(16);
 }

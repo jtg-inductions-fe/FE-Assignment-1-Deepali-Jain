@@ -1,47 +1,46 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/functions' as func;
-@use '../abstracts//mixins' as mix;
+@use '../abstracts/mixins' as mix;
 .features {
-    margin: func.pxToRem(98px) auto;
-    max-width: func.pxToRem(320px);
+    margin: func.pxToRem(98) auto;
+    max-width: func.pxToRem(320);
     &--paragraph {
-        padding: 15px 5px;
+        padding: func.pxToRem(15) func.pxToRem(5);
         @include mix.respond('lg') {
-            padding: func.pxToRem(15px) 0;
-            padding-right: func.pxToRem(48px);
+            padding: func.pxToRem(15) func.pxToRem(48) func.pxToRem(15) 0;
         }
     }
 
     // Responsive styles
     @include mix.respond('xs') {
-        max-width: func.pxToRem(350px);
+        max-width: func.pxToRem(350);
         margin-bottom: 0;
     }
     @include mix.respond('lg') {
-        max-width: func.pxToRem(896px);
-        margin-top: func.pxToRem(132px);
+        max-width: func.pxToRem(896);
+        margin-top: func.pxToRem(132);
     }
     @include mix.respond('xl') {
         @include mix.flexbox($direction: row-reverse);
-        max-width: func.pxToRem(1321px);
-        margin-top: func.pxToRem(88px);
+        max-width: func.pxToRem(1321);
+        margin-top: func.pxToRem(88);
     }
 
     // Content of features section
     &__content {
         @include mix.flexbox($direction: column);
-        padding-top: func.pxToRem(98px);
-        row-gap: func.pxToRem(16px);
+        padding-top: func.pxToRem(98);
+        row-gap: func.pxToRem(16);
         text-align: center;
         @include mix.respond('xs') {
-            max-width: func.pxToRem(334px);
+            max-width: func.pxToRem(334);
         }
         @include mix.respond('lg') {
-            padding-top: func.pxToRem(62px);
-            max-width: func.pxToRem(896px);
+            padding-top: func.pxToRem(62);
+            max-width: func.pxToRem(896);
         }
         @include mix.respond('xl') {
-            max-width: func.pxToRem(558px);
+            max-width: func.pxToRem(558);
             align-items: flex-start;
             text-align: left;
             padding-top: 0;
@@ -51,12 +50,12 @@
     // Cards container in features section
     &__cards {
         @include mix.flexbox($direction: column);
-        row-gap: func.pxToRem(16px);
-        padding-top: func.pxToRem(10px);
+        row-gap: func.pxToRem(16);
+        padding-top: func.pxToRem(10);
         @include mix.respond('lg') {
-            max-width: func.pxToRem(832px);
+            max-width: func.pxToRem(832);
             width: 100%;
-            padding-top: func.pxToRem(26px);
+            padding-top: func.pxToRem(26);
             row-gap: 0;
         }
     }
@@ -65,36 +64,36 @@
     &__card {
         @include mix.flexbox($align: flex-start, $direction: column);
         width: 100%;
-        padding: func.pxToRem(32px);
+        padding: func.pxToRem(32);
         text-align: left;
-        row-gap: func.pxToRem(8px);
+        row-gap: func.pxToRem(8);
         @include mix.respond('lg') {
             @include mix.flexbox($justify: flex-start);
-            column-gap: func.pxToRem(32px);
+            column-gap: func.pxToRem(32);
         }
 
         &:hover {
             border: 1px solid var.$border-color;
-            border-radius: func.pxToRem(32px);
+            border-radius: func.pxToRem(32);
         }
     }
 
     // Subheading for feature cards
     &__card-subheading {
-        padding-top: func.pxToRem(24px);
+        padding-top: func.pxToRem(24);
         @include mix.respond('lg') {
-            padding-top: func.pxToRem(10px);
+            padding-top: func.pxToRem(10);
         }
     }
 
     // Image in feature cards
     &__img {
         @include mix.respond('lg') {
-            max-width: func.pxToRem(693px);
+            max-width: func.pxToRem(693);
             margin: 0 auto;
         }
         @include mix.respond('xl') {
-            max-width: func.pxToRem(650px);
+            max-width: func.pxToRem(650);
             width: 100%;
         }
         img {
@@ -103,5 +102,5 @@
     }
 }
 .paragraph--features {
-    padding-right: func.pxToRem(50px);
+    padding-right: func.pxToRem(50);
 }

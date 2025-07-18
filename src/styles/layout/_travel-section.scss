@@ -3,27 +3,27 @@
 @use '../abstracts/variables' as var;
 .travel {
     @include mix.flexbox($direction: column);
-    margin-top: func.pxToRem(66px);
-    row-gap: func.pxToRem(25px);
+    margin-top: func.pxToRem(66);
+    row-gap: func.pxToRem(25);
     @include mix.respond('sm') {
-        margin-top: func.pxToRem(130px);
-        margin-left: func.pxToRem(30px);
-        row-gap: func.pxToRem(64px);
+        margin-top: func.pxToRem(130);
+        margin-left: func.pxToRem(30);
+        row-gap: func.pxToRem(64);
     }
     @include mix.respond('lg') {
         margin-left: auto;
     }
     @include mix.respond('xl') {
-        margin-top: func.pxToRem(116px);
+        margin-top: func.pxToRem(116);
         margin-left: auto;
         @include mix.flexbox($direction: row);
     }
 
     // Image in travel section
     &__image {
-        max-width: func.pxToRem(398px);
+        max-width: func.pxToRem(398);
         @include mix.respond('sm') {
-            max-width: func.pxToRem(871px);
+            max-width: func.pxToRem(871);
             width: 100%;
         }
         img {
@@ -35,33 +35,33 @@
     // Content in travel section
     &__content {
         @include mix.flexbox($direction: column);
-        max-width: func.pxToRem(398px);
+        max-width: func.pxToRem(398);
         text-align: center;
         @include mix.respond('sm') {
-            max-width: func.pxToRem(896px);
+            max-width: func.pxToRem(896);
         }
         @include mix.respond('xl') {
             align-items: flex-start;
-            max-width: func.pxToRem(450px);
+            max-width: func.pxToRem(450);
             text-align: left;
-            margin-right: func.pxToRem(114px);
-            padding-top: func.pxToRem(52px);
+            margin-right: func.pxToRem(114);
+            padding-top: func.pxToRem(52);
         }
     }
 
     // Heading of travel section
     &--heading {
-        padding-top: func.pxToRem(2px);
+        padding-top: func.pxToRem(2);
     }
 
     // Paragraph of travel section
     &--paragraph {
-        padding: func.pxToRem(20px);
+        padding: func.pxToRem(20);
         @include mix.respond('sm') {
-            padding: func.pxToRem(25px) func.pxToRem(32px);
+            padding: func.pxToRem(25) func.pxToRem(32);
         }
         @include mix.respond('xl') {
-            padding: func.pxToRem(25px) 0;
+            padding: func.pxToRem(25) 0;
         }
     }
 
@@ -69,17 +69,17 @@
     &__cards {
         @include mix.flexbox($direction: column);
         width: 100%;
-        max-width: func.pxToRem(398px);
-        row-gap: func.pxToRem(16px);
-        margin-top: func.pxToRem(20px);
+        max-width: func.pxToRem(398);
+        gap: func.pxToRem(16);
+        margin-top: func.pxToRem(20);
 
         // Individual card of travel section
-        .travel--card {
+        .travel__card {
             @include mix.flexbox($direction: column);
-            row-gap: func.pxToRem(5px);
+            gap: func.pxToRem(5);
             width: 100%;
-            border-radius: func.pxToRem(32px);
-            padding: func.pxToRem(32px) 0;
+            border-radius: func.pxToRem(32);
+            padding: func.pxToRem(32) 0;
             border: 0.5px solid lighten(var.$muted-text-color, 60%);
             @include mix.respond('sm') {
                 width: 48%;
@@ -87,10 +87,10 @@
         }
         @include mix.respond('sm') {
             @include mix.flexbox($direction: row);
-            max-width: func.pxToRem(832px);
+            max-width: func.pxToRem(832);
             flex-wrap: wrap;
-            row-gap: func.pxToRem(32px);
-            margin-top: func.pxToRem(40px);
+            gap: func.pxToRem(32);
+            margin-top: func.pxToRem(40);
         }
     }
 }

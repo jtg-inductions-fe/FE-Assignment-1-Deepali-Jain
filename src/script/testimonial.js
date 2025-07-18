@@ -6,7 +6,7 @@ import '@splidejs/splide/dist/css/splide.min.css';
  * The slider will rewind after the last slide and has custom pagination and arrow classes.
  * The slider is mounted to the element with the class 'splide'.
  */
-var splide = new Splide('.splide', {
+const splide = new Splide('.splide', {
     type: 'fade',
     rewind: true,
     classes: {

@@ -1,15 +1,15 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/functions' as func;
-@use '../abstracts//mixins' as mix;
+@use '../abstracts/mixins' as mix;
 
 .services {
     @include mix.flexbox($direction: column);
     text-align: center;
-    margin-top: func.pxToRem(14px);
-    row-gap: func.pxToRem(32px);
+    margin-top: func.pxToRem(14);
+    row-gap: func.pxToRem(32);
     @include mix.respond('sm') {
-        margin-top: func.pxToRem(45px);
-        row-gap: func.pxToRem(64px);
+        margin-top: func.pxToRem(45);
+        row-gap: func.pxToRem(64);
     }
     @include mix.respond('xl') {
         flex-direction: row;
@@ -18,16 +18,16 @@
     // Service section headings
     &__headings {
         @include mix.flexbox($direction: column);
-        row-gap: func.pxToRem(13px);
-        max-width: func.pxToRem(398px);
+        row-gap: func.pxToRem(13);
+        max-width: func.pxToRem(398);
         @include mix.respond('lg') {
-            max-width: func.pxToRem(896px);
+            max-width: func.pxToRem(896);
         }
         @include mix.respond('xl') {
             align-items: flex-start;
             text-align: left;
-            max-width: func.pxToRem(400px);
-            margin-left: func.pxToRem(130px);
+            max-width: func.pxToRem(400);
+            margin-left: func.pxToRem(130);
         }
     }
 
@@ -35,29 +35,29 @@
     &__cards {
         @include mix.flexbox($direction: column);
         align-items: stretch;
-        row-gap: func.pxToRem(16px);
-        max-width: func.pxToRem(398px);
+        row-gap: func.pxToRem(16);
+        max-width: func.pxToRem(398);
 
         // Individual card of service section
-        & .service--card {
+        & .service__card {
             @include mix.flexbox($direction: column);
             width: 100%;
-            row-gap: func.pxToRem(30px);
-            padding: func.pxToRem(32px) func.pxToRem(50px);
-            border-radius: func.pxToRem(32px);
+            row-gap: func.pxToRem(30);
+            padding: func.pxToRem(32) func.pxToRem(50);
+            border-radius: func.pxToRem(32);
             border: 0.5px solid lighten(var.$muted-text-color, 60%);
             @include mix.respond('sm') {
-                padding: func.pxToRem(64px) func.pxToRem(34px)
-                    func.pxToRem(32px) func.pxToRem(34px);
-                row-gap: func.pxToRem(16px);
+                padding: func.pxToRem(64) func.pxToRem(34) func.pxToRem(32)
+                    func.pxToRem(34);
+                row-gap: func.pxToRem(16);
             }
             @include mix.respond('md') {
-                padding: func.pxToRem(64px) func.pxToRem(64px)
-                    func.pxToRem(32px) func.pxToRem(64px);
+                padding: func.pxToRem(64) func.pxToRem(64) func.pxToRem(32)
+                    func.pxToRem(64);
             }
             @include mix.respond('xl') {
-                padding: func.pxToRem(74px) func.pxToRem(64px)
-                    func.pxToRem(94px) func.pxToRem(64px);
+                padding: func.pxToRem(74) func.pxToRem(64) func.pxToRem(94)
+                    func.pxToRem(64);
             }
 
             &:hover {
@@ -67,7 +67,7 @@
 
         // Image in individual service card
         img {
-            width: func.pxToRem(64px);
+            width: func.pxToRem(64);
             height: auto;
         }
 
@@ -76,26 +76,26 @@
             @include mix.flexbox($direction: row);
             align-items: stretch;
             justify-content: flex-start;
-            max-width: func.pxToRem(596px);
-            column-gap: func.pxToRem(16px);
+            max-width: func.pxToRem(596);
+            column-gap: func.pxToRem(16);
         }
         @include mix.respond('md') {
             @include mix.flexbox($direction: row);
             align-items: stretch;
             justify-content: flex-start;
-            max-width: func.pxToRem(896px);
+            max-width: func.pxToRem(896);
         }
         @include mix.respond('xl') {
             flex-direction: row;
-            max-width: func.pxToRem(793px);
-            column-gap: func.pxToRem(21px);
+            max-width: func.pxToRem(793);
+            column-gap: func.pxToRem(21);
             align-items: stretch;
-            margin-right: func.pxToRem(100px);
+            margin-right: func.pxToRem(100);
         }
     }
 }
 
-.service--card:nth-child(3) {
+.service__card:nth-child(3) {
     @include mix.respond('xl') {
         display: none;
     }
@@ -105,10 +105,10 @@
 .card-subheading {
     &--services {
         @include mix.respond('sm') {
-            padding-top: func.pxToRem(14px);
+            padding-top: func.pxToRem(14);
         }
         @include mix.respond('md') {
-            padding-top: func.pxToRem(34px);
+            padding-top: func.pxToRem(34);
         }
     }
 }
@@ -116,7 +116,7 @@
 .paragraph {
     &--services {
         @include mix.respond('lg') {
-            padding-top: func.pxToRem(10px);
+            padding-top: func.pxToRem(10);
         }
     }
 }

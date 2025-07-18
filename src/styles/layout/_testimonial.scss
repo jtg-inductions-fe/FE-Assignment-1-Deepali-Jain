@@ -1,49 +1,49 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/functions' as func;
-@use '../abstracts//mixins' as mix;
+@use '../abstracts/mixins' as mix;
 
 .testimonial {
     position: relative;
-    margin-top: func.pxToRem(76px);
+    margin-top: func.pxToRem(76);
     @include mix.flexbox($direction: column);
     @include mix.respond('lg') {
         background: url('/assets/images/testimonial-bg.webp') no-repeat center;
         background-size: cover;
-        margin-top: func.pxToRem(126px);
+        margin-top: func.pxToRem(126);
     }
     @include mix.respond('xl') {
-        margin-top: func.pxToRem(142px);
+        margin-top: func.pxToRem(142);
     }
     &__slide {
         @include mix.flexbox($direction: column);
-        gap: func.pxToRem(54px);
+        gap: func.pxToRem(54);
         width: 100%;
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 10;
     }
     &__track {
-        max-width: func.pxToRem(310px);
-        margin-top: func.pxToRem(64px);
+        max-width: func.pxToRem(310);
+        margin-top: func.pxToRem(64);
         @include mix.respond('xs') {
-            max-width: func.pxToRem(398px);
+            max-width: func.pxToRem(398);
         }
         @include mix.respond('lg') {
-            max-width: func.pxToRem(584px);
-            margin-top: func.pxToRem(44px);
+            max-width: func.pxToRem(584);
+            margin-top: func.pxToRem(44);
         }
         @include mix.respond('xl') {
-            max-width: func.pxToRem(880px);
+            max-width: func.pxToRem(880);
         }
     }
     &__title {
         @include mix.flexbox($direction: column);
-        gap: func.pxToRem(32px);
+        gap: func.pxToRem(32);
     }
     &__arrows {
         width: 100%;
         position: absolute;
         top: 100%;
-        margin-top: func.pxToRem(74px);
+        margin-top: func.pxToRem(74);
         @include mix.respond('lg') {
             width: 90%;
             top: 50%;
@@ -51,19 +51,19 @@
         }
     }
     &__heading {
-        padding-top: func.pxToRem(10px);
+        padding-top: func.pxToRem(10);
     }
     &__stars {
         @include mix.flexbox();
-        gap: func.pxToRem(16px);
-        font-size: func.pxToRem(32px);
+        gap: func.pxToRem(16);
+        font-size: func.pxToRem(32);
     }
     &__pagination {
         @include mix.flexbox();
-        margin-top: func.pxToRem(74px);
-        gap: func.pxToRem(24px);
+        margin-top: func.pxToRem(74);
+        gap: func.pxToRem(24);
         @include mix.respond('lg') {
-            margin-top: func.pxToRem(64px);
+            margin-top: func.pxToRem(64);
         }
         &__page {
             height: 24px;
@@ -87,21 +87,21 @@
             &__arrow {
                 &--next {
                     background-color: var.$primary-color;
-                    height: func.pxToRem(64px);
-                    width: func.pxToRem(64px);
+                    height: func.pxToRem(64);
+                    width: func.pxToRem(64);
                     @include mix.respond('lg') {
-                        height: func.pxToRem(100px);
-                        width: func.pxToRem(100px);
+                        height: func.pxToRem(100);
+                        width: func.pxToRem(100);
                     }
                 }
                 &--prev {
                     background-color: var.$white;
                     border: 1px solid var.$border-color;
-                    height: func.pxToRem(64px);
-                    width: func.pxToRem(64px);
+                    height: func.pxToRem(64);
+                    width: func.pxToRem(64);
                     @include mix.respond('lg') {
-                        height: func.pxToRem(100px);
-                        width: func.pxToRem(100px);
+                        height: func.pxToRem(100);
+                        width: func.pxToRem(100);
                     }
                 }
             }
@@ -110,5 +110,5 @@
 }
 .icon-arrow-left,
 .icon-arrow-right {
-    font-size: func.pxToRem(24px);
+    font-size: func.pxToRem(24);
 }

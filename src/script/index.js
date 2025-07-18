@@ -22,6 +22,11 @@ const navLinkContainer = document.getElementById('js-navLinkContainer');
 const newsletterForm = document.getElementById('js-newsletterForm');
 
 /**
+ * Navigation links for closing the sidebar when clicked
+ */
+const navLinks = document.querySelectorAll('.nav__list-item a');
+
+/**
  * Opens the navigation menu by adding the 'open' class to the container.
  * Triggered when the hamburger icon is clicked.
  * This also prevents body scrolling while the menu is open.
@@ -62,6 +67,14 @@ function closeSidebar() {
         document.body.classList.remove('no-scroll');
     }
 }
+
+/**
+ * Adds click event listeners to each navigation link to close the sidebar
+ * when a link is clicked. This ensures the sidebar closes after navigation on mobile devices.
+ */
+navLinks.forEach((link) => {
+    link.addEventListener('click', closeSidebar);
+});
 
 /**
  * Calls closeSidebar() whenever the window is resized.

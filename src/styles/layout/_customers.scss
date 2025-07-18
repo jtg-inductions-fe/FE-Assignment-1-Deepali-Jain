@@ -6,23 +6,23 @@
     // Flexbox container for customer section
     @include mix.flexbox($justify: center);
     flex-wrap: wrap;
-    gap: func.pxToRem(32px) func.pxToRem(27px);
-    padding: func.pxToRem(47px) 0;
+    gap: func.pxToRem(32) func.pxToRem(27);
+    padding: func.pxToRem(47) 0;
     position: relative;
 
     // Responsive styles
     @include mix.respond('xs') {
-        max-width: func.pxToRem(896px);
+        max-width: func.pxToRem(896);
         margin: 0 auto;
-        padding: func.pxToRem(47px) func.pxToRem(10px);
+        padding: func.pxToRem(47) func.pxToRem(10);
     }
     @include mix.respond('md') {
-        padding: func.pxToRem(80px) func.pxToRem(100px);
+        padding: func.pxToRem(80) func.pxToRem(100);
     }
     @include mix.respond('xl') {
-        max-width: func.pxToRem(1320px);
-        padding: func.pxToRem(72px) 0;
-        column-gap: func.pxToRem(100px);
+        max-width: func.pxToRem(1320);
+        padding: func.pxToRem(72) 0;
+        column-gap: func.pxToRem(100);
     }
 
     // Background gradient for the section
@@ -34,7 +34,7 @@
         width: 200px;
         height: 300px;
         background: radial-gradient(circle at center, var.$yellow, var.$white);
-        filter: blur(40px);
+        filter: blur(60px);
         border-radius: 50%;
         z-index: 1;
         opacity: 0.5;
@@ -57,13 +57,10 @@
         height: auto;
         display: block;
         @include mix.respond('xs') {
-            height: func.pxToRem(22px);
+            height: func.pxToRem(22);
         }
         @include mix.respond('md') {
-            height: func.pxToRem(32px);
-        }
-        .customers::before {
-            transform: translateX(500px) translateY(-20px);
+            height: func.pxToRem(32);
         }
     }
 }
