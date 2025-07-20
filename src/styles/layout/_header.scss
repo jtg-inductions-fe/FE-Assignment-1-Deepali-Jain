@@ -2,11 +2,22 @@
 @use '../abstracts/functions' as func;
 @use '../abstracts/mixins' as mix;
 
-.nav {
+.header {
+    @include mix.flexbox();
+    padding: func.pxToRem(34) func.pxToRem(18);
+
+    // Large and XL screen padding
+    @include mix.respond('lg') {
+        padding: func.pxToRem(30) func.pxToRem(64);
+    }
+
+    @include mix.respond('xl') {
+        padding: func.pxToRem(58) func.pxToRem(64);
+    }
+
     // Hamburger Icon Wrapper
     &__hamburger {
         order: 2;
-
         // On medium screens, show before logo
         @include mix.respond('md') {
             order: 1;
@@ -39,75 +50,6 @@
         }
     }
 
-    // Navigation List
-    &__list {
-        padding: 0;
-
-        // Show list as horizontal flex on extra-large screens
-        @include mix.respond('xl') {
-            @include mix.flexbox();
-            gap: func.pxToRem(24);
-        }
-
-        // Navigation list items
-        &-item {
-            padding: func.pxToRem(20) func.pxToRem(15);
-
-            @include mix.respond('md') {
-                padding: func.pxToRem(30) func.pxToRem(50);
-            }
-
-            @include mix.respond('lg') {
-                padding: func.pxToRem(30) func.pxToRem(50);
-            }
-
-            @include mix.respond('xl') {
-                padding: func.pxToRem(20) func.pxToRem(20);
-            }
-        }
-    }
-
-    // Container for all nav sections
-    &__container {
-        @include mix.flexbox();
-        padding: func.pxToRem(34) func.pxToRem(18);
-
-        // Small screen padding
-        @include mix.respond('sm') {
-            padding: func.pxToRem(30) func.pxToRem(64);
-        }
-
-        // Large and XL screen padding
-        @include mix.respond('lg') {
-            padding: func.pxToRem(30) func.pxToRem(64);
-        }
-
-        @include mix.respond('xl') {
-            padding: func.pxToRem(58) func.pxToRem(64);
-        }
-    }
-
-    // Navigation Buttons (Log In / Sign Up)
-    &__buttons {
-        @include mix.flexbox();
-        flex-direction: column;
-        gap: func.pxToRem(5);
-        margin-right: func.pxToRem(50);
-        order: 4;
-        display: none;
-
-        // Show and adjust layout on medium screens
-        @include mix.respond('md') {
-            @include mix.flexbox();
-            margin-right: func.pxToRem(10);
-        }
-
-        // Add padding on extra-large screens
-        @include mix.respond('xl') {
-            padding-right: func.pxToRem(40);
-        }
-    }
-
     // Close (X) button container
     &__close {
         // Hide close button on extra-large screens
@@ -117,7 +59,6 @@
 
         // Close icon button styling
         &--icon {
-            padding: 0 func.pxToRem(15);
             background-color: transparent;
             border: none;
             cursor: pointer;
@@ -151,60 +92,108 @@
 
         // Center logo on medium screens
         @include mix.respond('md') {
-            margin-left: func.pxToRem(180);
             order: 2;
         }
 
         // Shift logo to the left on large screens
         @include mix.respond('lg') {
-            margin-left: 0;
-            padding-left: func.pxToRem(80);
+            margin-left: func.pxToRem(190);
+        }
+        @include mix.respond('xl') {
+            margin-left: func.pxToRem(80);
         }
     }
+}
 
-    // Mobile menu open state
-    &--open {
-        display: block;
-        position: fixed;
-        right: 0;
-        top: 0;
-        background: linear-gradient(135deg, var.$white, var.$off-white);
-        width: func.pxToRem(250);
-        height: 100vh;
-        box-shadow: -8px 0 24px rgba(0, 0, 0, 0.1);
-        border-top-left-radius: func.pxToRem(20);
-        border-bottom-left-radius: func.pxToRem(20);
-        padding: func.pxToRem(30) func.pxToRem(20);
-        transition:
-            transform 0.4s ease-in-out,
-            opacity 0.3s ease-in-out;
-        transform: translateX(0);
-        opacity: 1;
-        z-index: 1;
+.a {
+    // Navigation Buttons (Log In / Sign Up)
+    &__container {
+        @include mix.flexbox();
+        flex-direction: column;
+        gap: func.pxToRem(5);
+        order: 4;
+        display: none;
 
-        // Expand menu leftwards and increase width on medium screens
+        // Show and adjust layout on medium screens
         @include mix.respond('md') {
-            left: 0;
-            width: func.pxToRem(300);
-        }
-        @include mix.respond('lg') {
-            width: func.pxToRem(400);
+            @include mix.flexbox();
         }
 
-        // Show nav list inside open menu
-        .nav__list {
-            @include mix.flexbox($direction: column);
-            gap: func.pxToRem(30);
-            margin-top: func.pxToRem(70);
-            text-align: center;
-            &-item {
-                width: 100%;
-                border-radius: func.pxToRem(12);
-                padding: func.pxToRem(12) func.pxToRem(18);
-                transition:
-                    background-color 0.3s,
-                    transform 0.3s;
-                a {
+        // Add padding on extra-large screens
+        @include mix.respond('xl') {
+            margin-right: func.pxToRem(40);
+        }
+
+        &-sidebar {
+            display: none;
+        }
+    }
+}
+
+.nav {
+    &__list {
+        padding: 0;
+        // Show list as horizontal flex on extra-large screens
+        @include mix.respond('xl') {
+            @include mix.flexbox();
+            gap: func.pxToRem(24);
+        }
+
+        // Navigation list items
+        &-item {
+            padding: func.pxToRem(20) func.pxToRem(15);
+
+            @include mix.respond('md') {
+                padding: func.pxToRem(30) func.pxToRem(50);
+            }
+
+            @include mix.respond('xl') {
+                padding: func.pxToRem(20) func.pxToRem(20);
+            }
+        }
+    }
+}
+.js {
+    &-header {
+        // Mobile menu open state
+        &--open {
+            display: block;
+            position: fixed;
+            right: 0;
+            top: 0;
+            background-color: var.$light-pink;
+            width: 100%;
+            height: 100vh;
+            box-shadow: -8px 0 24px var.$shadow-color;
+            border-top-left-radius: func.pxToRem(20);
+            border-bottom-left-radius: func.pxToRem(20);
+            padding: func.pxToRem(30) func.pxToRem(20);
+            transition:
+                transform 0.4s ease-in-out,
+                opacity 0.3s ease-in-out;
+            transform: translateX(0);
+            opacity: 1;
+            z-index: 1;
+
+            // Expand menu leftwards and increase width on medium screens
+            @include mix.respond('md') {
+                left: 0;
+                width: 85%;
+            }
+            // Show nav list inside open menu
+            .nav__list {
+                @include mix.flexbox($direction: column);
+                gap: func.pxToRem(30);
+                margin-top: func.pxToRem(124);
+                text-align: center;
+                &-item {
+                    width: 100%;
+                    border-radius: func.pxToRem(12);
+                    transition:
+                        background-color 0.3s,
+                        transform 0.3s;
+                }
+                &-link {
                     text-decoration: none;
                     color: var.$black;
                     font-weight: 600;
@@ -215,37 +204,44 @@
                     }
                 }
             }
-        }
 
-        // Show nav buttons below open menu
-        + .nav__buttons {
-            display: flex;
-            position: fixed;
-            bottom: 20px;
-            right: 10px;
-            z-index: 2;
-            gap: func.pxToRem(12);
-            // Return to normal flow on medium screens
-            @include mix.respond('md') {
-                position: inherit;
+            // Show nav buttons below open menu
+            .a__container-sidebar {
+                @include mix.flexbox($direction: column);
+                z-index: 2;
+                gap: func.pxToRem(30);
+                width: 100%;
+                margin-top: func.pxToRem(40);
+                // Return to normal flow on medium screens
+                @include mix.respond('md') {
+                    display: none;
+                }
+                .btn--active {
+                    width: 70%;
+                    border-radius: func.pxToRem(16);
+                }
+                .btn--outlined {
+                    width: 70%;
+                    border-radius: func.pxToRem(16);
+                }
             }
-        }
 
-        // Close button styles
-        .nav__close--icon {
-            background: transparent;
-            border: none;
-            font-size: func.pxToRem(28);
-            cursor: pointer;
-            color: var.$black;
-            position: absolute;
-            top: func.pxToRem(20);
-            right: func.pxToRem(20);
-            transition: color 0.3s;
+            // Close button styles
+            .header__close--icon {
+                background: transparent;
+                border: none;
+                font-size: func.pxToRem(28);
+                cursor: pointer;
+                color: var.$black;
+                position: absolute;
+                top: func.pxToRem(20);
+                right: func.pxToRem(20);
+                transition: color 0.3s;
+            }
         }
     }
 }
 
-body.no-scroll {
+.body.js-no-scroll {
     overflow: hidden;
 }

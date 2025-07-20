@@ -20,8 +20,7 @@
     &::before {
         content: '';
         position: absolute;
-        top: -130px;
-        left: -400px;
+        inset: func.pxToRem(-130) func.pxToRem(-400);
         width: 100vw;
         height: 590px;
         background: radial-gradient(circle at center, var.$orange, var.$white);
@@ -32,16 +31,16 @@
     }
 
     // Hero section image
-    &__image {
+    &__image-container {
         @include mix.respond('sm') {
             max-width: func.pxToRem(782);
             width: 100%;
         }
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    }
+    &__image {
+        width: 100%;
+        height: auto;
+        display: block;
     }
 
     // Hero section heading
@@ -49,13 +48,20 @@
         line-height: 1.2;
         padding: func.pxToRem(8) func.pxToRem(42);
         @include mix.respond('xs') {
-            padding: func.pxToRem(8) 0;
+            padding: func.pxToRem(8) func.pxToRem(10);
         }
         @include mix.respond('sm') {
-            padding: 0;
+            width: 100%;
+            line-height: 1.2;
+            padding: func.pxToRem(30) func.pxToRem(70);
+        }
+        @include mix.respond('lg') {
+            padding: func.pxToRem(34) func.pxToRem(140);
         }
         @include mix.respond('xl') {
             padding: 0;
+            width: func.pxToRem(420);
+            line-height: 1.2;
         }
     }
 
@@ -65,16 +71,15 @@
         gap: func.pxToRem(16);
         text-align: center;
         padding-top: func.pxToRem(10);
-        max-width: func.pxToRem(320);
         @include mix.respond('xs') {
-            max-width: func.pxToRem(396);
+            max-width: var.$maxWidth-sm;
         }
         @include mix.respond('sm') {
             padding-top: func.pxToRem(44);
             text-align: center;
         }
         @include mix.respond('md') {
-            max-width: func.pxToRem(896);
+            max-width: var.$maxWidth-lg;
         }
         @include mix.respond('xl') {
             @include mix.flexbox($align: flex-start, $direction: column);
@@ -85,37 +90,22 @@
         }
     }
 
-    &-heading {
-        @include mix.respond('sm') {
-            max-width: func.pxToRem(756);
-            width: 100%;
-            line-height: 1.2;
-            padding: func.pxToRem(30) func.pxToRem(70);
-        }
-        @include mix.respond('xl') {
-            width: func.pxToRem(420);
-            line-height: 1.2;
-            padding: 0;
-        }
-    }
-
     // Hero section button
     &__button {
         @include mix.flexbox($direction: column);
         gap: func.pxToRem(24);
-        padding: func.pxToRem(20) 0;
-        max-width: func.pxToRem(398);
+        margin: func.pxToRem(20) 0;
         width: 100%;
         @include mix.respond('sm') {
             @include mix.flexbox;
             max-width: func.pxToRem(338);
             gap: func.pxToRem(16);
-            padding: func.pxToRem(25) 0;
+            margin: func.pxToRem(25) 0;
         }
         @include mix.respond('xl') {
             @include mix.flexbox;
             gap: func.pxToRem(24);
-            padding: func.pxToRem(15) 0;
+            margin: func.pxToRem(15) 0;
         }
         &--icon {
             font-size: func.pxToRem(24);
@@ -130,16 +120,16 @@
     // Hero section paragraph
     &__paragraph {
         @include mix.respond('xs') {
-            padding: 0 func.pxToRem(10);
+            margin: 0 func.pxToRem(10);
         }
         @include mix.respond('sm') {
-            padding: 0;
+            margin: 0;
         }
         @include mix.respond('md') {
-            padding: 0 func.pxToRem(230);
+            margin: 0 func.pxToRem(230);
         }
         @include mix.respond('xl') {
-            padding: 0;
+            margin: 0;
         }
     }
 

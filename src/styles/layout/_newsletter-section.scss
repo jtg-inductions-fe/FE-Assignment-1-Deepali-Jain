@@ -9,13 +9,13 @@
 
     // Responsive styles
     @include mix.respond('lg') {
-        max-width: func.pxToRem(897);
+        max-width: var.$maxWidth-lg;
         background-color: var.$light-yellow;
         padding: func.pxToRem(128) func.pxToRem(64);
         margin-top: func.pxToRem(104);
     }
     @include mix.respond('xl') {
-        max-width: func.pxToRem(1192);
+        max-width: var.$maxWidth-xl;
         margin-top: func.pxToRem(160);
     }
 

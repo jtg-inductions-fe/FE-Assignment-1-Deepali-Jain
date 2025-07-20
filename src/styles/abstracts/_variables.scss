@@ -12,7 +12,9 @@ $orange: #ff5722;
 $yellow: #facd49;
 $light-yellow: rgba(250, 206, 73, 0.08);
 $off-white: #f1f2f2;
+$light-pink: rgb(255, 238, 238);
 $border-color: lighten(rgba(25, 24, 37, 0.522), 60%);
+$shadow-color: rgba(0, 0, 0, 0.148);
 
 // Fonts
 $font-family-base: 'Circular Std', sans-serif;
@@ -33,3 +35,7 @@ $breakpoints: (
 
 //dimensions
 $default-border-radius: func.pxToRem(32);
+$maxWidth-lg: func.pxToRem(896);
+$maxWidth-xs: func.pxToRem(320);
+$maxWidth-sm: func.pxToRem(398);
+$maxWidth-xl: func.pxToRem(1192);

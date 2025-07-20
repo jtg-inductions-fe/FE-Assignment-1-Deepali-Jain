@@ -12,12 +12,11 @@
 
     // Responsive styles
     @include mix.respond('xs') {
-        max-width: func.pxToRem(896);
-        margin: 0 auto;
+        max-width: var.$maxWidth-lg;
         padding: func.pxToRem(47) func.pxToRem(10);
     }
-    @include mix.respond('md') {
-        padding: func.pxToRem(80) func.pxToRem(100);
+    @include mix.respond('lg') {
+        padding: func.pxToRem(80) func.pxToRem(150);
     }
     @include mix.respond('xl') {
         max-width: func.pxToRem(1320);
@@ -30,7 +29,6 @@
         content: '';
         position: absolute;
         transform: translateX(300px) translateY(-20px);
-        bottom: 0;
         width: 200px;
         height: 300px;
         background: radial-gradient(circle at center, var.$yellow, var.$white);
@@ -43,16 +41,15 @@
         // Responsive styles for the gradient
         @include mix.respond('lg') {
             transform: translateX(350px) translateY(-10px);
-            width: 300px;
-            height: 200px;
             display: block;
         }
         @include mix.respond('xl') {
             transform: translateX(500px) translateY(-20px);
-            width: 300px;
         }
     }
-    img {
+
+    // Images of customer section
+    &__image {
         max-width: 100%;
         height: auto;
         display: block;

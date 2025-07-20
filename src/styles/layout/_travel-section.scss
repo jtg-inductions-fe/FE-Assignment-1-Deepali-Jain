@@ -5,6 +5,7 @@
     @include mix.flexbox($direction: column);
     margin-top: func.pxToRem(66);
     row-gap: func.pxToRem(25);
+    position: relative;
     @include mix.respond('sm') {
         margin-top: func.pxToRem(130);
         margin-left: func.pxToRem(30);
@@ -15,30 +16,29 @@
     }
     @include mix.respond('xl') {
         margin-top: func.pxToRem(116);
-        margin-left: auto;
         @include mix.flexbox($direction: row);
     }
 
     // Image in travel section
-    &__image {
-        max-width: func.pxToRem(398);
+    &__image__container {
+        max-width: var.$maxWidth-sm;
         @include mix.respond('sm') {
             max-width: func.pxToRem(871);
             width: 100%;
         }
-        img {
-            width: 100%;
-            height: auto;
-        }
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
     }
 
     // Content in travel section
     &__content {
         @include mix.flexbox($direction: column);
-        max-width: func.pxToRem(398);
         text-align: center;
         @include mix.respond('sm') {
-            max-width: func.pxToRem(896);
+            max-width: var.$maxWidth-lg;
         }
         @include mix.respond('xl') {
             align-items: flex-start;
@@ -48,12 +48,6 @@
             padding-top: func.pxToRem(52);
         }
     }
-
-    // Heading of travel section
-    &--heading {
-        padding-top: func.pxToRem(2);
-    }
-
     // Paragraph of travel section
     &--paragraph {
         padding: func.pxToRem(20);
@@ -66,17 +60,17 @@
     }
 
     // Container of cards in travel section
-    &__cards {
+    &__cards__container {
         @include mix.flexbox($direction: column);
         width: 100%;
-        max-width: func.pxToRem(398);
+        max-width: var.$maxWidth-sm;
         gap: func.pxToRem(16);
         margin-top: func.pxToRem(20);
 
         // Individual card of travel section
         .travel__card {
             @include mix.flexbox($direction: column);
-            gap: func.pxToRem(5);
+            row-gap: func.pxToRem(5);
             width: 100%;
             border-radius: func.pxToRem(32);
             padding: func.pxToRem(32) 0;
@@ -89,8 +83,20 @@
             @include mix.flexbox($direction: row);
             max-width: func.pxToRem(832);
             flex-wrap: wrap;
-            gap: func.pxToRem(32);
+            row-gap: func.pxToRem(32);
             margin-top: func.pxToRem(40);
+        }
+    }
+
+    &__sticker {
+        &-container {
+            position: absolute;
+            top: 268px;
+            right: 0;
+            display: none;
+            @include mix.respond('xl') {
+                display: block;
+            }
         }
     }
 }

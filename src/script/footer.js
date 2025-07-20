@@ -1,7 +1,9 @@
 /**
  * Footer JavaScript for handling accordion functionality
  */
-const accordionToggles = document.querySelectorAll('.footer__accordion-toggle');
+const accordionToggles = document.querySelectorAll(
+    '.js-footer__accordion-toggle',
+);
 
 /**
  * Breakpoints for responsive design
@@ -11,17 +13,23 @@ const breakpoints = {
 };
 
 /**
+ * Footer element
+ */
+const footer = document.getElementById('js-footer');
+
+/**
  * Toggles the active state of the accordion when a toggle element is clicked.
  * This adds or removes the 'active' class from the parent accordion element.
  */
-function toggleAccordion() {
-    accordionToggles.forEach((element) => {
-        element.addEventListener('click', () => {
-            const accordionParent = element.closest('.footer__accordion');
-            accordionParent.classList.toggle('active');
-        });
-    });
-}
+footer.addEventListener('click', (event) => {
+    if (
+        event.target.classList.contains('icon-circle-down') ||
+        event.target.classList.contains('js-footer__accordion-toggle')
+    ) {
+        const accordionParent = event.target.closest('.js-footer__accordion');
+        accordionParent.classList.toggle('active');
+    }
+});
 
 /**
  * Disables the accordion toggles for larger screens by setting tabindex to -1.
@@ -38,11 +46,6 @@ function disableAccordionTab() {
         });
     }
 }
-
-/**
- * Initializes the accordion functionality by adding click event listeners
- */
-toggleAccordion();
 
 /**
  * Sets up event listeners to disable accordion toggles on page load and resize.

@@ -3,20 +3,20 @@
 @use '../abstracts/mixins' as mix;
 
 .footer {
-    max-width: func.pxToRem(320);
+    max-width: var.$maxWidth-xs;
     margin-top: func.pxToRem(96);
 
     // Responsive styles
     @include mix.respond('xs') {
-        max-width: func.pxToRem(398);
+        max-width: var.$maxWidth-sm;
     }
     @include mix.respond('lg') {
-        max-width: func.pxToRem(897);
+        max-width: var.$maxWidth-lg;
         margin-top: func.pxToRem(64);
     }
     @include mix.respond('xl') {
         @include mix.flexbox();
-        max-width: func.pxToRem(1192);
+        max-width: var.$maxWidth-xl;
         gap: func.pxToRem(64);
         padding: func.pxToRem(64) 0;
     }
@@ -55,8 +55,8 @@
             background-color: var.$primary-color;
             border-radius: 50%;
             cursor: pointer;
-            height: 32px;
-            width: 32px;
+            height: func.pxToRem(32);
+            width: func.pxToRem(32);
             border: none;
             &:hover {
                 background-color: darken(var.$primary-color, 10%);
@@ -85,16 +85,6 @@
 
     // Container for individual accordions in footer
     &__accordion {
-        width: 100%;
-
-        // Toggle for accordion
-        &-toggle {
-            @include mix.flexbox();
-            width: 100%;
-            background-color: var.$white;
-            border: none;
-        }
-
         // List of items in accordion
         &-list {
             display: none;
@@ -108,20 +98,30 @@
     }
 }
 
-// List styles for accordion when opened
-.footer__accordion.active {
-    .footer__accordion-list {
-        display: block;
-        @include mix.flexbox($direction: column, $align: flex-start);
-        gap: func.pxToRem(32);
-        margin-top: func.pxToRem(32);
+.js-footer__accordion {
+    width: 100%;
+    // Toggle for accordion
+    &-toggle {
+        @include mix.flexbox();
+        width: 100%;
+        background-color: var.$white;
+        border: none;
     }
-    .icon-circle-down {
-        transform: rotate(180deg);
+
+    &.active {
+        .footer__accordion-list {
+            display: block;
+            @include mix.flexbox($direction: column, $align: flex-start);
+            gap: func.pxToRem(32);
+            margin-top: func.pxToRem(32);
+        }
+        .icon-circle-down {
+            transform: rotate(180deg);
+        }
     }
 }
 
-// Individual icon for toggling accordion
+// Individual icon for toggling accordionmax-width
 .icon-circle-down {
     @include mix.respond('lg') {
         display: none;

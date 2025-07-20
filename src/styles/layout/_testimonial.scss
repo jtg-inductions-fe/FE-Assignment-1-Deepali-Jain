@@ -19,13 +19,13 @@
         gap: func.pxToRem(54);
         width: 100%;
         text-align: center;
-        margin-bottom: 10;
+        margin-bottom: func.pxToRem(10);
     }
     &__track {
         max-width: func.pxToRem(310);
         margin-top: func.pxToRem(64);
         @include mix.respond('xs') {
-            max-width: func.pxToRem(398);
+            max-width: var.$maxWidth-sm;
         }
         @include mix.respond('lg') {
             max-width: func.pxToRem(584);

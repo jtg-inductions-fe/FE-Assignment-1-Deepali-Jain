@@ -7,8 +7,6 @@
 // ==============================
 
 .btn {
-    // Minimum width and height for button size
-
     // Fully rounded pill-shaped button
     border-radius: func.pxToRem(100);
 
@@ -30,7 +28,7 @@
     // Hover effect: lift slightly and add shadow
     &:hover {
         transform: translateY(-1px);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px var.$shadow-color;
     }
 
     // Focus effect: visible outline
@@ -88,20 +86,21 @@
     // Explore Button Modifier
     // ==============================
 
-    &__explore {
+    &__disabled {
         @include mix.flexbox();
         width: func.pxToRem(224);
         height: func.pxToRem(56);
         color: var.$highlight-color;
-        box-shadow: 0 5px 10px rgba(21, 21, 21, 0.034);
+        box-shadow: 0 5px 10px var.$shadow-color;
         background-color: transparent;
+        pointer-events: none;
     }
 
     // ==============================
     // Start Button Modifier
     // ==============================
 
-    &__start {
+    &__success {
         width: 100%;
         height: func.pxToRem(65);
         @include mix.respond('md') {
@@ -111,7 +110,7 @@
             padding: func.pxToRem(16);
         }
         &:hover {
-            box-shadow: 0 15px 10px rgba(0, 0, 0, 0.148);
+            box-shadow: 0 15px 10px var.$shadow-color;
         }
     }
 
@@ -119,16 +118,11 @@
     // Watch Button Modifier
     // ==============================
 
-    &__watch {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    &__secondary {
+        @include mix.flexbox($justify: center);
         width: 100%;
         height: func.pxToRem(65);
         border: 1px solid var.$border-color;
-        @include mix.respond('xs') {
-            @include mix.flexbox($justify: center);
-        }
         @include mix.respond('md') {
             height: func.pxToRem(49);
         }
@@ -138,10 +132,10 @@
     }
 
     // ==============================
-    //Subscribe Button Modifier
+    // Subscribe Button Modifier
     // ==============================
 
-    &__subscribe {
+    &-lg {
         width: 100%;
         height: func.pxToRem(66);
         border-radius: func.pxToRem(16);

@@ -13,49 +13,55 @@
             content="travel, destinations, world, tourism, vacation"
         />
     </head>
-    <body>
-        <header class="nav">
-            <div class="nav__container">
-                <div class="nav__hamburger" id="js-hamIcon">
+    <body class="body">
+        <header class="header">
+            <div class="header__hamburger" id="js-hamIcon">
+                <button
+                    class="header__hamburger-icon icon-hamburger-menu"
+                    aria-label="open main menu"
+                    type="button"
+                ></button>
+            </div>
+            <div class="header__logo">
+                <img src="/assets/images/logo.webp" alt="Travlog logo" />
+            </div>
+            <div class="header__links" id="js-navLinkContainer">
+                <div class="header__close" id="js-crossIcon">
                     <button
-                        class="nav__hamburger-icon icon-hamburger-menu"
-                        aria-label="open main menu"
+                        class="header__close--icon"
+                        aria-label="close main menu"
                         type="button"
                     ></button>
                 </div>
-                <div class="nav__logo">
-                    <img
-                        src="/assets/images/logo.webp"
-                        loading="eager"
-                        alt="Travlog logo"
-                    />
-                </div>
-                <div class="nav__links" id="js-navLinkContainer">
-                    <div class="nav__close" id="js-crossIcon">
-                        <button
-                            class="nav__close--icon"
-                            aria-label="close main menu"
-                            type="button"
-                        ></button>
-                    </div>
-                    <nav>
-                        <ul class="nav__list">
-                            <li class="nav__list-item">
-                                <a aria-current="page" href="#"> Home </a>
-                            </li>
-                            <li class="nav__list-item">
-                                <a href="#discover">Discover</a>
-                            </li>
-                            <li class="nav__list-item">
-                                <a href="#deals">Special Deals</a>
-                            </li>
-                            <li class="nav__list-item">
-                                <a href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="nav__buttons" id="js-navButtons">
+                <nav class="nav" id="js-nav">
+                    <ul class="nav__list">
+                        <li class="nav__list-item">
+                            <a
+                                aria-current="page"
+                                href="#"
+                                class="nav__list-link"
+                            >
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav__list-item">
+                            <a href="#discover" class="nav__list-link"
+                                >Discover</a
+                            >
+                        </li>
+                        <li class="nav__list-item">
+                            <a href="#deals" class="nav__list-link"
+                                >Special Deals</a
+                            >
+                        </li>
+                        <li class="nav__list-item">
+                            <a href="#contact" class="nav__list-link"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+                <div class="a__container-sidebar">
                     <button class="btn btn--outlined" type="button">
                         Log In
                     </button>
@@ -65,94 +71,109 @@
                     </button>
                 </div>
             </div>
+            <div class="a__container">
+                <button class="btn btn--outlined" type="button">Log In</button>
+
+                <button class="btn btn--active" type="button">Sign Up</button>
+            </div>
         </header>
         <main class="hero">
             <div class="hero__content">
-                <div>
-                    <button
-                        class="btn btn--outlined btn__explore"
-                        type="button"
-                    >
-                        Explore the world!
-                        <i class="icon-work hero__button--icon"></i>
-                    </button>
-                </div>
-                <div class="hero__heading">
-                    <h1 class="hero-heading">
-                        Travel
-                        <mark class="heading--highlight">top destination</mark>
-                        of the world
-                    </h1>
-                </div>
-                <div class="hero__paragraph">
-                    <p class="paragraph">
-                        We always make our customer happy by providing as many
-                        choices as possible
-                    </p>
-                </div>
+                <button class="btn btn--outlined btn__disabled" type="button">
+                    Explore the world!
+                    <i class="icon-work hero__button--icon"></i>
+                </button>
+                <h1 class="hero__heading">
+                    Travel
+                    <mark class="heading--highlight">top destination</mark>
+                    of the world
+                </h1>
+                <p class="hero__paragraph paragraph">
+                    We always make our customer happy by providing as many
+                    choices as possible
+                </p>
                 <div class="hero__button">
-                    <button class="btn btn--active btn__start" type="button">
+                    <button class="btn btn--active btn__success" type="button">
                         Get Started
                     </button>
-                    <button class="btn btn--outlined btn__watch" type="button">
+                    <button
+                        class="btn btn--outlined btn__secondary"
+                        type="button"
+                    >
                         <i class="icon-play-button hero__button--play-icon"></i>
                         Watch Demo
                     </button>
                 </div>
-                <img
-                    class="hero__arrow"
-                    src="/assets/images/hero-object.webp"
-                    alt="hero section graphical arrow elements"
-                />
+                <div class="hero__arrow">
+                    <img
+                        src="/assets/images/hero-object.webp"
+                        alt="hero section graphical arrow elements"
+                    />
+                </div>
             </div>
-            <div class="hero__image">
+            <div class="hero__image-container">
                 <img
                     src="/assets/images/hero-banner.webp"
-                    loading="eager"
                     alt="a collage of travel images"
+                    class="hero__image"
                 />
             </div>
         </main>
         <section class="customers">
-            <img
-                src="/assets/images/tripadvisor-logo.webp"
-                alt="logo of tripadvisor"
-                loading="lazy"
-            />
-            <img
-                src="/assets/images/expedia-logo.webp"
-                loading="lazy"
-                alt="logo of expedia"
-            />
-            <img
-                src="/assets/images/booking-logo.webp"
-                loading="lazy"
-                alt="logo of booking"
-            />
-            <img
-                src="/assets/images/airbnb-logo.webp"
-                loading="lazy"
-                alt="logo of airbnb"
-            />
-            <img
-                src="/assets/images/orbitz-logo.webp"
-                loading="lazy"
-                alt="logo of orbitz"
-            />
+            <div>
+                <img
+                    src="/assets/images/tripadvisor-logo.webp"
+                    alt="logo of tripadvisor"
+                    class="customers__image"
+                    loading="lazy"
+                />
+            </div>
+            <div>
+                <img
+                    src="/assets/images/expedia-logo.webp"
+                    loading="lazy"
+                    alt="logo of expedia"
+                    class="customers__image"
+                />
+            </div>
+            <div>
+                <img
+                    src="/assets/images/booking-logo.webp"
+                    loading="lazy"
+                    alt="logo of booking"
+                    class="customers__image"
+                />
+            </div>
+            <div>
+                <img
+                    src="/assets/images/airbnb-logo.webp"
+                    loading="lazy"
+                    alt="logo of airbnb"
+                    class="customers__image"
+                />
+            </div>
+            <div>
+                <img
+                    src="/assets/images/orbitz-logo.webp"
+                    loading="lazy"
+                    alt="logo of orbitz"
+                    class="customers__image"
+                />
+            </div>
         </section>
         <section class="services">
             <div class="services__headings">
                 <h4 class="subheading">SERVICES</h4>
-                <h2 class="heading services--heading">
-                    Our top value categories for you
-                </h2>
+                <h2 class="heading">Our top value categories for you</h2>
             </div>
-            <div class="services__cards">
+            <div class="services__cards__container">
                 <div class="service__card">
-                    <img
-                        src="/assets/images/globe.webp"
-                        alt="a globe with location pins"
-                    />
+                    <div class="service__card-image">
+                        <img
+                            src="/assets/images/globe.webp"
+                            alt="a globe with location pins"
+                        />
+                    </div>
                     <h3 class="card-subheading card-subheading--services">
                         Best Tour Guide
                     </h3>
@@ -162,10 +183,12 @@
                     </p>
                 </div>
                 <div class="service__card">
-                    <img
-                        src="/assets/images/booking.webp"
-                        alt="an illustration of online booking"
-                    />
+                    <div class="service__card-image">
+                        <img
+                            src="/assets/images/booking.webp"
+                            alt="an illustration of online booking"
+                        />
+                    </div>
                     <h3 class="card-subheading card-subheading--services">
                         Easy Booking
                     </h3>
@@ -174,10 +197,12 @@
                     </p>
                 </div>
                 <div class="service__card">
-                    <img
-                        src="/assets/images/weather.webp"
-                        alt="an illustration of weather forecast"
-                    />
+                    <div class="service__card-image">
+                        <img
+                            src="/assets/images/weather.webp"
+                            alt="an illustration of weather forecast"
+                        />
+                    </div>
                     <h3 class="card-subheading card-subheading--services">
                         Weather Forecast
                     </h3>
@@ -189,23 +214,22 @@
             </div>
         </section>
         <section class="travel" id="discover">
-            <div class="travel__image">
+            <div class="travel__image__container">
                 <img
                     src="/assets/images/travel-image.webp"
                     alt="A collage of travel images"
+                    class="travel__image"
                 />
             </div>
             <div class="travel__content">
                 <h4 class="subheading">TRAVEL POINT</h4>
-                <h2 class="heading travel--heading">
-                    We helping you find your dream location
-                </h2>
+                <h2 class="heading">We helping you find your dream location</h2>
                 <p class="paragraph travel--paragraph">
                     Contrary to popular belief, Lorem Ipsum is not simply random
                     text. It has roots in a piece of classical Latin literature
                     from 45 BC.
                 </p>
-                <div class="travel__cards">
+                <div class="travel__cards__container">
                     <div class="travel__card">
                         <h4 class="card-subheading card-subheading--travel">
                             500+
@@ -237,6 +261,12 @@
                         </p>
                     </div>
                 </div>
+                <div class="travel__sticker-container">
+                    <img
+                        src="/assets/images/travel-sticker.webp"
+                        alt="a decorative, yellow sticker"
+                    />
+                </div>
             </div>
         </section>
         <section class="features" id="deals">
@@ -256,12 +286,14 @@
                     text. It has roots in a piece of classical Latin literature
                     from 45 BC.
                 </p>
-                <div class="features__cards">
+                <div class="features__cards__container">
                     <div class="features__card">
-                        <img
-                            src="/assets/images/location.webp"
-                            alt="Location pin"
-                        />
+                        <div>
+                            <img
+                                src="/assets/images/location.webp"
+                                alt="Location pin"
+                            />
+                        </div>
                         <div>
                             <h3
                                 class="card-subheading features__card-subheading card-subheading--features"
@@ -274,10 +306,12 @@
                         </div>
                     </div>
                     <div class="features__card">
-                        <img
-                            src="/assets/images/calendar.webp"
-                            alt="Calendar image"
-                        />
+                        <div>
+                            <img
+                                src="/assets/images/calendar.webp"
+                                alt="Calendar image"
+                            />
+                        </div>
                         <div>
                             <h3
                                 class="card-subheading features__card-subheading card-subheading--features"
@@ -290,10 +324,12 @@
                         </div>
                     </div>
                     <div class="features__card">
-                        <img
-                            src="/assets/images/coupon.webp"
-                            alt="A coupon's image"
-                        />
+                        <div>
+                            <img
+                                src="/assets/images/coupon.webp"
+                                alt="A coupon's image"
+                            />
+                        </div>
                         <div>
                             <h3
                                 class="card-subheading features__card-subheading card-subheading--features"
@@ -317,10 +353,12 @@
             <div class="splide__track testimonial__track">
                 <ul class="splide__list">
                     <li class="splide__slide testimonial__slide">
-                        <img
-                            src="/assets/images/testimonial_pfp.webp"
-                            alt="testimonial profile picture"
-                        />
+                        <div>
+                            <img
+                                src="/assets/images/testimonial_pfp.webp"
+                                alt="testimonial profile picture"
+                            />
+                        </div>
                         <div class="splide__title testimonial__title">
                             <h5 class="card-subheading--testimonial">
                                 <mark class="card-subheading--highlight"
@@ -342,10 +380,12 @@
                         </p>
                     </li>
                     <li class="splide__slide testimonial__slide">
-                        <img
-                            src="/assets/images/testimonial_pfp.webp"
-                            alt="testimonial profile picture"
-                        />
+                        <div>
+                            <img
+                                src="/assets/images/testimonial_pfp.webp"
+                                alt="testimonial profile picture"
+                            />
+                        </div>
                         <div class="splide__title testimonial__title">
                             <h5 class="card-subheading--testimonial">
                                 <mark class="card-subheading--highlight"
@@ -367,10 +407,12 @@
                         </p>
                     </li>
                     <li class="splide__slide testimonial__slide">
-                        <img
-                            src="/assets/images/testimonial_pfp.webp"
-                            alt="testimonial profile picture"
-                        />
+                        <div>
+                            <img
+                                src="/assets/images/testimonial_pfp.webp"
+                                alt="testimonial profile picture"
+                            />
+                        </div>
                         <div class="splide__title testimonial__title">
                             <h5 class="card-subheading--testimonial">
                                 <mark class="card-subheading--highlight"
@@ -425,38 +467,39 @@
                             class="newsletter__form-input"
                             type="email"
                             aria-label="Email address"
+                            name="email"
                             pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                             required
                         />
                     </div>
-                    <button
-                        class="btn btn--active btn__subscribe"
-                        type="submit"
-                    >
+                    <button class="btn btn--active btn-lg" type="submit">
                         Subscribe
                     </button>
                 </form>
             </div>
-            <img
-                src="/assets/images/newsletter-object.webp"
-                alt="graphical elements of newsletter section"
-                class="newsletter__dots"
-            />
-            <img
-                src="/assets/images/newsletter-object2.webp"
-                alt="graphical elements of newsletter section"
-                class="newsletter__object"
-            />
+            <div class="newsletter__dots">
+                <img
+                    src="/assets/images/newsletter-object.webp"
+                    alt="graphical elements of newsletter section"
+                />
+            </div>
+            <div class="newsletter__object">
+                <img
+                    src="/assets/images/newsletter-object2.webp"
+                    alt="graphical elements of newsletter section"
+                />
+            </div>
         </section>
 
-        <footer class="footer">
+        <footer class="footer" id="js-footer">
             <div class="footer__content">
                 <div class="footer__title">
-                    <img
-                        src="/assets/images/logo.webp"
-                        loading="eager"
-                        alt="Travlog logo"
-                    />
+                    <div>
+                        <img
+                            src="/assets/images/logo.webp"
+                            alt="Travlog logo"
+                        />
+                    </div>
                     <h2 class="heading heading--footer">Travlog</h2>
                 </div>
                 <p class="paragraph paragraph--footer">
@@ -475,14 +518,14 @@
                     </button>
                     <button
                         class="footer__social-icon"
-                        aria-label="Instagram"
+                        aria-label="Twitter"
                         type="button"
                     >
                         <i class="icon-twitter-logo"></i>
                     </button>
                     <button
                         class="footer__social-icon"
-                        aria-label="Twitter"
+                        aria-label="Instagram"
                         type="button"
                     >
                         <i class="icon-ig-logo"></i>
@@ -490,9 +533,9 @@
                 </div>
             </div>
             <div class="footer__links">
-                <div class="footer__accordion">
+                <div class="js-footer__accordion">
                     <button
-                        class="footer__accordion-toggle"
+                        class="js-footer__accordion-toggle"
                         aria-label="Company"
                         type="button"
                     >
@@ -504,9 +547,9 @@
                         <li><a href="#">Mobile</a></li>
                     </ul>
                 </div>
-                <div class="footer__accordion">
+                <div class="js-footer__accordion">
                     <button
-                        class="footer__accordion-toggle"
+                        class="js-footer__accordion-toggle"
                         aria-label="Contact Us"
                         type="button"
                     >
@@ -519,9 +562,9 @@
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
-                <div class="footer__accordion">
+                <div class="js-footer__accordion">
                     <button
-                        class="footer__accordion-toggle"
+                        class="js-footer__accordion-toggle"
                         aria-label="Meet Us"
                         type="button"
                     >
@@ -536,7 +579,5 @@
             </div>
         </footer>
         <script type="module" src="./src/script/index.js"></script>
-        <script type="module" src="./src/script/testimonial.js"></script>
-        <script type="module" src="./src/script/footer.js"></script>
     </body>
 </html>

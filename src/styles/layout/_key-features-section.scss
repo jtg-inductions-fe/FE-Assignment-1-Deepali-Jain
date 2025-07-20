@@ -3,7 +3,7 @@
 @use '../abstracts/mixins' as mix;
 .features {
     margin: func.pxToRem(98) auto;
-    max-width: func.pxToRem(320);
+    max-width: var.$maxWidth-xs;
     &--paragraph {
         padding: func.pxToRem(15) func.pxToRem(5);
         @include mix.respond('lg') {
@@ -17,7 +17,7 @@
         margin-bottom: 0;
     }
     @include mix.respond('lg') {
-        max-width: func.pxToRem(896);
+        max-width: var.$maxWidth-lg;
         margin-top: func.pxToRem(132);
     }
     @include mix.respond('xl') {
@@ -29,33 +29,33 @@
     // Content of features section
     &__content {
         @include mix.flexbox($direction: column);
-        padding-top: func.pxToRem(98);
+        margin-top: func.pxToRem(98);
         row-gap: func.pxToRem(16);
         text-align: center;
         @include mix.respond('xs') {
             max-width: func.pxToRem(334);
         }
         @include mix.respond('lg') {
-            padding-top: func.pxToRem(62);
-            max-width: func.pxToRem(896);
+            margin-top: func.pxToRem(62);
+            max-width: var.$maxWidth-lg;
         }
         @include mix.respond('xl') {
             max-width: func.pxToRem(558);
             align-items: flex-start;
             text-align: left;
-            padding-top: 0;
+            margin-top: func.pxToRem(40);
         }
     }
 
     // Cards container in features section
-    &__cards {
+    &__cards__container {
         @include mix.flexbox($direction: column);
         row-gap: func.pxToRem(16);
-        padding-top: func.pxToRem(10);
+        margin-top: func.pxToRem(10);
         @include mix.respond('lg') {
             max-width: func.pxToRem(832);
             width: 100%;
-            padding-top: func.pxToRem(26);
+            margin-top: func.pxToRem(26);
             row-gap: 0;
         }
     }
@@ -80,9 +80,9 @@
 
     // Subheading for feature cards
     &__card-subheading {
-        padding-top: func.pxToRem(24);
+        margin-top: func.pxToRem(24);
         @include mix.respond('lg') {
-            padding-top: func.pxToRem(10);
+            margin-top: func.pxToRem(10);
         }
     }
 
@@ -103,4 +103,8 @@
 }
 .paragraph--features {
     padding-right: func.pxToRem(50);
+    @include mix.line-clamp($lines: 2);
+    @include mix.respond('lg') {
+        @include mix.line-clamp();
+    }
 }
