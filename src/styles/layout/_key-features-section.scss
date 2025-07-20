@@ -5,9 +5,9 @@
     margin: func.pxToRem(98) auto;
     max-width: var.$maxWidth-xs;
     &--paragraph {
-        padding: func.pxToRem(15) func.pxToRem(5);
+        margin: func.pxToRem(18) func.pxToRem(5);
         @include mix.respond('lg') {
-            padding: func.pxToRem(15) func.pxToRem(48) func.pxToRem(15) 0;
+            margin: func.pxToRem(15) func.pxToRem(48);
         }
     }
 
@@ -29,14 +29,14 @@
     // Content of features section
     &__content {
         @include mix.flexbox($direction: column);
-        margin-top: func.pxToRem(98);
+        margin-top: func.pxToRem(92);
         row-gap: func.pxToRem(16);
         text-align: center;
         @include mix.respond('xs') {
             max-width: func.pxToRem(334);
         }
         @include mix.respond('lg') {
-            margin-top: func.pxToRem(62);
+            margin-top: func.pxToRem(56);
             max-width: var.$maxWidth-lg;
         }
         @include mix.respond('xl') {
@@ -51,7 +51,7 @@
     &__cards__container {
         @include mix.flexbox($direction: column);
         row-gap: func.pxToRem(16);
-        margin-top: func.pxToRem(10);
+        margin-top: func.pxToRem(4);
         @include mix.respond('lg') {
             max-width: func.pxToRem(832);
             width: 100%;
@@ -64,7 +64,7 @@
     &__card {
         @include mix.flexbox($align: flex-start, $direction: column);
         width: 100%;
-        padding: func.pxToRem(32);
+        padding: func.pxToRem(28) func.pxToRem(32);
         text-align: left;
         row-gap: func.pxToRem(8);
         @include mix.respond('lg') {
@@ -80,7 +80,7 @@
 
     // Subheading for feature cards
     &__card-subheading {
-        margin-top: func.pxToRem(24);
+        margin-top: func.pxToRem(14);
         @include mix.respond('lg') {
             margin-top: func.pxToRem(10);
         }
@@ -88,23 +88,17 @@
 
     // Image in feature cards
     &__img {
-        @include mix.respond('lg') {
-            max-width: func.pxToRem(693);
-            margin: 0 auto;
+        width: 100%;
+        height: auto;
+        &-container {
+            @include mix.respond('lg') {
+                max-width: func.pxToRem(693);
+                margin: 0 auto;
+            }
+            @include mix.respond('xl') {
+                max-width: func.pxToRem(650);
+                width: 100%;
+            }
         }
-        @include mix.respond('xl') {
-            max-width: func.pxToRem(650);
-            width: 100%;
-        }
-        img {
-            width: 100%;
-        }
-    }
-}
-.paragraph--features {
-    padding-right: func.pxToRem(50);
-    @include mix.line-clamp($lines: 2);
-    @include mix.respond('lg') {
-        @include mix.line-clamp();
     }
 }

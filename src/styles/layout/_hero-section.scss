@@ -68,14 +68,14 @@
     // Hero section paragraph
     &__content {
         @include mix.flexbox($direction: column);
-        gap: func.pxToRem(16);
+        gap: func.pxToRem(14);
         text-align: center;
-        padding-top: func.pxToRem(10);
+        margin-top: func.pxToRem(14);
         @include mix.respond('xs') {
             max-width: var.$maxWidth-sm;
         }
         @include mix.respond('sm') {
-            padding-top: func.pxToRem(44);
+            margin-top: func.pxToRem(44);
             text-align: center;
         }
         @include mix.respond('md') {
@@ -85,7 +85,7 @@
             @include mix.flexbox($align: flex-start, $direction: column);
             max-width: func.pxToRem(420);
             gap: func.pxToRem(43);
-            padding: func.pxToRem(50) 0;
+            margin: func.pxToRem(50) 0;
             text-align: left;
         }
     }
@@ -93,7 +93,7 @@
     // Hero section button
     &__button {
         @include mix.flexbox($direction: column);
-        gap: func.pxToRem(24);
+        gap: func.pxToRem(26);
         margin: func.pxToRem(20) 0;
         width: 100%;
         @include mix.respond('sm') {

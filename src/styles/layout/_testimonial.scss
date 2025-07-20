@@ -9,14 +9,14 @@
     @include mix.respond('lg') {
         background: url('/assets/images/testimonial-bg.webp') no-repeat center;
         background-size: cover;
-        margin-top: func.pxToRem(126);
+        margin-top: func.pxToRem(138);
     }
     @include mix.respond('xl') {
         margin-top: func.pxToRem(142);
     }
     &__slide {
         @include mix.flexbox($direction: column);
-        gap: func.pxToRem(54);
+        gap: func.pxToRem(60);
         width: 100%;
         text-align: center;
         margin-bottom: func.pxToRem(10);

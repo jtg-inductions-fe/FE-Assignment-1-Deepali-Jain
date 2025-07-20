@@ -3,7 +3,7 @@
 @use '../abstracts/variables' as var;
 .travel {
     @include mix.flexbox($direction: column);
-    margin-top: func.pxToRem(66);
+    margin-top: func.pxToRem(74);
     row-gap: func.pxToRem(25);
     position: relative;
     @include mix.respond('sm') {
@@ -37,15 +37,21 @@
     &__content {
         @include mix.flexbox($direction: column);
         text-align: center;
+        margin-top: func.pxToRem(8);
+        gap: func.pxToRem(14);
         @include mix.respond('sm') {
             max-width: var.$maxWidth-lg;
+        }
+        @include mix.respond('lg') {
+            margin-top: 0;
+            gap: func.pxToRem(6);
         }
         @include mix.respond('xl') {
             align-items: flex-start;
             max-width: func.pxToRem(450);
             text-align: left;
             margin-right: func.pxToRem(114);
-            padding-top: func.pxToRem(52);
+            margin-top: func.pxToRem(52);
         }
     }
     // Paragraph of travel section
@@ -65,7 +71,6 @@
         width: 100%;
         max-width: var.$maxWidth-sm;
         gap: func.pxToRem(16);
-        margin-top: func.pxToRem(20);
 
         // Individual card of travel section
         .travel__card {
@@ -85,6 +90,10 @@
             flex-wrap: wrap;
             row-gap: func.pxToRem(32);
             margin-top: func.pxToRem(40);
+        }
+
+        @include mix.respond('lg') {
+            margin-top: func.pxToRem(36);
         }
     }
 

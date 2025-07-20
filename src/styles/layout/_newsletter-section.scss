@@ -21,9 +21,11 @@
 
     // Content of newsletter section
     &__content {
-        max-width: func.pxToRem(769);
         @include mix.flexbox($direction: column);
-        gap: func.pxToRem(32);
+        gap: func.pxToRem(28);
+        @include mix.respond('lg') {
+            max-width: func.pxToRem(769);
+        }
         @include mix.respond('xl') {
             max-width: func.pxToRem(1065);
         }

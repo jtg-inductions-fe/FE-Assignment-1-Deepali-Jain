@@ -11,6 +11,8 @@
     font-size: var.$hero-heading-size;
     font-weight: bold;
     @include mix.line-clamp(4);
+
+    // Font styling adjustments for highlighted part of heading in hero section
     & .heading--highlight {
         background-color: transparent;
         color: var.$highlight-color;
@@ -37,6 +39,7 @@
     font-weight: bold;
     line-height: 1.2;
     @include mix.line-clamp(3);
+
     // Responsive scaling for medium screens
     @include mix.respond('md') {
         font-size: func.pxToRem(40);
@@ -47,15 +50,13 @@
         font-size: func.pxToRem(44);
     }
 
-    // Font adjustments for heading in newsletter section
-    &--newsletter {
+    &-lg {
         @include mix.respond('xl') {
             font-size: func.pxToRem(55);
         }
     }
 
-    // Font adjustments for heading in footer section
-    &--footer {
+    &-md {
         font-size: func.pxToRem(24);
     }
 }
@@ -68,7 +69,8 @@
     // Set font family and default muted color
     font-family: var.$font-paragraph;
     color: var.$muted-text-color;
-    @include mix.line-clamp(5);
+    @include mix.line-clamp(4);
+
     // Increase font size on large screens
     @include mix.respond('sm') {
         font-size: func.pxToRem(18);
@@ -76,7 +78,7 @@
 
     // Modifier: smaller base font
     &--primary {
-        font-size: func.pxToRem(16);
+        font-size: func.pxToRem(18);
     }
 
     // Modifier: slightly larger font
@@ -84,42 +86,17 @@
         font-size: func.pxToRem(20);
     }
 
-    // Font adjustments for travel section paragraph
-    &--travel {
-        font-size: func.pxToRem(18);
-        color: var.$black;
-        @include mix.line-clamp();
-    }
-
-    // Font adjustments for services section paragraph
-    &--services {
-        font-size: func.pxToRem(18);
-        @include mix.line-clamp($lines: 2);
-        @include mix.respond('lg') {
-            @include mix.line-clamp($lines: 4);
-        }
-        @include mix.respond('xl') {
-            @include mix.line-clamp($lines: 3);
+    // Adjustments for font family of paragraphs
+    &__font {
+        &-circular {
+            font-family: var.$font-family-base;
         }
     }
 
-    // Font adjustments for testimonial section paragraph
-    &--testimonial {
-        font-size: func.pxToRem(18);
-        font-family: var.$font-family-base;
-        color: var.$black;
-        @include mix.line-clamp($lines: 3);
+    // Increase font size on large screens
+    &-lg {
         @include mix.respond('lg') {
             font-size: func.pxToRem(23);
-        }
-    }
-
-    // Font adjustments for footer section paragraph
-    &--footer {
-        font-family: var.$font-family-base;
-        @include mix.respond('lg') {
-            font-size: func.pxToRem(22);
-            line-height: 1.7;
         }
     }
 }
@@ -134,7 +111,8 @@
     color: var.$highlight-color;
     letter-spacing: func.pxToRem(4);
     text-transform: uppercase;
-    @include mix.line-clamp();
+    @include mix.line-clamp(2);
+
     // Responsive scaling for larger screens
     @include mix.respond('lg') {
         font-size: func.pxToRem(24);
@@ -151,33 +129,23 @@
     color: var.$orange;
     @include mix.line-clamp(3);
 
-    // Font adjustments for services section
-    &--services {
+    // Font size adjustments for different screens
+    &-sm {
+        font-size: func.pxToRem(22);
+    }
+
+    &-md {
         font-size: func.pxToRem(24);
-        color: var.$black;
+    }
+
+    &-lg {
         @include mix.respond('lg') {
             font-size: func.pxToRem(28);
         }
     }
 
-    // Font adjustments for features section
-    &--features {
-        font-size: func.pxToRem(24);
-        color: var.$black;
-        @include mix.respond('lg') {
-            font-size: func.pxToRem(23);
-        }
-    }
-
-    // Font adjustments for travel section
-    &--travel {
+    &-xl {
         font-size: func.pxToRem(35);
-    }
-
-    // Font adjustments for testimonial section
-    &--testimonial {
-        font-size: func.pxToRem(22);
-        color: var.$muted-text-color;
     }
 
     // Font adjustments for highlighted part of testimonial section
@@ -206,5 +174,15 @@
     &-toggle {
         font-size: func.pxToRem(23);
         font-weight: bold;
+    }
+}
+
+// Adjustments for font color
+.color {
+    &-black {
+        color: var.$black;
+    }
+    &-muted {
+        color: var.$muted-text-color;
     }
 }

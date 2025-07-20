@@ -69,7 +69,7 @@
 
     // Footer section links
     &__links {
-        margin-top: func.pxToRem(100);
+        margin-top: func.pxToRem(92);
         @include mix.flexbox($direction: column, $align: flex-start);
         gap: func.pxToRem(70);
         @include mix.respond('lg') {
@@ -121,7 +121,7 @@
     }
 }
 
-// Individual icon for toggling accordionmax-width
+// Individual icon for toggling accordion
 .icon-circle-down {
     @include mix.respond('lg') {
         display: none;

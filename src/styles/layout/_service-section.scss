@@ -8,6 +8,8 @@
     margin-top: func.pxToRem(14);
     row-gap: func.pxToRem(32);
     max-width: var.$maxWidth-sm;
+
+    // Responsive styles
     @include mix.respond('sm') {
         margin-top: func.pxToRem(45);
         row-gap: func.pxToRem(64);
@@ -41,8 +43,8 @@
         & .service__card {
             @include mix.flexbox($direction: column);
             width: 100%;
-            row-gap: func.pxToRem(30);
-            padding: func.pxToRem(32) func.pxToRem(50);
+            row-gap: func.pxToRem(24);
+            padding: func.pxToRem(32);
             border-radius: func.pxToRem(32);
             border: 0.5px solid lighten(var.$muted-text-color, 60%);
             @include mix.respond('sm') {
@@ -53,6 +55,7 @@
             @include mix.respond('md') {
                 padding: func.pxToRem(64) func.pxToRem(64) func.pxToRem(32)
                     func.pxToRem(64);
+                row-gap: func.pxToRem(36);
             }
             @include mix.respond('xl') {
                 padding: func.pxToRem(74) func.pxToRem(64) func.pxToRem(94)
@@ -61,6 +64,12 @@
 
             &:hover {
                 box-shadow: 0 20px 20px var.$shadow-color;
+            }
+
+            &:nth-child(n + 3) {
+                @include mix.respond('xl') {
+                    display: none;
+                }
             }
         }
 
@@ -86,32 +95,6 @@
             flex-direction: row;
             column-gap: func.pxToRem(21);
             align-items: stretch;
-        }
-    }
-}
-
-.service__card:nth-child(n + 3) {
-    @include mix.respond('xl') {
-        display: none;
-    }
-}
-
-// Subheading of the cards present in service section
-.card-subheading {
-    &--services {
-        @include mix.respond('sm') {
-            padding-top: func.pxToRem(14);
-        }
-        @include mix.respond('md') {
-            padding-top: func.pxToRem(34);
-        }
-    }
-}
-
-.paragraph {
-    &--services {
-        @include mix.respond('lg') {
-            padding-top: func.pxToRem(10);
         }
     }
 }
