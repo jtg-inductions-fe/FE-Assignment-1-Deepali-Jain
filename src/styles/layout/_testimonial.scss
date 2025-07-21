@@ -4,7 +4,7 @@
 
 .testimonial {
     position: relative;
-    margin-top: func.pxToRem(76);
+    margin-top: func.pxToRem(96);
     @include mix.flexbox($direction: column);
     @include mix.respond('lg') {
         background: url('/assets/images/testimonial-bg.webp') no-repeat center;
@@ -16,10 +16,16 @@
     }
     &__slide {
         @include mix.flexbox($direction: column);
-        gap: func.pxToRem(60);
+        gap: func.pxToRem(64);
         width: 100%;
         text-align: center;
         margin-bottom: func.pxToRem(10);
+        @include mix.respond('lg') {
+            gap: func.pxToRem(60);
+        }
+        @include mix.respond('xl') {
+            gap: func.pxToRem(68);
+        }
     }
     &__track {
         max-width: func.pxToRem(310);
@@ -52,6 +58,11 @@
     }
     &__heading {
         padding-top: func.pxToRem(10);
+    }
+    &__paragraph {
+        @include mix.respond('xl') {
+            margin: 0 func.pxToRem(20);
+        }
     }
     &__stars {
         @include mix.flexbox();
