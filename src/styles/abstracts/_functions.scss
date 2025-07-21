@@ -1,6 +1,4 @@
-@use './variables' as var;
-
 // Function to convert px to rem
-@function pxToRem($size) {
-    @return calc($size/var.$font-size) * 1rem;
+@function pxToRem($size, $base: 10) {
+    @return calc($size/$base) * 1rem;
 }

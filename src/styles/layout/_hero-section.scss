@@ -1,0 +1,152 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+.hero {
+    // Flexbox container for the hero section
+    @include mix.flexbox($direction: column-reverse);
+    padding-top: func.pxToRem(32);
+    position: relative;
+
+    // Responsive styles for the hero section
+    @include mix.respond('sm') {
+        padding: func.pxToRem(65) 0;
+    }
+    @include mix.respond('xl') {
+        @include mix.flexbox($direction: row);
+        padding: func.pxToRem(40) func.pxToRem(130);
+    }
+
+    // Background gradient for the hero section
+    &::before {
+        content: '';
+        position: absolute;
+        inset: func.pxToRem(-130) func.pxToRem(-400);
+        width: 100vw;
+        height: 590px;
+        background: radial-gradient(circle at center, var.$orange, var.$white);
+        filter: blur(140px);
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.5;
+    }
+
+    // Hero section image
+    &__image-container {
+        @include mix.respond('sm') {
+            max-width: func.pxToRem(782);
+            width: 100%;
+        }
+    }
+    &__image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    // Hero section heading
+    &__heading {
+        line-height: 1.2;
+        padding: func.pxToRem(8) func.pxToRem(42);
+        @include mix.respond('xs') {
+            padding: func.pxToRem(8) func.pxToRem(10);
+        }
+        @include mix.respond('sm') {
+            width: 100%;
+            line-height: 1.2;
+            padding: func.pxToRem(30) func.pxToRem(70);
+        }
+        @include mix.respond('lg') {
+            padding: func.pxToRem(34) func.pxToRem(140);
+        }
+        @include mix.respond('xl') {
+            padding: 0;
+            width: func.pxToRem(420);
+            line-height: 1.2;
+        }
+    }
+
+    // Hero section paragraph
+    &__content {
+        @include mix.flexbox($direction: column);
+        gap: func.pxToRem(14);
+        text-align: center;
+        margin-top: func.pxToRem(14);
+        @include mix.respond('xs') {
+            max-width: var.$maxWidth-sm;
+        }
+        @include mix.respond('sm') {
+            margin-top: func.pxToRem(44);
+            text-align: center;
+        }
+        @include mix.respond('md') {
+            max-width: var.$maxWidth-lg;
+        }
+        @include mix.respond('xl') {
+            @include mix.flexbox($align: flex-start, $direction: column);
+            max-width: func.pxToRem(420);
+            gap: func.pxToRem(43);
+            margin: func.pxToRem(50) 0;
+            text-align: left;
+        }
+    }
+
+    // Hero section button
+    &__button {
+        @include mix.flexbox($direction: column);
+        gap: func.pxToRem(26);
+        margin: func.pxToRem(20) 0;
+        width: 100%;
+        @include mix.respond('sm') {
+            @include mix.flexbox;
+            max-width: func.pxToRem(338);
+            gap: func.pxToRem(16);
+            margin: func.pxToRem(25) 0;
+        }
+        @include mix.respond('xl') {
+            @include mix.flexbox;
+            gap: func.pxToRem(24);
+            margin: func.pxToRem(15) 0;
+        }
+        &--icon {
+            font-size: func.pxToRem(24);
+            margin-left: func.pxToRem(16);
+        }
+        &--play-icon {
+            font-size: func.pxToRem(24);
+            margin-right: func.pxToRem(10);
+        }
+    }
+
+    // Hero section paragraph
+    &__paragraph {
+        @include mix.respond('xs') {
+            margin: 0 func.pxToRem(10);
+        }
+        @include mix.respond('sm') {
+            margin: 0;
+        }
+        @include mix.respond('md') {
+            margin: 0 func.pxToRem(230);
+        }
+        @include mix.respond('xl') {
+            margin: 0;
+        }
+    }
+
+    // Hero section arrows image
+    &__arrow {
+        display: none;
+        @include mix.respond('md') {
+            display: block;
+            position: absolute;
+            left: func.pxToRem(40);
+            bottom: func.pxToRem(30);
+        }
+        @include mix.respond('xl') {
+            display: block;
+            position: absolute;
+            left: func.pxToRem(40);
+            bottom: func.pxToRem(-70);
+        }
+    }
+}

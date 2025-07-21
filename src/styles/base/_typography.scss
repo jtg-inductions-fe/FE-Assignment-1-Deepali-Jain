@@ -6,19 +6,26 @@
 // Hero Section Heading
 // ==============================
 
-.hero-heading {
+.hero__heading {
     // Base font size using custom pxToRem function
-    font-size: func.pxToRem(var.$hero-heading-size);
+    font-size: var.$hero-heading-size;
     font-weight: bold;
+    @include mix.line-clamp(4);
+
+    // Font styling adjustments for highlighted part of heading in hero section
+    & .heading--highlight {
+        background-color: transparent;
+        color: var.$highlight-color;
+    }
 
     // Font size adjustment for large screens
-    @include mix.respond('lg') {
-        font-size: func.pxToRem(56px);
+    @include mix.respond('sm') {
+        font-size: func.pxToRem(56);
     }
 
     // Font size adjustment for extra-large screens
     @include mix.respond('xl') {
-        font-size: func.pxToRem(68px);
+        font-size: func.pxToRem(68);
     }
 }
 
@@ -28,22 +35,29 @@
 
 .heading {
     // Base font size and weight
-    font-size: func.pxToRem(32px);
+    font-size: func.pxToRem(32);
     font-weight: bold;
+    line-height: 1.2;
+    @include mix.line-clamp(3);
 
     // Responsive scaling for medium screens
     @include mix.respond('md') {
-        font-size: func.pxToRem(40px);
+        font-size: func.pxToRem(40);
     }
 
     // Responsive scaling for large screens
-    @include mix.respond('lg') {
-        font-size: func.pxToRem(56px);
+    @include mix.respond('xl') {
+        font-size: func.pxToRem(44);
     }
 
-    // Responsive override for extra-large screens
-    @include mix.respond('xl') {
-        font-size: func.pxToRem(64px);
+    &-lg {
+        @include mix.respond('xl') {
+            font-size: func.pxToRem(55);
+        }
+    }
+
+    &-md {
+        font-size: func.pxToRem(24);
     }
 }
 
@@ -55,20 +69,35 @@
     // Set font family and default muted color
     font-family: var.$font-paragraph;
     color: var.$muted-text-color;
+    @include mix.line-clamp(4);
+
+    // Increase font size on large screens
+    @include mix.respond('sm') {
+        font-size: func.pxToRem(18);
+    }
 
     // Modifier: smaller base font
     &--primary {
-        font-size: func.pxToRem(16px);
+        font-size: func.pxToRem(18);
     }
 
     // Modifier: slightly larger font
     &--secondary {
-        font-size: func.pxToRem(20px);
+        font-size: func.pxToRem(20);
+    }
+
+    // Adjustments for font family of paragraphs
+    &__font {
+        &-circular {
+            font-family: var.$font-family-base;
+        }
     }
 
     // Increase font size on large screens
-    @include mix.respond('lg') {
-        font-size: func.pxToRem(18px);
+    &-lg {
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(23);
+        }
     }
 }
 
@@ -78,12 +107,16 @@
 
 .subheading {
     // Base size and highlight color
-    font-size: func.pxToRem(16px);
+    font-size: func.pxToRem(16);
     color: var.$highlight-color;
+    letter-spacing: func.pxToRem(4);
+    text-transform: uppercase;
+    @include mix.line-clamp(2);
 
     // Responsive scaling for larger screens
     @include mix.respond('lg') {
-        font-size: func.pxToRem(24px);
+        font-size: func.pxToRem(24);
+        letter-spacing: func.pxToRem(5);
     }
 }
 
@@ -92,9 +125,64 @@
 // ==============================
 
 .card-subheading {
-    // Font size for card stat heading
-    font-size: func.pxToRem(18px);
-
-    // Color (e.g., orange highlight)
+    font-size: func.pxToRem(18);
     color: var.$orange;
+    @include mix.line-clamp(3);
+
+    // Font size adjustments for different screens
+    &-sm {
+        font-size: func.pxToRem(22);
+    }
+
+    &-md {
+        font-size: func.pxToRem(24);
+    }
+
+    &-lg {
+        @include mix.respond('lg') {
+            font-size: func.pxToRem(28);
+        }
+    }
+
+    &-xl {
+        font-size: func.pxToRem(35);
+    }
+
+    // Font adjustments for highlighted part of testimonial section
+    &--highlight {
+        font-size: func.pxToRem(28);
+        background-color: transparent;
+        color: var.$orange;
+    }
+}
+
+// ==============================
+// Footer Section Accordion
+// ==============================
+
+.footer {
+    &__accordion {
+        &-list {
+            font-family: var.$font-paragraph;
+            font-size: func.pxToRem(18);
+            color: var.$muted-text-color;
+        }
+    }
+}
+
+.js-footer__accordion {
+    &-toggle {
+        font-size: func.pxToRem(23);
+        font-weight: bold;
+    }
+}
+
+// Adjustments for font color
+.color {
+    &-black {
+        color: var.$black;
+    }
+    &-muted {
+        color: var.$muted-text-color;
+    }
 }

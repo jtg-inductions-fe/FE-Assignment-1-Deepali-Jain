@@ -4,57 +4,587 @@
         <title>Assignment 1</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Discover top travel destinations worldwide. Get started with our travel planning service and explore amazing places."
+        />
+        <meta
+            name="keywords"
+            content="travel, destinations, world, tourism, vacation"
+        />
     </head>
-    <body>
-        <header class="nav">
-            <div class="nav__container">
-                <div class="nav__hamburger" id="js-hamIcon">
+    <body class="body">
+        <header class="header">
+            <div class="header__hamburger" id="js-hamIcon">
+                <button
+                    class="header__hamburger-icon icon-hamburger-menu"
+                    aria-label="open main menu"
+                    type="button"
+                ></button>
+            </div>
+            <div class="header__logo">
+                <img src="/assets/images/logo.webp" alt="Travlog logo" />
+            </div>
+            <div class="header__links" id="js-navLinkContainer">
+                <div class="header__close" id="js-crossIcon">
                     <button
-                        class="nav__hamburger-icon icon-hamburger-menu"
-                        aria-label="open main menu"
+                        class="header__close--icon"
+                        aria-label="close main menu"
                         type="button"
                     ></button>
                 </div>
-                <div class="nav__logo">
-                    <img src="/assets/images/logo.webp" alt="Travlog logo" />
-                </div>
-                <div class="nav__links" id="js-navLinkContainer">
-                    <div class="nav__close" id="js-crossIcon">
-                        <button
-                            class="nav__close--icon"
-                            aria-label="close main menu"
-                            type="button"
-                        ></button>
-                    </div>
-                    <nav>
-                        <ul class="nav__list">
-                            <li class="nav__list-item">
-                                <a
-                                    class="nav__links--active"
-                                    aria-current="page"
-                                    href="#"
-                                    >Home</a
-                                >
-                            </li>
-                            <li class="nav__list-item">
-                                <a href="#">Discover</a>
-                            </li>
-                            <li class="nav__list-item">
-                                <a href="#">Special Deals</a>
-                            </li>
-                            <li class="nav__list-item">
-                                <a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="nav__buttons" id="js-navButtons">
-                    <button class="btn btn--outlined">Log In</button>
+                <nav class="nav" id="js-nav">
+                    <ul class="nav__list">
+                        <li class="nav__list-item">
+                            <a
+                                aria-current="page"
+                                href="#"
+                                class="nav__list-link"
+                            >
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav__list-item">
+                            <a href="#discover" class="nav__list-link"
+                                >Discover</a
+                            >
+                        </li>
+                        <li class="nav__list-item">
+                            <a href="#deals" class="nav__list-link"
+                                >Special Deals</a
+                            >
+                        </li>
+                        <li class="nav__list-item">
+                            <a href="#contact" class="nav__list-link"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+                <div class="a__container-sidebar">
+                    <button class="btn btn--outlined" type="button">
+                        Log In
+                    </button>
 
-                    <button class="btn btn--active">Sign Up</button>
+                    <button class="btn btn--active" type="button">
+                        Sign Up
+                    </button>
                 </div>
             </div>
+            <div class="a__container">
+                <button class="btn btn--outlined" type="button">Log In</button>
+
+                <button class="btn btn--active" type="button">Sign Up</button>
+            </div>
         </header>
+        <main class="hero">
+            <div class="hero__content">
+                <button class="btn btn--outlined btn__disabled" type="button">
+                    Explore the world!
+                    <i class="icon-work hero__button--icon"></i>
+                </button>
+                <h1 class="hero__heading">
+                    Travel
+                    <mark class="heading--highlight">top destination</mark>
+                    of the world
+                </h1>
+                <p class="hero__paragraph paragraph">
+                    We always make our customer happy by providing as many
+                    choices as possible
+                </p>
+                <div class="hero__button">
+                    <button class="btn btn--active btn__success" type="button">
+                        Get Started
+                    </button>
+                    <button
+                        class="btn btn--outlined btn__secondary"
+                        type="button"
+                    >
+                        <i class="icon-play-button hero__button--play-icon"></i>
+                        Watch Demo
+                    </button>
+                </div>
+                <div class="hero__arrow">
+                    <img
+                        src="/assets/images/hero-object.webp"
+                        alt="hero section graphical arrow elements"
+                    />
+                </div>
+            </div>
+            <div class="hero__image-container">
+                <img
+                    src="/assets/images/hero-banner.webp"
+                    alt="a collage of travel images"
+                    class="hero__image"
+                />
+            </div>
+        </main>
+        <section class="customers">
+            <div>
+                <img
+                    src="/assets/images/tripadvisor-logo.webp"
+                    alt="logo of tripadvisor"
+                    class="customers__image"
+                    loading="lazy"
+                />
+            </div>
+            <div>
+                <img
+                    src="/assets/images/expedia-logo.webp"
+                    loading="lazy"
+                    alt="logo of expedia"
+                    class="customers__image"
+                />
+            </div>
+            <div>
+                <img
+                    src="/assets/images/booking-logo.webp"
+                    loading="lazy"
+                    alt="logo of booking"
+                    class="customers__image"
+                />
+            </div>
+            <div>
+                <img
+                    src="/assets/images/airbnb-logo.webp"
+                    loading="lazy"
+                    alt="logo of airbnb"
+                    class="customers__image"
+                />
+            </div>
+            <div>
+                <img
+                    src="/assets/images/orbitz-logo.webp"
+                    loading="lazy"
+                    alt="logo of orbitz"
+                    class="customers__image"
+                />
+            </div>
+        </section>
+        <section class="services">
+            <div class="services__headings">
+                <h4 class="subheading">SERVICES</h4>
+                <h2 class="heading">Our top value categories for you</h2>
+            </div>
+            <div class="services__cards__container">
+                <div class="service__card">
+                    <div class="service__card-image">
+                        <img
+                            src="/assets/images/globe.webp"
+                            alt="a globe with location pins"
+                        />
+                    </div>
+                    <h3
+                        class="card-subheading card-subheading-md card-subheading-lg color-black"
+                    >
+                        Best Tour Guide
+                    </h3>
+                    <p class="paragraph paragraph--primary">
+                        What looked like a small patch of purple grass, above
+                        five feet.
+                    </p>
+                </div>
+                <div class="service__card">
+                    <div class="service__card-image">
+                        <img
+                            src="/assets/images/booking.webp"
+                            alt="an illustration of online booking"
+                        />
+                    </div>
+                    <h3
+                        class="card-subheading card-subheading-md card-subheading-lg color-black"
+                    >
+                        Easy Booking
+                    </h3>
+                    <p class="paragraph paragraph--primary">
+                        Square, was moving across the sand in their direction.
+                    </p>
+                </div>
+                <div class="service__card">
+                    <div class="service__card-image">
+                        <img
+                            src="/assets/images/weather.webp"
+                            alt="an illustration of weather forecast"
+                        />
+                    </div>
+                    <h3
+                        class="card-subheading card-subheading-md color-black card-subheading-lg"
+                    >
+                        Weather Forecast
+                    </h3>
+                    <p class="paragraph paragraph--primary">
+                        What looked like a small patch of purple grass, above
+                        five feet.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="travel" id="discover">
+            <div class="travel__image__container">
+                <img
+                    src="/assets/images/travel-image.webp"
+                    alt="A collage of travel images"
+                    class="travel__image"
+                />
+            </div>
+            <div class="travel__content">
+                <h4 class="subheading">TRAVEL POINT</h4>
+                <h2 class="heading">We helping you find your dream location</h2>
+                <p class="paragraph travel--paragraph">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literature
+                    from 45 BC.
+                </p>
+                <div class="travel__cards__container">
+                    <div class="travel__card">
+                        <h4 class="card-subheading card-subheading-xl">500+</h4>
+                        <p class="paragraph paragraph--primary color-black">
+                            Holiday Package
+                        </p>
+                    </div>
+                    <div class="travel__card">
+                        <h4 class="card-subheading card-subheading-xl">100</h4>
+                        <p class="paragraph paragraph--primary color-black">
+                            Luxury Hotel
+                        </p>
+                    </div>
+                    <div class="travel__card">
+                        <h4 class="card-subheading card-subheading-xl">7</h4>
+                        <p class="paragraph paragraph--primary color-black">
+                            Premium Airlines
+                        </p>
+                    </div>
+                    <div class="travel__card">
+                        <h4 class="card-subheading card-subheading-xl">2k+</h4>
+                        <p class="paragraph paragraph--primary color-black">
+                            Happy Customer
+                        </p>
+                    </div>
+                </div>
+                <div class="travel__sticker-container">
+                    <img
+                        src="/assets/images/travel-sticker.webp"
+                        alt="a decorative, yellow sticker"
+                    />
+                </div>
+            </div>
+        </section>
+        <section class="features" id="deals">
+            <div class="features__img-container">
+                <img
+                    src="/assets/images/key-features-img.webp"
+                    alt="a collage of travel images"
+                    class="features__img"
+                />
+            </div>
+            <div class="features__content">
+                <h4 class="subheading">KEY FEATURES</h4>
+                <h2 class="heading services--heading">
+                    We offer best services
+                </h2>
+                <p class="paragraph features--paragraph">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literature
+                    from 45 BC.
+                </p>
+                <div class="features__cards__container">
+                    <div class="features__card">
+                        <div>
+                            <img
+                                src="/assets/images/location.webp"
+                                alt="Location pin"
+                            />
+                        </div>
+                        <div>
+                            <h3
+                                class="card-subheading features__card-subheading card-subheading-md color-black"
+                            >
+                                We offer best services
+                            </h3>
+                            <p class="paragraph paragraph--primary">
+                                Lorem Ipsum is not simply random text
+                            </p>
+                        </div>
+                    </div>
+                    <div class="features__card">
+                        <div>
+                            <img
+                                src="/assets/images/calendar.webp"
+                                alt="Calendar image"
+                            />
+                        </div>
+                        <div>
+                            <h3
+                                class="card-subheading features__card-subheading card-subheading-md color-black"
+                            >
+                                Schedule your trip
+                            </h3>
+                            <p class="paragraph paragraph--primary">
+                                It has roots in a piece of classical
+                            </p>
+                        </div>
+                    </div>
+                    <div class="features__card">
+                        <div>
+                            <img
+                                src="/assets/images/coupon.webp"
+                                alt="A coupon's image"
+                            />
+                        </div>
+                        <div>
+                            <h3
+                                class="card-subheading features__card-subheading card-subheading-md color-black"
+                            >
+                                Get discounted coupons
+                            </h3>
+                            <p class="paragraph paragraph--primary">
+                                Lorem Ipsum is not simply random text
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="splide testimonial">
+            <h4 class="subheading">TESTIMONIALS</h4>
+            <h2 class="heading splide__heading testimonial__heading">
+                Trust our clients
+            </h2>
+            <div class="splide__track testimonial__track">
+                <ul class="splide__list">
+                    <li class="splide__slide testimonial__slide">
+                        <div>
+                            <img
+                                src="/assets/images/testimonial_pfp.webp"
+                                alt="testimonial profile picture"
+                            />
+                        </div>
+                        <div class="splide__title testimonial__title">
+                            <h5 class="card-subheading-sm color-muted">
+                                <mark class="card-subheading--highlight"
+                                    >Mark Smith</mark
+                                >/Travel Enthusiast
+                            </h5>
+                            <div class="testimonial__stars">
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                            </div>
+                        </div>
+                        <p
+                            class="paragraph paragraph--primary paragraph__font-circular color-black paragraph-lg testimonial__paragraph"
+                        >
+                            Contrary to popular belief, Lorem Ipsum is not
+                            simply random text. It has roots in a piece of
+                            classical Latin literature from 45 BC.
+                        </p>
+                    </li>
+                    <li class="splide__slide testimonial__slide">
+                        <div>
+                            <img
+                                src="/assets/images/testimonial_pfp.webp"
+                                alt="testimonial profile picture"
+                            />
+                        </div>
+                        <div class="splide__title testimonial__title">
+                            <h5 class="card-subheading-sm color-muted">
+                                <mark class="card-subheading--highlight"
+                                    >Jane Doe</mark
+                                >/Travel Enthusiast
+                            </h5>
+                            <div class="testimonial__stars">
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                            </div>
+                        </div>
+                        <p
+                            class="paragraph paragraph--primary paragraph__font-circular color-black paragraph-lg"
+                        >
+                            Contrary to popular belief, Lorem Ipsum is not
+                            simply random text. It has roots in a piece of
+                            classical Latin literature from 45 BC.
+                        </p>
+                    </li>
+                    <li class="splide__slide testimonial__slide">
+                        <div>
+                            <img
+                                src="/assets/images/testimonial_pfp.webp"
+                                alt="testimonial profile picture"
+                            />
+                        </div>
+                        <div class="splide__title testimonial__title">
+                            <h5 class="card-subheading-sm color-muted">
+                                <mark class="card-subheading--highlight"
+                                    >John Doe</mark
+                                >/Travel Enthusiast
+                            </h5>
+                            <div class="testimonial__stars">
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                            </div>
+                        </div>
+                        <p
+                            class="paragraph paragraph--primary paragraph__font-circular color-black paragraph-lg"
+                        >
+                            Contrary to popular belief, Lorem Ipsum is not
+                            simply random text. It has roots in a piece of
+                            classical Latin literature from 45 BC.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="splide__arrows testimonial__arrows">
+                <button
+                    class="splide__arrow splide__arrow--prev testimonial__arrow--prev"
+                    type="button"
+                    aria-label="Previous slide"
+                >
+                    <i class="icon-arrow-left"></i>
+                </button>
+                <button
+                    class="splide__arrow splide__arrow--next testimonial__arrow--next"
+                    type="button"
+                    aria-label="Next slide"
+                >
+                    <i class="icon-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="newsletter" id="contact">
+            <div class="newsletter__content">
+                <h4 class="subheading">SUBSCRIBE TO OUR NEWSLETTER</h4>
+                <h2 class="heading newsletter__heading heading-lg">
+                    Prepare yourself & let's explore the beauty of the world
+                </h2>
+                <form class="newsletter__form" id="js-newsletterForm">
+                    <div class="newsletter__form-email">
+                        <i class="icon-email newsletter__form-icon"></i>
+                        <input
+                            placeholder="Your Email"
+                            class="newsletter__form-input"
+                            type="email"
+                            aria-label="Email address"
+                            name="email"
+                            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                            required
+                        />
+                    </div>
+                    <button class="btn btn--active btn-lg" type="submit">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+            <div class="newsletter__dots">
+                <img
+                    src="/assets/images/newsletter-object.webp"
+                    alt="graphical elements of newsletter section"
+                />
+            </div>
+            <div class="newsletter__object">
+                <img
+                    src="/assets/images/newsletter-object2.webp"
+                    alt="graphical elements of newsletter section"
+                />
+            </div>
+        </section>
+
+        <footer class="footer" id="js-footer">
+            <div class="footer__content">
+                <div class="footer__title">
+                    <div>
+                        <img
+                            src="/assets/images/logo.webp"
+                            alt="Travlog logo"
+                        />
+                    </div>
+                    <h2 class="heading heading-md">Travlog</h2>
+                </div>
+                <p class="paragraph paragraph__font-circular paragraph-lg">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literature
+                    from 45 BC.
+                </p>
+
+                <div class="footer__social">
+                    <button
+                        class="footer__social-icon"
+                        aria-label="Facebook"
+                        type="button"
+                    >
+                        <i class="icon-fb-logo"></i>
+                    </button>
+                    <button
+                        class="footer__social-icon"
+                        aria-label="Twitter"
+                        type="button"
+                    >
+                        <i class="icon-twitter-logo"></i>
+                    </button>
+                    <button
+                        class="footer__social-icon"
+                        aria-label="Instagram"
+                        type="button"
+                    >
+                        <i class="icon-ig-logo"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="footer__links">
+                <div class="js-footer__accordion">
+                    <button
+                        class="js-footer__accordion-toggle"
+                        aria-label="Company"
+                        type="button"
+                    >
+                        Company<i class="icon-circle-down"></i>
+                    </button>
+                    <ul class="footer__accordion-list">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Mobile</a></li>
+                    </ul>
+                </div>
+                <div class="js-footer__accordion">
+                    <button
+                        class="js-footer__accordion-toggle"
+                        aria-label="Contact Us"
+                        type="button"
+                    >
+                        Contact Us<i class="icon-circle-down"></i>
+                    </button>
+                    <ul class="footer__accordion-list">
+                        <li><a href="#">Why Travlog?</a></li>
+                        <li><a href="#">Partner with us</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="js-footer__accordion">
+                    <button
+                        class="js-footer__accordion-toggle"
+                        aria-label="Meet Us"
+                        type="button"
+                    >
+                        Meet Us<i class="icon-circle-down"></i>
+                    </button>
+                    <ul class="footer__accordion-list">
+                        <li><a href="#">+00 92 1234 56789</a></li>
+                        <li><a href="#">info@travlog.com</a></li>
+                        <li><a href="#">205. R Street, New York BD23200</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

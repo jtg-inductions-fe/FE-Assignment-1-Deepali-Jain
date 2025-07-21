@@ -1,3 +1,5 @@
+@use '../abstracts/functions' as func;
+
 // Colors
 $primary-color: #5d50c6;
 $secondary-text-color: #eeeeee;
@@ -8,25 +10,32 @@ $highlight-color: #f85e95;
 $black: #000000;
 $orange: #ff5722;
 $yellow: #facd49;
+$light-yellow: rgba(250, 206, 73, 0.08);
 $off-white: #f1f2f2;
+$light-pink: rgb(255, 238, 238);
 $border-color: lighten(rgba(25, 24, 37, 0.522), 60%);
+$shadow-color: rgba(0, 0, 0, 0.148);
 
 // Fonts
 $font-family-base: 'Circular Std', sans-serif;
 $font-paragraph: 'Inter', sans-serif;
-$font-size: 10px;
-$font-size-primary: 16px;
+$font-size: func.pxToRem(10);
+$font-size-primary: func.pxToRem(16);
 $font-size-root: 62.5%;
-$hero-heading-size: 40px;
+$hero-heading-size: func.pxToRem(40);
 
 // Break-points
 $breakpoints: (
     xs: 430px,
     sm: 480px,
     md: 768px,
-    lg: 1204px,
+    lg: 1024px,
     xl: 1440px,
 );
 
 //dimensions
-$default-border-radius: 32px;
+$default-border-radius: func.pxToRem(32);
+$maxWidth-lg: func.pxToRem(896);
+$maxWidth-xs: func.pxToRem(320);
+$maxWidth-sm: func.pxToRem(398);
+$maxWidth-xl: func.pxToRem(1192);

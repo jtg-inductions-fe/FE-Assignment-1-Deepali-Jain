@@ -1,0 +1,100 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+
+.services {
+    @include mix.flexbox($direction: column);
+    text-align: center;
+    margin-top: func.pxToRem(14);
+    row-gap: func.pxToRem(32);
+    max-width: var.$maxWidth-sm;
+
+    // Responsive styles
+    @include mix.respond('sm') {
+        margin-top: func.pxToRem(45);
+        row-gap: func.pxToRem(64);
+    }
+    @include mix.respond('lg') {
+        max-width: var.$maxWidth-lg;
+    }
+    @include mix.respond('xl') {
+        flex-direction: row;
+        column-gap: 10px;
+        max-width: var.$maxWidth-xl;
+    }
+
+    // Service section headings
+    &__headings {
+        @include mix.flexbox($direction: column);
+        row-gap: func.pxToRem(13);
+        @include mix.respond('xl') {
+            align-items: flex-start;
+            text-align: left;
+        }
+    }
+
+    // Container of cards in service section
+    &__cards__container {
+        @include mix.flexbox($direction: column);
+        align-items: stretch;
+        row-gap: func.pxToRem(16);
+
+        // Individual card of service section
+        & .service__card {
+            @include mix.flexbox($direction: column);
+            width: 100%;
+            row-gap: func.pxToRem(24);
+            padding: func.pxToRem(32);
+            border-radius: func.pxToRem(32);
+            border: 0.5px solid lighten(var.$muted-text-color, 60%);
+            @include mix.respond('sm') {
+                padding: func.pxToRem(64) func.pxToRem(34) func.pxToRem(32)
+                    func.pxToRem(34);
+                row-gap: func.pxToRem(16);
+            }
+            @include mix.respond('md') {
+                padding: func.pxToRem(64) func.pxToRem(64) func.pxToRem(32)
+                    func.pxToRem(64);
+                row-gap: func.pxToRem(36);
+            }
+            @include mix.respond('xl') {
+                padding: func.pxToRem(74) func.pxToRem(64) func.pxToRem(94)
+                    func.pxToRem(64);
+            }
+
+            &:hover {
+                box-shadow: 0 20px 20px var.$shadow-color;
+            }
+
+            &:nth-child(n + 3) {
+                @include mix.respond('xl') {
+                    display: none;
+                }
+            }
+        }
+
+        // Image in individual service card
+        &-img {
+            width: func.pxToRem(64);
+            height: auto;
+        }
+
+        // Responsive styles
+        @include mix.respond('sm') {
+            @include mix.flexbox($direction: row);
+            align-items: stretch;
+            justify-content: flex-start;
+            column-gap: func.pxToRem(16);
+        }
+        @include mix.respond('md') {
+            @include mix.flexbox($direction: row);
+            align-items: stretch;
+            justify-content: flex-start;
+        }
+        @include mix.respond('xl') {
+            flex-direction: row;
+            column-gap: func.pxToRem(21);
+            align-items: stretch;
+        }
+    }
+}

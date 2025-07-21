@@ -1,0 +1,104 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+.features {
+    margin: func.pxToRem(98) auto;
+    max-width: var.$maxWidth-xs;
+    &--paragraph {
+        margin: func.pxToRem(18) func.pxToRem(5);
+        @include mix.respond('lg') {
+            margin: func.pxToRem(15) func.pxToRem(48);
+        }
+    }
+
+    // Responsive styles
+    @include mix.respond('xs') {
+        max-width: func.pxToRem(350);
+        margin-bottom: 0;
+    }
+    @include mix.respond('lg') {
+        max-width: var.$maxWidth-lg;
+        margin-top: func.pxToRem(132);
+    }
+    @include mix.respond('xl') {
+        @include mix.flexbox($direction: row-reverse);
+        max-width: func.pxToRem(1321);
+        margin-top: func.pxToRem(88);
+    }
+
+    // Content of features section
+    &__content {
+        @include mix.flexbox($direction: column);
+        margin-top: func.pxToRem(92);
+        row-gap: func.pxToRem(16);
+        text-align: center;
+        @include mix.respond('xs') {
+            max-width: func.pxToRem(334);
+        }
+        @include mix.respond('lg') {
+            margin-top: func.pxToRem(56);
+            max-width: var.$maxWidth-lg;
+        }
+        @include mix.respond('xl') {
+            max-width: func.pxToRem(558);
+            align-items: flex-start;
+            text-align: left;
+            margin-top: func.pxToRem(40);
+        }
+    }
+
+    // Cards container in features section
+    &__cards__container {
+        @include mix.flexbox($direction: column);
+        row-gap: func.pxToRem(16);
+        margin-top: func.pxToRem(4);
+        @include mix.respond('lg') {
+            max-width: func.pxToRem(832);
+            width: 100%;
+            margin-top: func.pxToRem(26);
+            row-gap: 0;
+        }
+    }
+
+    // Individual feature card
+    &__card {
+        @include mix.flexbox($align: flex-start, $direction: column);
+        width: 100%;
+        padding: func.pxToRem(28) func.pxToRem(32);
+        text-align: left;
+        row-gap: func.pxToRem(8);
+        @include mix.respond('lg') {
+            @include mix.flexbox($justify: flex-start);
+            column-gap: func.pxToRem(32);
+        }
+
+        &:hover {
+            border: 1px solid var.$border-color;
+            border-radius: func.pxToRem(32);
+        }
+    }
+
+    // Subheading for feature cards
+    &__card-subheading {
+        margin-top: func.pxToRem(14);
+        @include mix.respond('lg') {
+            margin-top: func.pxToRem(10);
+        }
+    }
+
+    // Image in feature cards
+    &__img {
+        width: 100%;
+        height: auto;
+        &-container {
+            @include mix.respond('lg') {
+                max-width: func.pxToRem(693);
+                margin: 0 auto;
+            }
+            @include mix.respond('xl') {
+                max-width: func.pxToRem(650);
+                width: 100%;
+            }
+        }
+    }
+}

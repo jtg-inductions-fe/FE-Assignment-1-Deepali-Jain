@@ -1,0 +1,12 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+.newsletter__form-input {
+    font-size: func.pxToRem(14);
+    font-weight: bold;
+    color: var.$muted-text-color;
+    @include mix.respond('lg') {
+        font-size: func.pxToRem(23);
+    }
+}

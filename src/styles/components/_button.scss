@@ -1,18 +1,17 @@
 @use '../abstracts/functions' as func;
 @use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
 
 // ==============================
 // Base Button Styles
 // ==============================
 
 .btn {
-    // Minimum width and height for button size
-
     // Fully rounded pill-shaped button
-    border-radius: func.pxToRem(100px);
+    border-radius: func.pxToRem(100);
 
     // Inner spacing
-    padding: func.pxToRem(16px) func.pxToRem(32px);
+    padding: func.pxToRem(16) func.pxToRem(32);
 
     // Basic styling
     border: none;
@@ -29,7 +28,7 @@
     // Hover effect: lift slightly and add shadow
     &:hover {
         transform: translateY(-1px);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px var.$shadow-color;
     }
 
     // Focus effect: visible outline
@@ -37,6 +36,10 @@
         outline: 1px solid var.$border-color;
     }
 
+    // Active effect: slightly shrink
+    &:active {
+        transform: translateY(0) scale(0.96);
+    }
     // ==============================
     // Active Button Modifier
     // ==============================
@@ -76,6 +79,72 @@
         &:focus {
             background-color: darken(var.$white, 10%);
             outline: 1px solid var.$border-color;
+        }
+    }
+
+    // ==============================
+    // Explore Button Modifier
+    // ==============================
+
+    &__disabled {
+        @include mix.flexbox();
+        width: func.pxToRem(224);
+        height: func.pxToRem(56);
+        color: var.$highlight-color;
+        box-shadow: 0 5px 10px var.$shadow-color;
+        background-color: transparent;
+        pointer-events: none;
+    }
+
+    // ==============================
+    // Start Button Modifier
+    // ==============================
+
+    &__success {
+        width: 100%;
+        height: func.pxToRem(65);
+        @include mix.respond('md') {
+            height: func.pxToRem(49);
+        }
+        @include mix.respond('sm') {
+            padding: func.pxToRem(16);
+        }
+        &:hover {
+            box-shadow: 0 15px 10px var.$shadow-color;
+        }
+    }
+
+    // ==============================
+    // Watch Button Modifier
+    // ==============================
+
+    &__secondary {
+        @include mix.flexbox($justify: center);
+        width: 100%;
+        height: func.pxToRem(65);
+        border: 1px solid var.$border-color;
+        @include mix.respond('md') {
+            height: func.pxToRem(49);
+        }
+        @include mix.respond('sm') {
+            padding: func.pxToRem(16);
+        }
+    }
+
+    // ==============================
+    // Button Modifier for larger size
+    // ==============================
+
+    &-lg {
+        width: 100%;
+        height: func.pxToRem(66);
+        border-radius: func.pxToRem(16);
+        font-size: func.pxToRem(16);
+        @include mix.respond('lg') {
+            width: func.pxToRem(235);
+            height: func.pxToRem(96);
+            border-radius: func.pxToRem(32);
+            font-size: func.pxToRem(23);
         }
     }
 }

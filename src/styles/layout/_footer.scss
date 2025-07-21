@@ -1,0 +1,136 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mix;
+
+.footer {
+    max-width: var.$maxWidth-xs;
+    margin-top: func.pxToRem(96);
+
+    // Responsive styles
+    @include mix.respond('xs') {
+        max-width: var.$maxWidth-sm;
+    }
+    @include mix.respond('lg') {
+        max-width: var.$maxWidth-lg;
+        margin-top: func.pxToRem(64);
+    }
+    @include mix.respond('xl') {
+        @include mix.flexbox();
+        max-width: var.$maxWidth-xl;
+        gap: func.pxToRem(64);
+        padding: func.pxToRem(64) 0;
+    }
+
+    // Content of footer section
+    &__content {
+        @include mix.flexbox($direction: column, $align: flex-start);
+        gap: func.pxToRem(32);
+        @include mix.respond('xl') {
+            max-width: func.pxToRem(564);
+            padding-top: func.pxToRem(62);
+            padding-left: func.pxToRem(8);
+        }
+    }
+
+    // Container for logo and title in footer section
+    &__title {
+        @include mix.flexbox($justify: flex-start);
+        gap: func.pxToRem(16);
+    }
+
+    // Container for social media icons in footer section
+    &__social {
+        @include mix.flexbox();
+        gap: func.pxToRem(32);
+        @include mix.respond('xl') {
+            padding-top: func.pxToRem(32);
+        }
+
+        // Individual social media icon styles
+        &-icon {
+            @include mix.flexbox();
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            background-color: var.$primary-color;
+            border-radius: 50%;
+            cursor: pointer;
+            height: func.pxToRem(32);
+            width: func.pxToRem(32);
+            border: none;
+            &:hover {
+                background-color: darken(var.$primary-color, 10%);
+            }
+            &:active {
+                transform: scale(0.96);
+            }
+        }
+    }
+
+    // Footer section links
+    &__links {
+        margin-top: func.pxToRem(92);
+        @include mix.flexbox($direction: column, $align: flex-start);
+        gap: func.pxToRem(70);
+        @include mix.respond('lg') {
+            @include mix.flexbox($align: stretch);
+            gap: func.pxToRem(32);
+            margin-top: func.pxToRem(64);
+        }
+        @include mix.respond('xl') {
+            margin-top: func.pxToRem(52);
+            padding-left: func.pxToRem(10);
+        }
+    }
+
+    // Container for individual accordions in footer
+    &__accordion {
+        // List of items in accordion
+        &-list {
+            display: none;
+            @include mix.respond('lg') {
+                display: block;
+                @include mix.flexbox($direction: column, $align: flex-start);
+                gap: func.pxToRem(32);
+                margin-top: func.pxToRem(32);
+            }
+        }
+    }
+}
+
+.js-footer__accordion {
+    width: 100%;
+    // Toggle for accordion
+    &-toggle {
+        @include mix.flexbox();
+        width: 100%;
+        background-color: var.$white;
+        border: none;
+    }
+
+    &.active {
+        .footer__accordion-list {
+            display: block;
+            @include mix.flexbox($direction: column, $align: flex-start);
+            gap: func.pxToRem(32);
+            margin-top: func.pxToRem(32);
+        }
+        .icon-circle-down {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+// Individual icon for toggling accordion
+.icon-circle-down {
+    @include mix.respond('lg') {
+        display: none;
+    }
+}
+
+// Individual icons for social media links
+.icon-fb-logo,
+.icon-twitter-logo,
+.icon-ig-logo {
+    font-size: func.pxToRem(16);
+}
