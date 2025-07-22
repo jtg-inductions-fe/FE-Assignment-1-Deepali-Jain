@@ -5,6 +5,7 @@
 .header {
     @include mix.flexbox();
     padding: func.pxToRem(34) func.pxToRem(18);
+    position: relative;
 
     // Large and XL screen padding
     @include mix.respond('lg') {
@@ -40,13 +41,18 @@
 
     // Navigation Links Container
     &__links {
-        display: none;
         order: 3;
+        overflow: scroll;
+        position: absolute;
+        left: -100%;
 
         // Display nav links horizontally on desktop
         @include mix.respond('xl') {
             @include mix.flexbox();
+            position: static;
+            left: 0;
             gap: func.pxToRem(24);
+            overflow: hidden;
         }
     }
 
@@ -105,7 +111,7 @@
     }
 }
 
-.a {
+.button {
     // Navigation Buttons (Log In / Sign Up)
     &__container {
         @include mix.flexbox();
@@ -158,9 +164,10 @@
         // Mobile menu open state
         &--open {
             display: block;
-            position: fixed;
+            position: absolute;
             right: 0;
             top: 0;
+            left: 0;
             background-color: var.$light-pink;
             width: 100%;
             height: 100vh;
@@ -168,12 +175,8 @@
             border-top-left-radius: func.pxToRem(20);
             border-bottom-left-radius: func.pxToRem(20);
             padding: func.pxToRem(30) func.pxToRem(20);
-            transition:
-                transform 0.4s ease-in-out,
-                opacity 0.3s ease-in-out;
-            transform: translateX(0);
-            opacity: 1;
             z-index: 1;
+            transition: all 1s ease-in-out;
 
             // Expand menu leftwards and increase width on medium screens
             @include mix.respond('md') {
@@ -206,7 +209,7 @@
             }
 
             // Show nav buttons below open menu
-            .a__container-sidebar {
+            .button__container-sidebar {
                 @include mix.flexbox($direction: column);
                 z-index: 2;
                 gap: func.pxToRem(30);
@@ -242,6 +245,6 @@
     }
 }
 
-.body.js-no-scroll {
+.js-no-scroll {
     overflow: hidden;
 }

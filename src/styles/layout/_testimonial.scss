@@ -12,7 +12,7 @@
         margin-top: func.pxToRem(138);
     }
     @include mix.respond('xl') {
-        margin-top: func.pxToRem(142);
+        margin-top: func.pxToRem(60);
     }
     &__slide {
         @include mix.flexbox($direction: column);
@@ -24,7 +24,7 @@
             gap: func.pxToRem(60);
         }
         @include mix.respond('xl') {
-            gap: func.pxToRem(68);
+            gap: func.pxToRem(58);
         }
     }
     &__track {

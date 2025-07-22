@@ -43,8 +43,18 @@
             max-width: func.pxToRem(558);
             align-items: flex-start;
             text-align: left;
-            margin-top: func.pxToRem(40);
+            margin-top: 0;
         }
+    }
+
+    &__heading {
+        @include mix.respond('lg') {
+            margin: 0 func.pxToRem(48);
+        }
+    }
+
+    &__subheading {
+        margin: 0 func.pxToRem(48);
     }
 
     // Cards container in features section
@@ -91,13 +101,15 @@
         width: 100%;
         height: auto;
         &-container {
+            max-width: func.pxToRem(300);
             @include mix.respond('lg') {
-                max-width: func.pxToRem(693);
+                max-width: func.pxToRem(594);
                 margin: 0 auto;
             }
             @include mix.respond('xl') {
-                max-width: func.pxToRem(650);
+                max-width: func.pxToRem(620);
                 width: 100%;
+                margin: 0;
             }
         }
     }

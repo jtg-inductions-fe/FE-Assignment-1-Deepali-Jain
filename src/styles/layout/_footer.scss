@@ -4,7 +4,7 @@
 
 .footer {
     max-width: var.$maxWidth-xs;
-    margin-top: func.pxToRem(96);
+    margin: func.pxToRem(96) auto func.pxToRem(56);
 
     // Responsive styles
     @include mix.respond('xs') {
@@ -12,13 +12,14 @@
     }
     @include mix.respond('lg') {
         max-width: var.$maxWidth-lg;
-        margin-top: func.pxToRem(64);
+        margin: func.pxToRem(64) auto;
     }
     @include mix.respond('xl') {
         @include mix.flexbox();
         max-width: var.$maxWidth-xl;
         gap: func.pxToRem(64);
         padding: func.pxToRem(64) 0;
+        margin-top: func.pxToRem(70);
     }
 
     // Content of footer section
