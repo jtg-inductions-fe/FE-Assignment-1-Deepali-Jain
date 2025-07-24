@@ -209,37 +209,45 @@
             }
 
             // Show nav buttons below open menu
-            .button__container-sidebar {
-                @include mix.flexbox($direction: column);
-                z-index: 2;
-                gap: func.pxToRem(30);
-                width: 100%;
-                margin-top: func.pxToRem(40);
-                // Return to normal flow on medium screens
-                @include mix.respond('md') {
-                    display: none;
-                }
-                .btn--active {
-                    width: 70%;
-                    border-radius: func.pxToRem(16);
-                }
-                .btn--outlined {
-                    width: 70%;
-                    border-radius: func.pxToRem(16);
+            .button {
+                &__container {
+                    &-sidebar {
+                        @include mix.flexbox($direction: column);
+                        z-index: 2;
+                        gap: func.pxToRem(30);
+                        width: 100%;
+                        margin-top: func.pxToRem(40);
+                        // Return to normal flow on medium screens
+                        @include mix.respond('md') {
+                            display: none;
+                        }
+                        .btn--active {
+                            width: 70%;
+                            border-radius: func.pxToRem(16);
+                        }
+                        .btn--outlined {
+                            width: 70%;
+                            border-radius: func.pxToRem(16);
+                        }
+                    }
                 }
             }
 
             // Close button styles
             .header__close--icon {
-                background: transparent;
-                border: none;
-                font-size: func.pxToRem(28);
-                cursor: pointer;
-                color: var.$black;
-                position: absolute;
-                top: func.pxToRem(20);
-                right: func.pxToRem(20);
-                transition: color 0.3s;
+                &__close {
+                    &--icon {
+                        background: transparent;
+                        border: none;
+                        font-size: func.pxToRem(28);
+                        cursor: pointer;
+                        color: var.$black;
+                        position: absolute;
+                        top: func.pxToRem(20);
+                        right: func.pxToRem(20);
+                        transition: color 0.3s;
+                    }
+                }
             }
         }
     }
