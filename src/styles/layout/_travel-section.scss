@@ -51,7 +51,7 @@
             max-width: func.pxToRem(450);
             text-align: left;
             margin-right: func.pxToRem(114);
-            margin-top: func.pxToRem(52);
+            margin-top: func.pxToRem(18);
         }
     }
     // Paragraph of travel section
@@ -100,7 +100,7 @@
     &__sticker {
         &-container {
             position: absolute;
-            top: 268px;
+            top: 256px;
             right: 0;
             display: none;
             @include mix.respond('xl') {

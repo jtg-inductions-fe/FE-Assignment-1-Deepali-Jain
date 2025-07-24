@@ -3,11 +3,11 @@
 @use 'abstracts/mixins';
 @use 'vendors/icons';
 @use 'base/reset';
+@use 'base/common';
 @use 'base/fonts';
 @use 'components/button';
 @use 'components/form';
 @use 'base/typography';
-@use 'layout/common';
 @use 'layout/header';
 @use 'layout/hero-section';
 @use 'layout/customers';

@@ -23,7 +23,7 @@ const footer = document.getElementById('js-footer');
  */
 footer.addEventListener('click', (event) => {
     if (
-        event.target.classList.contains('icon-circle-down') ||
+        event.target.classList.contains('js-icon-circle-down') ||
         event.target.classList.contains('js-footer__accordion-toggle')
     ) {
         const accordionParent = event.target.closest('.js-footer__accordion');

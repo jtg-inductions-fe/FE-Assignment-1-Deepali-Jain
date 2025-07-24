@@ -22,8 +22,7 @@
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
-        background-color 0.2s ease,
-        color 0.2s ease;
+        background-color 0.2s ease;
 
     // Hover effect: lift slightly and add shadow
     &:hover {
@@ -135,7 +134,7 @@
     // Button Modifier for larger size
     // ==============================
 
-    &-lg {
+    &--lg {
         width: 100%;
         height: func.pxToRem(66);
         border-radius: func.pxToRem(16);

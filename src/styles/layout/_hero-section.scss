@@ -13,7 +13,7 @@
     }
     @include mix.respond('xl') {
         @include mix.flexbox($direction: row);
-        padding: func.pxToRem(40) func.pxToRem(130);
+        padding: func.pxToRem(30) func.pxToRem(130);
     }
 
     // Background gradient for the hero section
@@ -47,11 +47,11 @@
     &__heading {
         line-height: 1.2;
         padding: func.pxToRem(8) func.pxToRem(42);
+        width: 100%;
         @include mix.respond('xs') {
             padding: func.pxToRem(8) func.pxToRem(10);
         }
         @include mix.respond('sm') {
-            width: 100%;
             line-height: 1.2;
             padding: func.pxToRem(30) func.pxToRem(70);
         }
@@ -119,6 +119,7 @@
 
     // Hero section paragraph
     &__paragraph {
+        width: 100%;
         @include mix.respond('xs') {
             margin: 0 func.pxToRem(10);
         }

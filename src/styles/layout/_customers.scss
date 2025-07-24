@@ -20,7 +20,7 @@
     }
     @include mix.respond('xl') {
         max-width: func.pxToRem(1320);
-        padding: func.pxToRem(72) 0;
+        padding: func.pxToRem(90) 0;
         column-gap: func.pxToRem(100);
     }
 
